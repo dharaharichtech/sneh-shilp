@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import DonateNow from "../../Donatenow";
-import ContactButton from "../../Contactusbutton";
+import DonateNow from "../../buttons/Donatenow";
+import ContactButton from "../../buttons/Contactusbutton";
 import { calistoga, sueEllen } from "../../app/font";
 
 interface CardData {

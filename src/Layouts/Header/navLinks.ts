@@ -17,9 +17,9 @@ export const navLinks: NavLink[] = [
   {
     id: 2,
     label: "About us",
-    href: "/about",
+    href: "/aboutus",
     subLinks: [
-      { id: 1, label: "About us", href: "/about" },
+      { id: 1, label: "About us", href: "/aboutus" },
       { id: 2, label: "Team", href: "/team" },
       { id: 3, label: "Join as a Volunteer", href: "/join" },
     ],

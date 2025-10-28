@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import DonateNow from "@/Donatenow";
+import DonateNow from "@/buttons/Donatenow";
 import { navLinks } from "./navLinks";
 import snehalshilpLogo from "../../../public/snehalshilplogo.svg";
 
