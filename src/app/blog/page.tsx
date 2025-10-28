@@ -5,6 +5,7 @@ import { BlogSectionData } from "@/data/BlogPageData";
 import JoinOurSection from "../../component/BlogpageComponent/JoinOurSection";
 import TheBlogSection from "../../component/BlogpageComponent/TheBlogSection";
 
+//comment added
 export default function BlogPage() {
   const { JoinOurSection: joinData, BlogSection: blogData } = BlogSectionData;
 
