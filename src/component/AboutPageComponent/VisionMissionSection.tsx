@@ -6,57 +6,47 @@ import { calistoga } from "../../app/font";
 import { AboutUsData } from "@/data/AboutUsData";
 
 export default function VisionMissionSection() {
-  const { VisionSection, MissionSection } = AboutUsData;
+  const { VisionMissionSection } = AboutUsData;
+  const { Vision, Mission, bgImage } = VisionMissionSection;
 
   return (
-    <section className="bg-[#EEFFE9] px-8 md:px-20 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl overflow-hidden shadow-md mt-10 md:mt-20">
-      {/* Left Side - Vision + Mission */}
-      <div className="w-full md:w-1/2 space-y-10">
-        {/* Vision */}
-        <div>
-          <h2
-            className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#73BE5F]`}
-          >
-            {VisionSection.heading}
-          </h2>
-          <p className="text-gray-600 leading-relaxed text-lg mt-4">
-            {VisionSection.description}
-          </p>
-        </div>
+    <section className="relative w-full py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
+      {/* Background Image */}
+      <Image
+        src={bgImage}
+        alt="Vision and Mission Background"
+        fill
+        className="object-cover object-center"
+        priority
+      />
 
-        {/* Mission */}
-        <div className="mt-10">
-          <h2
-            className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#73BE5F]`}
-          >
-            {MissionSection.heading}
-          </h2>
-          <p className="text-gray-600 leading-relaxed text-lg mt-4">
-            {MissionSection.description}
-          </p>
+      {/* Content */}
+      <div className="relative z-10 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 text-gray-800">
+        <div className="w-full md:w-1/2 space-y-12">
+          {/* Vision */}
+          <div>
+            <h2
+              className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#73BE5F]`}
+            >
+              {Vision.heading}
+            </h2>
+            <p className="leading-relaxed text-lg mt-4">
+              {Vision.description}
+            </p>
+          </div>
 
-          {/* Decorative small image below mission text */}
-          <div className="flex justify-center mt-8">
-            <Image
-              src={MissionSection.image2}
-              alt="Decorative"
-              width={120}
-              height={120}
-              className="opacity-90"
-            />
+          {/* Mission */}
+          <div>
+            <h2
+              className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#73BE5F]`}
+            >
+              {Mission.heading}
+            </h2>
+            <p className="leading-relaxed text-lg mt-4">
+              {Mission.description}
+            </p>
           </div>
         </div>
-      </div>
-
-      {/* Right Side - Main Image */}
-      <div className="w-full md:w-1/2 flex justify-center items-center">
-        <Image
-          src={VisionSection.image}
-          alt="Vision Graphic"
-          width={600}
-          height={600}
-          className="w-[85%] h-auto object-contain"
-        />
       </div>
     </section>
   );
