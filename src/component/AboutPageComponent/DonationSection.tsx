@@ -25,7 +25,8 @@ export default function DonationSection({ data }: DonationSectionProps) {
   const { title, heading, description, image, button } = data;
 
   return (
-    <section className="bg-[#EEFFE9] px-8 md:px-20 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-14 rounded-2xl overflow-hidden mt-10 md:mt-20">
+      <section className="bg-[#EEFFE9] w-[85%] md:w-[90%] mx-auto px-8 md:px-20 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-14 rounded-2xl overflow-hidden shadow-md mt-10 md:mt-20">
+
       {/* Left Content */}
       <div className="w-full md:w-1/2 space-y-6 md:space-y-8">
         <h4

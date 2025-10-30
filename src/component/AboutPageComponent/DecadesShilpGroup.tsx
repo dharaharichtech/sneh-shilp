@@ -11,7 +11,9 @@ const DecadesShilpGroup = () => {
   const { subtitle, title, description, images, button } = DecadesShilpGroup;
 
   return (
-    <section className="bg-[#E8FBE6] w-full py-10 md:py-14 px-4 md:px-10">
+    // <section className="bg-[#E8FBE6] w-full py-10 md:py-14 px-4 md:px-10">
+    <section className="bg-[#E8FBE6] w-[85%] md:w-[90%] mx-auto py-10 md:py-14 px-4 md:px-10 rounded-2xl shadow-md">
+
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         
         <div className="w-full lg:w-[48%] border border-[#73BE5F] p-5 md:p-6 rounded-2xl shadow-sm bg-white/70">

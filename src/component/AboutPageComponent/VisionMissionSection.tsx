@@ -10,7 +10,11 @@ export default function VisionMissionSection() {
   const { Vision, Mission, bgImage } = VisionMissionSection;
 
   return (
-    <section className="relative w-full py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
+    // <section className="relative w-full py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
+    
+    <section className="relative w-[85%] md:w-[90%] mx-auto py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
+
+
       {/* Background Image */}
       <Image
         src={bgImage}
