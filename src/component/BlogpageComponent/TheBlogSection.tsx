@@ -3,6 +3,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { calistoga, sueEllen } from "@/app/font";
+import Link from "next/link";
 
 interface BlogCard {
   id: number;
@@ -12,6 +13,7 @@ interface BlogCard {
   description: string;
   belowtext: string;
   icon: StaticImageData;
+  link?: string; // ✅ made optional to prevent errors
 }
 
 interface BlogSectionProps {
@@ -27,11 +29,11 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
   const { title, heading, description, cards } = data;
 
   return (
-    <section className="w-full py-5 px-5 md:px-10 lg:px-20 bg-white">
+    <section className="w-full py-10 px-5 md:px-10 lg:px-20 bg-white">
       {/* Title & Heading */}
-      <div className="text-center max-w-3xl mx-auto space-y-2 mb-10">
+      <div className="text-center max-w-3xl mx-auto mb-10">
         <h4
-          className={`${sueEllen.className} text-lg md:text-3xl text-gray-700 mb-5`}
+          className={`${sueEllen.className} text-lg md:text-3xl text-gray-700 mb-3`}
         >
           {title}
         </h4>
@@ -57,7 +59,7 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
         {cards.map((card) => (
           <div
             key={card.id}
-            className="rounded-2xl shadow-md overflow-hidden bg-white border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+            className="rounded-2xl shadow-md overflow-hidden bg-white border border-gray-100 hover:shadow-lg transition-all duration-300"
           >
             {/* Blog Image */}
             <div className="relative w-full h-56">
@@ -82,16 +84,34 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
 
             {/* Read More Button */}
             <div className="flex items-center justify-between px-5 pb-5">
-              <button className="flex items-center gap-2 text-[#73BE5F] text-sm md:text-base font-medium hover:underline transition-all">
-                {card.belowtext}
-                <Image
-                  src={card.icon}
-                  alt="arrow"
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                />
-              </button>
+              {card.link ? ( // ✅ check added
+                <Link href={card.link}>
+                  <button className="flex items-center gap-2 text-[#73BE5F] text-sm md:text-base font-medium hover:underline transition-all">
+                    {card.belowtext}
+                    <Image
+                      src={card.icon}
+                      alt="arrow"
+                      width={16}
+                      height={16}
+                      className="object-contain"
+                    />
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="flex items-center gap-2 text-gray-400 text-sm md:text-base font-medium cursor-not-allowed"
+                >
+                  {card.belowtext}
+                  <Image
+                    src={card.icon}
+                    alt="arrow"
+                    width={16}
+                    height={16}
+                    className="object-contain opacity-50"
+                  />
+                </button>
+              )}
             </div>
           </div>
         ))}

@@ -1,10 +1,9 @@
-// src/Data/HelpSectionData.ts
 import { Helper } from "../Helper/HomePageHelper";
 
 export const HelpSectionData = {
   InvestingSection: {
     title: "Investing in People",
-    heading: "Help the needed through us",
+    heading: "Help the needy through us",
     description:
       "At SnehShip Foundation, we believe that the greatest investment is in people. By empowering individuals through education, skill development, healthcare, and social support, we nurture the potential within every person to create positive, lasting change in their communities. Our work is dedicated to giving people the tools they need to build better lives and stronger futures.",
     buttons: {

@@ -28,7 +28,7 @@ export const navLinks: NavLink[] = [
   {
     id: 3,
     label: "Donate",
-    href: "/donate",
+    href: "/donate/clothing",
     subLinks: [
       { id: 1, label: "Clothing Matters", href: "/donate/clothing" },
       { id: 2, label: "Help on Wheels", href: "/donate/help-on-wheels" },
@@ -40,14 +40,16 @@ export const navLinks: NavLink[] = [
   {
     id: 4,
     label: "Events",
-    href: "/events",
+    href: "/events/upcoming",
     subLinks: [
       { id: 1, label: "Upcoming Events", href: "/events/upcoming" },
       { id: 2, label: "Past Events", href: "/events/past" },
     ],
   },
 
-  { id: 5, label: "Snehal Brahmbhatt", href: "/snehalbrahmbhatt" },
+  // ✅ Opens external site in new tab
+  { id: 5, label: "Snehal Brahmbhatt", href: "https://snehalbrahmbhatt.com/" },
+
   { id: 6, label: "Impact Day", href: "/impact-day" },
   { id: 7, label: "Blog", href: "/blog" },
   { id: 8, label: "Contact", href: "/contact" },

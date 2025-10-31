@@ -1,6 +1,4 @@
-import { Helper } from "@/Helper/BlogPageHelper";
-
-
+import { blogPageImages } from "@/Helper/BlogPageHelper";
 
 export const ContactSectionData = {
   ContactSection: {
@@ -28,7 +26,7 @@ export const ContactSectionData = {
     ],
     button: {
       text: "Contact Us",
-      icon: Helper.Arrow,
+      icon: blogPageImages.Arrow,
     },
   },
 
@@ -73,7 +71,7 @@ export const ContactSectionData = {
     ],
     button: {
       text: "Submit",
-      icon: Helper.Arrow,
+      icon: blogPageImages.Arrow,
     },
   },
 };
