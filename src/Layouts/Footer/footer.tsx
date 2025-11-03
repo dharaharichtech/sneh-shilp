@@ -3,9 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import footerLogo from "../../../public/footerlogo.svg";
-import type { FC } from "react";
 
-// Interfaces
 interface FooterLink {
   label: string;
   href?: string;
@@ -16,14 +14,13 @@ interface FooterLinkGroup {
   links: FooterLink[];
 }
 
-// Footer links data
 const footerLinks: FooterLinkGroup[] = [
   {
     title: "About Snehshilp",
     links: [
       {
         label:
-          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
       },
     ],
   },
@@ -57,78 +54,44 @@ const footerLinks: FooterLinkGroup[] = [
   },
 ];
 
-const Footer: FC = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#6BB45B] text-white py-11 px-6 sm:px-8 lg:px-33">
+    <footer className="w-full bg-[#6BB45B] text-white py-10 px-6 sm:px-10 lg:px-24">
       {/* Logo */}
-      <div className="flex justify-start mb-6">
-        <Image
-          src={footerLogo}
-          alt="Snehshilp Foundation Logo"
-          width={150}
-          height={50}
-        />
+      <div className="flex justify-center lg:justify-start mb-8">
+        <Image src={footerLogo} alt="Snehshilp Foundation Logo" width={150} height={50} />
       </div>
 
-      {/* Top white line */}
-      <div className="border-t border-white w-full max-w-7xl mx-auto mb-13"></div>
+      {/* Top Divider */}
+      <div className="border-t border-white w-full mb-10"></div>
 
-      {/* Link groups */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mb-13">
-        {/* First column with bigger right margin */}
-        <div className="flex-1 lg:mr-9 mb-8 lg:mb-0">
-          <h3 className="font-bold text-xl mb-5">{footerLinks[0].title}</h3>
-          <ul className="space-y-4 text-md">
-            {footerLinks[0].links.map((link, i) => (
-              <li key={i}>
-                {link.href ? (
-                  <a
-                    href={link.href}
-                    className="hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <span>{link.label}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Remaining columns with bullets */}
-        <div className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-5">
-          {footerLinks.slice(1).map((group, idx) => (
-            <div key={idx} className="flex-1">
-              <h3 className="font-bold text-xl mb-5">{group.title}</h3>
-              <ul className="list-disc pl-5 space-y-2 text-md">
-                {group.links.map((link, i) => (
-                  <li key={i}>
-                    {link.href ? (
-                      <a
-                        href={link.href}
-                        className="hover:underline transition-colors"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <span>{link.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      {/* Link Sections */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 max-w-7xl mx-auto">
+        {footerLinks.map((group, idx) => (
+          <div key={idx}>
+            <h3 className="font-semibold text-lg mb-4">{group.title}</h3>
+            <ul className="space-y-3 text-sm leading-relaxed">
+              {group.links.map((link, i) => (
+                <li key={i}>
+                  {link.href ? (
+                    <a href={link.href} className="hover:underline transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <span>{link.label}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
-      {/* Bottom white line */}
-      <div className="border-t border-white w-full max-w-7xl mx-auto mb-4"></div>
+      {/* Bottom Divider */}
+      <div className="border-t border-white w-full mt-10 mb-4"></div>
 
       {/* Copyright */}
-      <div className="max-w-7xl mx-auto text-sm text-left">
-        Copyright @ Snehshilp Foundation
-      </div>
+      <p className="text-center text-sm">© {new Date().getFullYear()} Snehshilp Foundation</p>
     </footer>
   );
 };

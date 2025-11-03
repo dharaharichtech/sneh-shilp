@@ -10,6 +10,7 @@ export const PastData = {
       date: "April 16, 2023",
       time:"05 : 30 AM - 07 : 30 AM ",
       image: PastHelper.StartupFest,
+      link: "/heritage", 
     },
     {
       title: "Shilp Aarambh Gift City Run 2024",
@@ -17,6 +18,7 @@ export const PastData = {
       date: "October 20 & 21, 2024",
       time:"05 : 30 AM - 07 : 30 AM ",
       image: PastHelper.InnovationConclave,
+      link:"https://shilpaarambh.com/",
     },
      {
       title: "Start Up Fest Gujarat 2023",
@@ -24,12 +26,14 @@ export const PastData = {
       date: "September 01 & 02, 2023",
       time:"10:00 AM - 07:00 PM",
       image: PastHelper.startupfest,
+      link: "https://startupfestgujarat.com/",
     },
      {
       title: "Shilp Aarambh Gift City Run 2022",
       location: "Vigyan Bhavan, Science City, Ahmedabad, Gujarat, India.",
       date: "February 26, 2023",
       image: PastHelper.Aarmbh,
+      link:"https://shilpaarambh.com/",
     },
   ],
 

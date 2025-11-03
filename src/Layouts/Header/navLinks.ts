@@ -47,8 +47,10 @@ export const navLinks: NavLink[] = [
     ],
   },
 
-  // ✅ Opens external site in new tab
-  { id: 5, label: "Snehal Brahmbhatt", href: "https://snehalbrahmbhatt.com/" },
+  { id: 5, 
+    label: "Snehal Brahmbhatt",
+    href: "/snehalbrahmbhatt",
+  },
 
   { id: 6, label: "Impact Day", href: "/impact-day" },
   { id: 7, label: "Blog", href: "/blog" },

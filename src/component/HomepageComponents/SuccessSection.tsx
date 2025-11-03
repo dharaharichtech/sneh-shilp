@@ -1,14 +1,16 @@
+// components/SuccessSection.tsx
 "use client";
 
 import React from "react";
 import Image from "next/image";
-import { calistoga, sueEllen } from "../../app/font";
+import { motion } from "framer-motion";
+import { calistoga, sueEllen } from "@/app/font";
 
 interface SuccessCard {
   id: number;
   title: string;
-  description: string;
-  icon: string;
+  description: string; // large number or highlight
+  icon: any; // image or string
 }
 
 interface SuccessSectionProps {
@@ -20,66 +22,32 @@ interface SuccessSectionProps {
   };
 }
 
-const SuccessSection: React.FC<SuccessSectionProps> = ({ data }) => {
+export default function SuccessSection({ data }: SuccessSectionProps) {
   const { title, heading, description, cards } = data;
 
   return (
-    // ✅ Full-width background — same as UnlockingPotential
-    <section className="bg-[#E8FBE4] px-6 md:px-20 py-16 rounded-xl overflow-hidden">
-      {/* Text Content */}
-      <div className="text-left mb-12">
-        {/* Top title */}
-        <h3
-          className={`${sueEllen.className} text-3xl sm:text-5xl text-gray-800 mb-6`}
-        >
-          {title}
-        </h3>
+    <section className="bg-[#E8FBE4] px-6 md:px-12 lg:px-20 py-12 rounded-xl overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h3 className={`${sueEllen.className} text-2xl md:text-4xl text-gray-800 mb-4`}>{title}</h3>
+          <h2 className={`${calistoga.className} text-3xl md:text-5xl text-[#73BE5F] font-bold mb-4`}>{heading}</h2>
+          <p className="text-gray-600 max-w-3xl">{description}</p>
+        </motion.div>
 
-        {/* Heading */}
-        <h2
-          className={`${calistoga.className} text-4xl sm:text-5xl text-[#73BE5F] font-bold mb-6`}
-        >
-          {heading}
-        </h2>
-
-        {/* Description */}
-        <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl">
-          {description}
-        </p>
-      </div>
-
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all flex items-center gap-4 p-6"
-          >
-            {/* Icon on Left */}
-            <div className="flex-shrink-0">
-              <Image
-                src={card.icon}
-                alt={card.title}
-                width={50}
-                height={50}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Text Content */}
-            <div className="flex flex-col">
-              <h4 className="text-lg font-semibold text-gray-700">
-                {card.title}
-              </h4>
-              <p className="text-2xl sm:text-3xl font-bold text-gray-900">
-                {card.description}
-              </p>
-            </div>
-          </div>
-        ))}
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ show: { transition: { staggerChildren: 0.08 } } }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          {cards.map((card) => (
+            <motion.div key={card.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-md p-5 flex items-center gap-4">
+              <div className="w-12 h-12 flex-shrink-0">
+                <Image src={card.icon} alt={card.title} width={48} height={48} className="object-contain" />
+              </div>
+              <div>
+                <h4 className="text-gray-700 font-semibold">{card.title}</h4>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">{card.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default SuccessSection;
+}

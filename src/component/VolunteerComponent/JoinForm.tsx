@@ -1,13 +1,21 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { calistoga, sueEllen } from "../../app/font";
 import { Helper } from "@/Helper/OurTeamHelper";
 import { sendJoinMessage } from "../../api/index";
 
-const JoinForm = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  name: string;
+  email: string;
+  mobile: string;
+  position: string;
+  message: string;
+}
+
+const JoinForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     mobile: "",
@@ -26,7 +34,7 @@ const JoinForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -44,14 +52,12 @@ const JoinForm = () => {
           message: "",
         });
 
-        setTimeout(() => {
-          setPopup(false);
-        }, 3000);
+        setTimeout(() => setPopup(false), 3000);
       } else {
         setError("Something went wrong. Please try again later.");
       }
-    } catch (err: any) {
-      console.error("Error response:", err.response?.data || err.message);
+    } catch (err: unknown) {
+      console.error("Error response:", err);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -87,44 +93,23 @@ const JoinForm = () => {
           </h3>
 
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Name */}
-            <div className="flex flex-col">
-              <label className="text-gray-700 text-sm mb-2">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
-              />
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col">
-              <label className="text-gray-700 text-sm mb-2">Email Id</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
-              />
-            </div>
-
-            {/* Mobile */}
-            <div className="flex flex-col">
-              <label className="text-gray-700 text-sm mb-2">Mobile no.</label>
-              <input
-                type="text"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleChange}
-                required
-                className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
-              />
-            </div>
+            {[
+              { label: "Your Name", name: "name", type: "text" },
+              { label: "Email Id", name: "email", type: "email" },
+              { label: "Mobile no.", name: "mobile", type: "text" },
+            ].map((input) => (
+              <div className="flex flex-col" key={input.name}>
+                <label className="text-gray-700 text-sm mb-2">{input.label}</label>
+                <input
+                  type={input.type}
+                  name={input.name}
+                  value={formData[input.name as keyof FormData]}
+                  onChange={handleChange}
+                  required
+                  className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
+                />
+              </div>
+            ))}
 
             {/* Select Position */}
             <div className="flex flex-col relative">
@@ -173,9 +158,7 @@ const JoinForm = () => {
                 {loading ? "Submitting..." : "Submit"}
               </button>
 
-              {error && (
-                <p className="text-red-600 mt-4 font-medium">{error}</p>
-              )}
+              {error && <p className="text-red-600 mt-4 font-medium">{error}</p>}
             </div>
           </form>
 
@@ -194,8 +177,14 @@ const JoinForm = () => {
       {/* Fade animation */}
       <style jsx>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-out;

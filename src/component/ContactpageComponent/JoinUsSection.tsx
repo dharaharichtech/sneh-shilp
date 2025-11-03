@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
-import { calistoga, sueEllen } from "@/app/font";
+import { calistoga } from "@/app/font";
 
 type FieldType = string;
 
@@ -50,14 +50,10 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
   return (
     <section className="bg-white py-15 px-5 md:px-8 lg:px-20">
       <div className="w-full bg-[#EEFFE9] rounded-2xl p-6 md:p-8">
-        {/* Title */}
-        <h3
-          className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F] mb-8`}
-        >
+        <h3 className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F] mb-8`}>
           {data.title}
         </h3>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {data.fields
@@ -83,7 +79,6 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
               ))}
           </div>
 
-          {/* Textarea Field */}
           {data.fields
             .filter((f) => f.type === "textarea")
             .map((field) => (
@@ -106,18 +101,12 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
               </div>
             ))}
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="mt-6 inline-flex items-center gap-3 bg-[#73BE5F] text-white rounded-full px-8 py-3 hover:bg-[#5aa647] transition-colors"
           >
             <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
-              <Image
-                src={data.button.icon}
-                alt="arrow"
-                width={18}
-                height={18}
-              />
+              <Image src={data.button.icon} alt="arrow" width={18} height={18} />
             </span>
             <span className={`${calistoga.className} text-sm`}>
               {data.button.text}

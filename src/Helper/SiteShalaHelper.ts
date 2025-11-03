@@ -20,7 +20,9 @@ import Stationary from "../../public/Image/Donation/Languages.png";
 
 import dontiondifference from "../../public/Image/Donation/dontiondifference.png";
 
-import Banner from "../../public/Image/HomePage/blogbanner.png";
+import Banner1 from "../../public/Image/BlogPage/blog1.png";
+import Banner2 from "../../public/Image/BlogPage/Blogs2.png";
+import Banner3 from "../../public/Image/BlogPage/Blogs3.png";
 import ReadMoreArrow from "../../public/Svg/arrow.svg";
 import JoinOurImage from "../../public/Image/Donation/rightside.png";
 import Arrow from "../../public/Svg/arrow-2.svg";
@@ -42,7 +44,9 @@ export const SiteShalaHelper = {
   FootWear,
   Stationary,
   dontiondifference,
-  Banner,
+  Banner1,
+  Banner2,
+  Banner3,  
   ReadMoreArrow,
   JoinOurImage,
   Arrow,

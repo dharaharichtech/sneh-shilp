@@ -1,17 +1,20 @@
+// components/LatestBlogSection.tsx
 "use client";
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { calistoga, sueEllen } from "@/app/font"; 
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { calistoga, sueEllen } from "@/app/font";
 
 interface BlogCard {
   id: number;
-  image: StaticImageData;
+  image: StaticImageData | string;
   date: string;
   highlight: string;
   description: string;
   belowtext: string;
-  icon: StaticImageData;
+  icon: StaticImageData | string;
 }
 
 interface LatestBlogSectionProps {
@@ -19,85 +22,110 @@ interface LatestBlogSectionProps {
     title: string;
     heading: string;
     cards: BlogCard[];
-    buttons: {
-      view: {
+    buttons?: {
+      view?: {
         text: string;
-        icon: StaticImageData;
+        icon: StaticImageData | string;
       };
     };
   };
 }
 
+const itemVariant = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function LatestBlogSection({ data }: LatestBlogSectionProps) {
-  const { title, heading, cards, buttons } = data;
+  const { title, heading, cards, buttons } = data ?? { title: "", heading: "", cards: [] };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
           <div className="text-center md:text-left">
-            <p
-              className={`${sueEllen.className} text-2xl md:text-4xl text-gray-700`}
+            <motion.p
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={itemVariant}
+              className={`${sueEllen.className} text-2xl md:text-3xl text-gray-700`}
             >
               {title}
-            </p>
-            <h2
-              className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F] mt-10`}
+            </motion.p>
+
+            <motion.h2
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={itemVariant}
+              transition={{ delay: 0.12 }}
+              className={`${calistoga.className} text-2xl md:text-4xl text-[#73BE5F] mt-3`}
             >
               {heading}
-            </h2>
+            </motion.h2>
           </div>
 
-          {/* View All Button */}
-          <button className=" flex items-center justify-center gap-3 bg-[#73BE5F] text-white px-7 py-3 rounded-full text-base font-medium hover:bg-[#5fa64e] transition-all shadow-md hover:shadow-lg">
-            <Image
-              src={buttons.view.icon}
-              alt="view all icon"
-              className="w-5 h-5"
-            />
-            <span>{buttons.view.text}</span>
-          </button>
+          {buttons?.view && (
+            <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={itemVariant}>
+              <Link href="/blog" legacyBehavior>
+                <a className="inline-flex items-center gap-3 bg-[#73BE5F] text-white px-5 py-2 rounded-full text-sm md:text-base font-medium hover:bg-[#5fa64e] transition-shadow shadow">
+                  {buttons.view.icon && (
+                    <span className="inline-block w-5 h-5">
+                      <Image src={buttons.view.icon} alt="view icon" width={20} height={20} />
+                    </span>
+                  )}
+                  {buttons.view.text}
+                </a>
+              </Link>
+            </motion.div>
+          )}
         </div>
 
-        {/* Blog Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cards.map((card) => (
-            <div
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ show: { transition: { staggerChildren: 0.08 } } }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {cards?.map((card) => (
+            <motion.article
               key={card.id}
+              variants={itemVariant}
               className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              <Image
-                src={card.image}
-                alt={card.highlight}
-                className="w-full object-cover rounded-t-2xl"
-              />
-              <div className="p-6 flex flex-col flex-1 justify-between">
+              <div className="w-full aspect-[16/9] relative">
+                <Image
+                  src={card.image}
+                  alt={card.highlight}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+
+              <div className="p-5 flex flex-col flex-1 justify-between">
                 <div>
                   <p className="text-gray-500 text-sm mb-2">{card.date}</p>
-                  <h3
-                    className={`${calistoga.className} text-lg text-[#73BE5F] mb-3`}
-                  >
-                    {card.highlight}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {card.description}
-                  </p>
+                  <h3 className={`${calistoga.className} text-lg text-[#73BE5F] mb-2`}>{card.highlight}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{card.description}</p>
                 </div>
 
-                {/* Read More */}
-                <div className="flex items-center gap-2 mt-5 text-[#73BE5F] font-semibold hover:underline cursor-pointer">
-                  <span>{card.belowtext}</span>
-                  <Image
-                    src={card.icon}
-                    alt="arrow icon"
-                    className="w-4 h-4 mt-[2px]"
-                  />
+                <div className="mt-4">
+                  <Link href="/blog" legacyBehavior>
+                    <a className="inline-flex items-center gap-2 text-[#73BE5F] font-semibold hover:underline">
+                      <span>{card.belowtext}</span>
+                      <span className="inline-block w-4 h-4">
+                        <Image src={card.icon} alt="arrow" width={16} height={16} />
+                      </span>
+                    </a>
+                  </Link>
                 </div>
               </div>
-            </div>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

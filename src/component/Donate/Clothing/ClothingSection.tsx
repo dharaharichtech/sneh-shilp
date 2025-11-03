@@ -3,8 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { calistoga, sueEllen } from "@/app/font";
-import { Sue_Ellen_Francisco } from "next/font/google";
-
 interface ClothingSectionProps {
   title: string;
   description: string;
@@ -26,7 +24,6 @@ const ClothingSection: React.FC<{
 }> = ({ clothingData, donationData }) => {
   return (
     <section className="bg-white w-full">
-      {/* 👕 Clothing Matters Section */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-20 w-full">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT */}

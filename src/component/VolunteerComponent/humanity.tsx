@@ -5,9 +5,8 @@ import Image from "next/image";
 import { calistoga, sueEllen } from "../../app/font";
 import { VolunteerData } from "@/data/VolunterrData";
 import { Helper } from "@/Helper/VolunteerHelper";
-import TeamsButtons from "../../buttons/Teambutton";
 
-const Humanity = () => {
+const Humanity: React.FC = () => {
   const { HumanitySection } = VolunteerData;
   const { subtitle, title, cards } = HumanitySection;
 
@@ -15,7 +14,6 @@ const Humanity = () => {
     <section className="w-full bg-white">
       {/* 🌿 Hero Section with Background Image (with side gap) */}
       <div className="w-full px-8 md:px-24 mt-30">
-
         <div className="relative w-full rounded-2xl overflow-hidden">
           <Image
             src={Helper.bg}

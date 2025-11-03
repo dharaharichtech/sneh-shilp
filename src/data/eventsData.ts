@@ -1,20 +1,23 @@
 import { UpcomingHelper } from "@/Helper/UpcomingHelper";
+import { link } from "fs";
 
 export const UpcomingEventsData = {
   banner: UpcomingHelper.upcomingBanner,
 
   events: [
-    {
+        {
       title: "Start - Up Fest Gujarat 2024",
       location: "Vigyan Bhavan, Science City, Ahmedabad, Gujarat, India",
       date: "October 20 & 21, 2024",
       image: UpcomingHelper.StartupFest,
+      link: "https://startupfestgujarat.com/",
     },
     {
-      title: "Innovation Conclave 2025",
-      location: "Sardar Patel Stadium, Ahmedabad, Gujarat, India",
-      date: "March 5 & 6, 2025",
+      title: "Shilp Aarambh Gift City Run 2024",
+      location: "Vigyan Bhavan, Science City, Ahmedabad, Gujarat, India.",
+      date: "December 15, 2024",
       image: UpcomingHelper.InnovationConclave,
+      link:"https://shilpaarambh.com/",
     },
   ],
 volunteer: {

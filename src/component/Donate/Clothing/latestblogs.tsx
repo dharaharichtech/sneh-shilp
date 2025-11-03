@@ -1,23 +1,24 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { calistoga, sueEllen } from "../../../app/font";
 
+// ✅ Fix: Allow both `string` and `StaticImageData` for all image fields
 interface BlogCard {
   id: number;
-  image: string;
+  image: string | StaticImageData;
   date: string;
   highlight: string;
   description: string;
   belowtext: string;
-  icon: string;
+  icon: string | StaticImageData;
 }
 
 interface ViewAllButton {
   text: string;
-  icon: string;
+  icon: string | StaticImageData;
 }
 
 interface BlogSectionProps {
@@ -30,8 +31,11 @@ interface BlogSectionProps {
 interface JoinOurSectionProps {
   title: string;
   description: string;
-  image: string;
-  button: { text: string; icon: string };
+  image: string | StaticImageData;
+  button: {
+    text: string;
+    icon: string | StaticImageData;
+  };
 }
 
 interface LatestBlogsProps {
@@ -51,21 +55,21 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({
 
   return (
     <section className="w-full bg-white">
-      {/* BLOG SECTION */}
+      {/* 📰 BLOG SECTION */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Section Header */}
+        {/* Header */}
         <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
           <div>
-             <h4
-               className={`${sueEllen.className} text-3xl text-[#2E4049] font-normal mb-5`}
-                >
+            <h4
+              className={`${sueEllen.className} text-3xl text-[#2E4049] font-normal mb-5`}
+            >
               {blogSection.title}
-              </h4>
-           <h2
-             className={`${calistoga.className} text-3xl font-bold text-[#73BE5F] leading-snug`}
-                >
+            </h4>
+            <h2
+              className={`${calistoga.className} text-3xl font-bold text-[#73BE5F] leading-snug`}
+            >
               {blogSection.heading}
-              </h2>
+            </h2>
           </div>
 
           {/* View All Button */}
@@ -88,7 +92,7 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({
           {blogSection.cards.map((card) => (
             <div
               key={card.id}
-              className="bg-white  shadow-sm hover:shadow-lg transition overflow-hidden"
+              className="bg-white shadow-sm hover:shadow-lg transition overflow-hidden"
             >
               <Image
                 src={card.image}
@@ -121,9 +125,9 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({
       </div>
 
       {/* 💚 JOIN AS VOLUNTEER SECTION */}
-      <div className="max-w-7xl mx-auto my-20 px-6 ">
+      <div className="max-w-7xl mx-auto my-20 px-6">
         <div className="bg-[#73BE5F] rounded-3xl flex flex-col md:flex-row items-center justify-between px-10 py-12 md:py-16 shadow-lg relative overflow-hidden">
-          {/* Left Text Section */}
+          {/* Left Side */}
           <div className="flex-1 text-white md:text-left text-center md:pr-10">
             <h3 className="text-3xl md:text-4xl font-bold mb-3">
               {joinOurSection.title}
@@ -142,7 +146,7 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({
             </button>
           </div>
 
-          {/* Right Illustration Image */}
+          {/* Right Image */}
           <div className="flex-1 flex justify-end items-end mt-10 md:mt-0 translate-x-8 translate-y-15">
             <Image
               src={joinOurSection.image}

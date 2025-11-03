@@ -83,6 +83,9 @@ import Banner from "../../public/Image/HomePage/blogbanner.png";
 
 //Svg
 import ReadMoreArrow from "../../public/Svg/readmorearrow.svg";
+import Banner1 from "../../public/Image/BlogPage/blog1.png";
+import Banner2 from "../../public/Image/BlogPage/Blogs2.png";
+import Banner3 from "../../public/Image/BlogPage/Blogs3.png";
 
 export const Helper = {
     // Buttons
@@ -157,4 +160,7 @@ export const Helper = {
     //Blog
     Banner,
     ReadMoreArrow,
+    Banner1,
+    Banner2,
+    Banner3,
 }

@@ -19,7 +19,7 @@ interface DifferenceSection {
   buttonText: string;
   buttonIcon: string;
   imageMain: string;
-  imageSmall: string;
+  imageSmall?: string; 
 }
 
 interface ClothingPageProps {
@@ -111,7 +111,7 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
                 src={difference.imageMain}
                 alt="Main Donation"
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
               />
             </div>
           </div>

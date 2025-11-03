@@ -365,43 +365,42 @@ export const HelpSectionData = {
   LatestBlogSection: {
     title: "Latest Blogs",
     heading: "Sharing news with Love: The Blog...",
-    cards: [
-      {
-        id: 1,
-        image: Helper.Banner,
-        date: "September 20, 2023",
-        highlight: "Shilp Aarambh Gift City Run 2024 - Season 2",
-        description:
-          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-        belowtext: "Read More",
+     cards: [
+        {
+          id: 1,
+          image: Helper.Banner,
+          date: "October 1, 2024",
+          highlight: "Celebrating the Divine Feminine",
+          description:
+            "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion, dance, and divine celebrations. Amidst the joyous festivities, the eighth and ninth days bring forth a sacred Hindu ritual known as Kanya Puja. The young girls, considered representations of the goddess’s divine energy, are worshipped on this day.  At SnehShilp...",
+          belowtext: "Read More",
+          icon: Helper.ReadMoreArrow,
+        },
+        {
+          id: 2,
+          image: Helper.Banner2,
+          date: "October 1, 2024",
+          highlight: "Spreading joy and goodness",
+          description:
+            "At SnehShilp Foundation, we believe that joy multiplies when shared, and this Diwali, we had the privilege of partnering with WealthX Capital for an initiative that left lasting smiles on many faces.   Diwali, the festival of lights, is not just about illumination; it’s about spreading warmth, happiness, and indulging in the simple joys of...",
+          belowtext: "Read More",
+          icon: Helper.ReadMoreArrow,
+        },
+        {
+          id: 3,
+          image: Helper.Banner3,
+          date: "October 1, 2024",
+          highlight: "A day of fun, learning and adventure",
+          description:
+            "In our ongoing mission to create meaningful connections and spread joy, we recently spent a great day with the resilient kids from the leprosy colony. Recognizing the importance of experiences that many take for granted, we decided to treat these enthusiastic learners to a day of fun and learning.   Our destination for the day...",
+          belowtext: "Read More",
+          icon: Helper.ReadMoreArrow,
+        },
+      ],
+    
+      viewAll: {
+        text: "View All",
         icon: Helper.ReadMoreArrow,
       },
-      {
-        id: 2,
-        image: Helper.Banner,
-        date: "September 20, 2023",
-        highlight: "Shilp Aarambh Gift City Run 2024 - Season 2",
-        description:
-          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-        belowtext: "Read More",
-        icon: Helper.ReadMoreArrow,
-      },
-      {
-        id: 3,
-        image: Helper.Banner,
-        date: "September 20, 2023",
-        highlight: "Shilp Aarambh Gift City Run 2024 - Season 2",
-        description:
-          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-        belowtext: "Read More",
-        icon: Helper.ReadMoreArrow,
-      },
-    ],
-    buttons: {
-      view: {
-        text: "View all",
-        icon: Helper.Arrow,
-      },
-    },
   },
 };

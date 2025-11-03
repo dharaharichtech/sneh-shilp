@@ -70,24 +70,49 @@ export const HelponwheelsData = {
     },
   },
 
+
   BlogSection: {
-    title: "Latest Blogs",
-    heading: "Sharing news with Love: The Blog...",
-    cards: Array.from({ length: 3 }).map((_, i) => ({
-      id: i + 1,
-      image: Helponwheels.Banner,
-         date: "October 1, 2024",
-           highlight: "Celebrating the divine feminine",
-           description:
-             "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion, dance, and divine celebrations. Amidst the joyous festivities, the eighth and ninth days bring forth a sacred Hindu ritual known as Kanya Puja. The young girls, considered representations of the goddess’s divine energy, are worshipped on this day.  At SnehShilp...",
-           belowtext: "Read More",
-           icon: Helponwheels.ReadMoreArrow,
-    })),
-    viewAll: {
-      text: "View All",
+  title: "Latest Blogs",
+  heading: "Sharing news with Love: The Blog...",
+
+  cards: [
+    {
+      id: 1,
+      image: Helponwheels.Banner1,
+      date: "October 1, 2024",
+      highlight: "Celebrating the Divine Feminine",
+      description:
+        "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion, dance, and divine celebrations. Amidst the joyous festivities, the eighth and ninth days bring forth a sacred Hindu ritual known as Kanya Puja. The young girls, considered representations of the goddess’s divine energy, are worshipped on this day.  At SnehShilp...",
+      belowtext: "Read More",
       icon: Helponwheels.ReadMoreArrow,
     },
+    {
+      id: 2,
+      image: Helponwheels.Banner2,
+      date: "October 1, 2024",
+      highlight: "Spreading joy and goodness",
+      description:
+        "At SnehShilp Foundation, we believe that joy multiplies when shared, and this Diwali, we had the privilege of partnering with WealthX Capital for an initiative that left lasting smiles on many faces.   Diwali, the festival of lights, is not just about illumination; it’s about spreading warmth, happiness, and indulging in the simple joys of...",
+      belowtext: "Read More",
+      icon: Helponwheels.ReadMoreArrow,
+    },
+    {
+      id: 3,
+      image: Helponwheels.Banner3,
+      date: "October 1, 2024",
+      highlight: "A day of fun, learning and adventure",
+      description:
+        "In our ongoing mission to create meaningful connections and spread joy, we recently spent a great day with the resilient kids from the leprosy colony. Recognizing the importance of experiences that many take for granted, we decided to treat these enthusiastic learners to a day of fun and learning.   Our destination for the day...",
+      belowtext: "Read More",
+      icon: Helponwheels.ReadMoreArrow,
+    },
+  ],
+
+  viewAll: {
+    text: "View All",
+    icon: Helponwheels.ReadMoreArrow,
   },
+},
 
   JoinOurSection: {
     title: "Contact us to collect extra food",
