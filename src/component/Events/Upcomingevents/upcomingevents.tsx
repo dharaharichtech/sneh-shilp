@@ -3,11 +3,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
-import {
-  MapPin,
-  CalendarDays,
-  ArrowRightCircle,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, CalendarDays, ArrowRightCircle } from "lucide-react";
 import { calistoga, sueEllen } from "../../../app/font";
 
 interface EventItem {
@@ -48,53 +45,77 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
   const router = useRouter();
 
   return (
-    <section className="bg-white w-full">
+    <section className="bg-white w-full overflow-hidden">
       {/* 🖼️ Banner */}
-      <div className="relative h-72 md:h-[420px] w-full overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-64 sm:h-80 md:h-[420px] w-full overflow-hidden"
+      >
         <Image
           src={banner}
           alt="Upcoming Events Banner"
           fill
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center pl-10 md:pl-20 text-white">
-          <h4 className={`${sueEllen.className} text-3xl mb-3`}>Past Events</h4>
-          <h4 className={`${calistoga.className} text-4xl font-bold mb-5`}>
-            Upcoming Events
-          </h4>
-          <button
-            onClick={() => router.push("/blog")}
-            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition w-fit"
+        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center px-6 sm:px-12 md:px-20 text-white">
+          <motion.h4
+            initial={{ x: -40, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className={`${sueEllen.className} text-2xl sm:text-3xl mb-2`}
           >
-            Explore Now
-          </button>
+            Past Events
+          </motion.h4>
+          <motion.h2
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className={`${calistoga.className} text-3xl sm:text-4xl md:text-5xl font-bold mb-4`}
+          >
+            Upcoming Events
+          </motion.h2>
+          <motion.button
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.7 }}
+            onClick={() => router.push("/blog")}
+            className="flex items-center gap-2 bg-[#73BE5F] hover:bg-[#63aa52] text-white px-6 py-2 rounded-full text-sm md:text-base transition w-fit"
+          >
+            Explore Now <ArrowRightCircle size={18} />
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       {/* 🗓️ Events List */}
       <div className="max-w-6xl mx-auto px-4 py-14 space-y-10">
         {events.map((event, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
             onClick={() =>
               event.link
                 ? window.open(event.link, "_blank", "noopener noreferrer")
                 : null
             }
-            className="flex flex-col md:flex-row items-center bg-green-50 p-6 rounded-3xl transition-all duration-300 hover:shadow-xl hover:bg-green-100 cursor-pointer"
+            className="flex flex-col md:flex-row items-center bg-[#EEFFE9] p-5 sm:p-6 rounded-3xl transition-all duration-300 hover:shadow-xl hover:bg-[#e2fbe4] cursor-pointer"
           >
-            {/* Left Image */}
-            <div className="md:w-2/5 w-full flex justify-center">
+            {/* Image */}
+            <div className="w-full md:w-2/5 flex justify-center">
               <Image
                 src={event.image}
                 alt={event.title}
                 width={400}
                 height={240}
-                className="rounded-xl object-cover w-full h-40 md:h-60"
+                className="rounded-xl object-cover w-full h-48 sm:h-56 md:h-60"
               />
             </div>
 
-            {/* Right Content */}
+            {/* Content */}
             <div className="flex-1 md:ml-8 mt-6 md:mt-0 text-center md:text-left">
               <h3 className="text-2xl font-semibold text-[#73BE5F]">
                 {event.title}
@@ -109,76 +130,105 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
               </p>
 
               {event.link && (
-                <a
+                <motion.a
+                  whileHover={{ x: 5 }}
                   href={event.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-4 text-[#73BE5F] font-medium hover:underline hover:text-green-700 transition-all"
                 >
                   Visit Event Website <ArrowRightCircle size={18} />
-                </a>
+                </motion.a>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* 🙌 Volunteer Section */}
-      <div className="max-w-7xl mx-auto my-20 px-6">
-        <div className="bg-[#73BE5F] rounded-3xl flex flex-col md:flex-row items-center justify-between px-10 py-12 md:py-16 shadow-lg relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto my-20 px-6"
+      >
+        <div className="bg-[#73BE5F] rounded-3xl flex flex-col md:flex-row items-center justify-between px-8 md:px-14 py-12 md:py-16 shadow-lg relative overflow-hidden">
           {/* Text */}
-          <div className="flex-1 text-white md:text-left text-center md:pr-10">
+          <div className="flex-1 text-white text-center md:text-left md:pr-10">
             <h3
               className={`${sueEllen.className} text-3xl md:text-4xl font-normal mb-3`}
             >
               {volunteer.title}
             </h3>
-            <p className="text-white/90 mb-6 max-w-lg leading-relaxed mx-auto md:mx-0 text-base md:text-lg">
+            <p className="text-white/90 mb-6 leading-relaxed text-base md:text-lg max-w-lg mx-auto md:mx-0">
               {volunteer.description}
             </p>
-            <button className="group flex items-center justify-center gap-3 bg-white text-[#73BE5F] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 mx-auto md:mx-0">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="group flex items-center justify-center gap-3 bg-white text-[#73BE5F] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 mx-auto md:mx-0"
+            >
               <ArrowRightCircle
                 size={20}
                 className="transition-transform group-hover:translate-x-1"
               />
               {volunteer.buttonText}
-            </button>
+            </motion.button>
           </div>
 
-          {/* Icon */}
-          <div className="flex-1 flex justify-end items-end mt-10 md:mt-0 translate-x-8 translate-y-4">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0"
+          >
             <Image
               src={volunteer.image}
               alt="Volunteer illustration"
-              width={220}
-              height={220}
+              width={240}
+              height={240}
               className="object-contain"
             />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* 🕰️ Past Events */}
-      <div className="text-center py-16">
-        <h4 className={`${sueEllen.className} text-3xl text-[#2E4049] mb-5`}>
+      <div className="text-center py-16 px-4">
+        <motion.h4
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className={`${sueEllen.className} text-2xl sm:text-3xl text-[#2E4049] mb-3`}
+        >
           {pastEvents.subheading}
-        </h4>
-        <h2
-          className={`${calistoga.className} text-3xl font-bold text-[#73BE5F]`}
+        </motion.h4>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className={`${calistoga.className} text-3xl sm:text-4xl font-bold text-[#73BE5F]`}
         >
           {pastEvents.heading}
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-10 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-10 max-w-6xl mx-auto">
           {pastEvents.gallery.map((img, idx) => (
-            <Image
+            <motion.div
               key={idx}
-              src={img}
-              alt={`past-event-${idx}`}
-              width={300}
-              height={200}
-              className="rounded-xl object-cover h-48 md:h-56 w-full hover:scale-105 transition-transform"
-            />
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <Image
+                src={img}
+                alt={`past-event-${idx}`}
+                width={300}
+                height={200}
+                className="rounded-xl object-cover h-40 sm:h-48 md:h-56 w-full hover:scale-105 transition-transform"
+              />
+            </motion.div>
           ))}
         </div>
       </div>

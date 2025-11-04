@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "../../app/font";
 import { AboutUsData } from "@/data/AboutUsData";
 import AboutusButtons from "@/buttons/Aboutusbutton";
@@ -11,28 +12,41 @@ const DecadesShilpGroup = () => {
   const { subtitle, title, description, images, button } = DecadesShilpGroup;
 
   return (
-    // <section className="bg-[#E8FBE6] w-full py-10 md:py-14 px-4 md:px-10">
-    <section className="bg-[#E8FBE6] w-[85%] md:w-[90%] mx-auto py-10 md:py-14 px-4 md:px-10 rounded-2xl shadow-md">
+    <section className="bg-[#E8FBE6] w-[90%] mx-auto py-12 md:py-16 px-4 md:px-10 rounded-2xl shadow-md mt-10">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
 
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-        
-        <div className="w-full lg:w-[48%] border border-[#73BE5F] p-5 md:p-6 rounded-2xl shadow-sm bg-white/70">
+        {/* --- Left Content --- */}
+        <motion.div
+          className="w-full lg:w-[50%] border border-[#73BE5F] p-6 md:p-8 rounded-2xl bg-white/80 shadow-sm"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h4 className={`${sueEllen.className} text-xl md:text-2xl text-black mb-2`}>
             {subtitle}
           </h4>
-          <h2 className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F] font-bold mb-4`}>
+          <h2
+            className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F] font-bold mb-4`}
+          >
             {title}
           </h2>
-          <p className="text-gray-700 text-[13px] md:text-[15px] leading-relaxed whitespace-pre-line mb-5">
+          <p className="text-gray-700 text-sm md:text-[15px] leading-relaxed whitespace-pre-line mb-6">
             {description}
           </p>
           <AboutusButtons text={button.text} />
-        </div>
+        </motion.div>
 
-        <div className="w-full lg:w-[45%] flex justify-center items-center">
-          <div className="relative w-[85%] aspect-[1/1] bg-[#D9D9D9] rounded-2xl overflow-hidden flex flex-col justify-end">
-            
-            <div className="w-full h-[70%] bg-[#D9D9D9] rounded-b-2xl relative">
+        {/* --- Right Images --- */}
+        <motion.div
+          className="w-full lg:w-[45%] flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative w-[85%] aspect-square bg-[#D9D9D9] rounded-2xl overflow-hidden flex justify-end items-end">
+            <div className="w-full h-[70%] relative">
               <Image
                 src={images[1]}
                 alt="Shilp Gray"
@@ -40,17 +54,11 @@ const DecadesShilpGroup = () => {
                 className="object-cover rounded-b-2xl"
               />
             </div>
-
-            <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-[#1D1D1D] rounded-tl-2xl rounded-br-[40px] overflow-hidden shadow-md">
-              <Image
-                src={images[0]}
-                alt="Shilp Logo"
-                fill
-                className="object-contain"
-              />
+            <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-[#1D1D1D] rounded-tl-2xl rounded-br-[40px] overflow-hidden shadow-lg">
+              <Image src={images[0]} alt="Shilp Logo" fill className="object-contain" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

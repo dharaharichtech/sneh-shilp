@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "@/app/font";
 
 interface BoxType {
@@ -19,7 +20,6 @@ interface DifferenceSection {
   buttonText: string;
   buttonIcon: string;
   imageMain: string;
-  imageSmall?: string; 
 }
 
 interface ClothingPageProps {
@@ -31,31 +31,49 @@ interface ClothingPageProps {
 }
 
 const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
-  const { title, heading, description, boxes, difference } = data;
+  const fadeIn = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2 },
+    }),
+  };
 
   return (
     <section className="w-full">
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-16 text-center">
+      {/* Header */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={0}
+        className="max-w-7xl mx-auto px-5 md:px-10 py-16 text-center"
+      >
         <h3 className={`${sueEllen.className} text-xl md:text-3xl text-gray-800`}>
-          {title}
+          {data.title}
         </h3>
         <h2
           className={`${calistoga.className} text-3xl md:text-5xl text-[#73BE5F] mt-3`}
         >
-          {heading}
+          {data.heading}
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
-          {description}
+          {data.description}
         </p>
 
         {/* Boxes */}
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-          {boxes.map((box) => (
-            <div
+          {data.boxes.map((box, i) => (
+            <motion.div
               key={box.id}
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              custom={i}
+              whileHover={{ scale: 1.05 }}
               className={`rounded-2xl p-6 border hover:shadow-lg transition-all ${
-                box.bg ? box.bg : "bg-white"
+                box.bg || "bg-white"
               }`}
             >
               <Image
@@ -71,50 +89,62 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
               >
                 {box.title}
               </h4>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Difference Section */}
       <div className="bg-[#EEFFE9] py-16 px-5 md:px-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4
               className={`${sueEllen.className} text-2xl md:text-3xl text-gray-700 mb-2`}
             >
-              {difference.smallTitle}
+              {data.difference.smallTitle}
             </h4>
             <h2
               className={`${calistoga.className} text-3xl md:text-5xl text-[#73BE5F] mb-3`}
             >
-              {difference.heading}
+              {data.difference.heading}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              {difference.description}
+              {data.difference.description}
             </p>
 
-            <button className="flex items-center gap-3 bg-[#73BE5F] text-white px-6 py-3 rounded-full hover:bg-[#9addaa] transition-all">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 bg-[#73BE5F] text-white px-6 py-3 rounded-full hover:bg-[#9addaa] transition-all"
+            >
               <Image
-                src={difference.buttonIcon}
+                src={data.difference.buttonIcon}
                 alt="Donate Now"
                 width={20}
                 height={20}
               />
-              {difference.buttonText}
-            </button>
-          </div>
+              {data.difference.buttonText}
+            </motion.button>
+          </motion.div>
 
-          <div className="relative flex justify-center items-center">
-            <div className="relative w-[300px] h-[400px] md:w-[490px] md:h-[400px] ">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="relative flex justify-center items-center"
+          >
+            <div className="relative w-[300px] h-[400px] md:w-[490px] md:h-[400px]">
               <Image
-                src={difference.imageMain}
+                src={data.difference.imageMain}
                 alt="Main Donation"
                 fill
                 className="object-cover rounded-2xl"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

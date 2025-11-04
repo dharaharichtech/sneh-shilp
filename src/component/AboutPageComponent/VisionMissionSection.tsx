@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { calistoga } from "../../app/font";
 import { AboutUsData } from "@/data/AboutUsData";
 
@@ -10,11 +11,7 @@ export default function VisionMissionSection() {
   const { Vision, Mission, bgImage } = VisionMissionSection;
 
   return (
-    // <section className="relative w-full py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
-    
-    <section className="relative w-[85%] md:w-[90%] mx-auto py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
-
-
+    <section className="relative w-[90%] mx-auto py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
       {/* Background Image */}
       <Image
         src={bgImage}
@@ -25,8 +22,14 @@ export default function VisionMissionSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 text-gray-800">
-        <div className="w-full md:w-1/2 space-y-12">
+      <div className="relative z-10 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 text-gray-800 backdrop-blur-[2px]">
+        <motion.div
+          className="w-full md:w-1/2 space-y-12 bg-white/70 p-6 md:p-10 rounded-2xl shadow-sm"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           {/* Vision */}
           <div>
             <h2
@@ -34,7 +37,7 @@ export default function VisionMissionSection() {
             >
               {Vision.heading}
             </h2>
-            <p className="leading-relaxed text-lg mt-4">
+            <p className="leading-relaxed text-base md:text-lg mt-4">
               {Vision.description}
             </p>
           </div>
@@ -46,11 +49,11 @@ export default function VisionMissionSection() {
             >
               {Mission.heading}
             </h2>
-            <p className="leading-relaxed text-lg mt-4">
+            <p className="leading-relaxed text-base md:text-lg mt-4">
               {Mission.description}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

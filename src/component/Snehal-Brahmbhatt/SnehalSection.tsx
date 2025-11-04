@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { snehalData } from "@/data/snehalData";
 import { calistoga, sueEllen } from "../../app/font";
 
@@ -9,29 +10,36 @@ const SnehalSection: React.FC = () => {
   const { banner, overview } = snehalData;
 
   return (
-    <section className="w-full mt-32">
+    <section className="w-full mt-24">
       {/* 🌿 Top Banner Section */}
-      <div className="bg-[#EEFFE9] rounded-2xl mx-auto max-w-6xl p-10 flex flex-col md:flex-row items-center justify-between gap-10 shadow-sm">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="bg-[#EEFFE9] rounded-2xl mx-auto max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-10 shadow-sm"
+      >
         {/* Left Content */}
-        <div className="flex-1">
+        <div className="flex-1 text-center md:text-left">
           <h3 className={`${sueEllen.className} text-lg text-gray-600 mb-1`}>
             {banner.title}
           </h3>
 
           <h1
-            className={`${calistoga.className} text-4xl font-bold text-[#6BB45B] mb-2`}
+            className={`${calistoga.className} text-3xl md:text-4xl font-bold text-[#6BB45B] mb-3`}
           >
             {banner.name}
           </h1>
 
-          <p className="text-gray-700 mb-6 text-base font-medium">
+          <p className="text-gray-700 mb-6 text-sm md:text-base font-medium">
             {banner.subtitle}
           </p>
 
-          {/* ✅ Know Her Button */}
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => window.open(banner.buttonLink, "_blank")}
-            className="inline-flex items-center gap-2 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ca14d] transition shadow-md"
+            className="inline-flex items-center gap-2 bg-[#6BB45B] text-white px-5 py-3 rounded-full font-medium hover:bg-[#5ca14d] transition shadow-md"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,55 +52,70 @@ const SnehalSection: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             {banner.buttonText}
-          </button>
+          </motion.button>
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex-1 flex justify-center"
+        >
           <Image
             src={banner.image}
             alt={banner.name}
-            className="rounded-2xl w-full max-w-sm object-cover shadow-md"
+            className="rounded-2xl w-full max-w-xs md:max-w-sm object-cover shadow-md"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* 🪶 Overview Section */}
       <div
         id="overview"
-        className="max-w-6xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-start p-6"
+        className="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start p-4 md:p-6"
       >
         {/* Left Gallery */}
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Big Image on Left */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row gap-4"
+        >
           <div className="flex-1">
             <Image
               src={overview.gallery[0]}
               alt="Main Snehal image"
-              className="rounded-2xl w-full h-[450px] object-cover shadow-md"
+              className="rounded-2xl w-full h-[350px] md:h-[450px] object-cover shadow-md"
             />
           </div>
 
-          {/* Two Small Images Stacked Vertically */}
           <div className="flex flex-col gap-4 flex-[0.8]">
             {overview.gallery.slice(1, 3).map((img, i) => (
               <Image
                 key={i}
                 src={img}
                 alt={`Snehal small image ${i + 1}`}
-                className="rounded-2xl w-full h-[215px] object-cover shadow-md"
+                className="rounded-2xl w-full h-[160px] md:h-[215px] object-cover shadow-md"
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Content */}
-        <div>
-          <h3 className={`${sueEllen.className} text-2xl text-gray-700`}>
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className={`${sueEllen.className} text-xl md:text-2xl text-gray-700`}>
             {overview.title}
           </h3>
           <h2
-            className={`${calistoga.className} text-3xl font-bold text-[#6BB45B] mb-5`}
+            className={`${calistoga.className} text-2xl md:text-3xl font-bold text-[#6BB45B] mb-5`}
           >
             {overview.heading}
           </h2>
@@ -100,12 +123,12 @@ const SnehalSection: React.FC = () => {
           {overview.paragraphs.map((p, i) => (
             <p
               key={i}
-              className="text-gray-700 mb-4 leading-relaxed text-[15px] font-medium"
+              className="text-gray-700 mb-4 leading-relaxed text-[14px] md:text-[15px] font-medium"
             >
               {p}
             </p>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

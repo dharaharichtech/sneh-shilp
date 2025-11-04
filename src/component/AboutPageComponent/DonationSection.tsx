@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "../../app/font";
 import AboutusButtons from "../../buttons/Aboutusbutton";
 
@@ -25,40 +26,52 @@ export default function DonationSection({ data }: DonationSectionProps) {
   const { title, heading, description, image, button } = data;
 
   return (
-      <section className="bg-[#EEFFE9] w-[85%] md:w-[90%] mx-auto px-8 md:px-20 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-14 rounded-2xl overflow-hidden shadow-md mt-10 md:mt-20">
-
+    <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-14 md:py-20 flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl shadow-md mt-10">
+      
       {/* Left Content */}
-      <div className="w-full md:w-1/2 space-y-6 md:space-y-8">
-        <h4
-          className={`${sueEllen.className} text-5xl md:text-6xl text-[#2E4049] font-normal`}
-        >
+      <motion.div
+        className="w-full md:w-1/2 space-y-6 md:space-y-8 text-center md:text-left"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h4 className={`${sueEllen.className} text-4xl md:text-5xl text-[#2E4049]`}>
           {title}
         </h4>
 
         <h2
-          className={`${calistoga.className} text-5xl md:text-6xl font-bold text-[#73BE5F] leading-snug`}
+          className={`${calistoga.className} text-4xl md:text-6xl font-bold text-[#73BE5F] leading-tight`}
         >
           {heading}
         </h2>
 
-        <p className="text-gray-600 leading-relaxed text-lg md:text-xl">
+        <p className="text-gray-700 leading-relaxed text-base md:text-lg">
           {description}
         </p>
 
-        {/* Button */}
-        <div className="flex flex-wrap gap-4 mt-6">
+        <div className="flex justify-center md:justify-start mt-6">
           <AboutusButtons text={button.text} />
         </div>
-      </div>
+      </motion.div>
 
-      {/* Right Image Section */}
-      <div className="relative w-full md:w-1/2 flex justify-center items-center mt-10 md:mt-0">
-        <Image
-          src={image}
-          alt="donation"
-          className="w-full h-auto object-cover rounded-2xl shadow-lg"
-        />
-      </div>
+      {/* Right Image */}
+      <motion.div
+        className="relative w-full md:w-1/2 flex justify-center items-center"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="relative w-full max-w-md aspect-square">
+          <Image
+            src={image}
+            alt="donation"
+            fill
+            className="object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
