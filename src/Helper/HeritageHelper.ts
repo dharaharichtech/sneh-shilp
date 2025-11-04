@@ -5,7 +5,7 @@ import illustration from "../../public/Image/heritage/heritage-logo.png";
 import routeMap from "../../public/Image/heritage/Walking-Route.png";
 import medicalIcon from "../../public/Image/heritage/Medical.png";
 import waterIcon from "../../public/Image/heritage/Water.svg";
-import volunteerIcon from "../../public/Image/heritage/RightArrow.svg";
+import volunteerIcon from "../../public/Image/Donation/rightside.png";
 
 // 👇 New images for "Participate" and "Past Events" section
 import past1 from "../../public/Image/heritage/past1.png";

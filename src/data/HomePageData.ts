@@ -18,7 +18,7 @@ export const HelpSectionData = {
     image: Helper.BannerImage,
   },
 
-  OurProjectSection: {
+   OurProjectSection: {
     title: "Our Projects",
     heading: "Illuminating lives",
     subheading: "RahelBa Vrudhashram",
@@ -61,6 +61,7 @@ export const HelpSectionData = {
     },
     image: Helper.OurProjectImage,
   },
+
 
   ServingHopeSection: {
     title: "Serving hope, Serving meals",
@@ -249,46 +250,48 @@ export const HelpSectionData = {
     image: Helper.DonationImage,
   },
 
-  WeHelpSection: {
-    title: "How We Help",
-    heading: "Lend a helping hand",
-    description: `We sincerely believe that helping others is not a matter of time, it is about feelings followed by dedication.
-  It isn’t about doing great things; it is all about doing small things with great love.
-  There is a lot of power in giving. Lending a hand to someone not only helps the one in need but greatly satisfies the thirst of the giver, the thirst of happiness and self-fulfilment.`,
-    form: {
-      fields: [
-        {
-          label: "Your Name",
-          type: "text",
-          name: "name",
-          placeholder: "Enter your name",
-        },
-        {
-          label: "Email Id",
-          type: "email",
-          name: "email",
-          placeholder: "Enter your email",
-        },
-        {
-          label: "Mobile no.",
-          type: "tel",
-          name: "mobile",
-          placeholder: "Enter your mobile number",
-        },
-        {
-          label: "Describe Your Project",
-          type: "text",
-          name: "project",
-          placeholder: "Write about your project",
-        },
-      ],
-      button: {
-        text: "Submit",
-        icon: Helper.Arrow, // ✅ imported image
+ WeHelpSection: {
+  title: "How We Help",
+  heading: "Lend a helping hand",
+  description: `We sincerely believe that helping others is not a matter of time, it is about feelings followed by dedication.
+It isn’t about doing great things; it is all about doing small things with great love.
+There is a lot of power in giving. Lending a hand to someone not only helps the one in need but greatly satisfies the thirst of the giver — the thirst of happiness and self-fulfilment.`,
+
+  form: {
+    fields: [
+      {
+        label: "Your Name",
+        type: "text",
+        name: "name",
+        placeholder: "Enter your name",
       },
+      {
+        label: "Email Id",
+        type: "email",
+        name: "email",
+        placeholder: "Enter your email",
+      },
+      {
+        label: "Mobile no.",
+        type: "tel",
+        name: "mobile",
+        placeholder: "Enter your mobile number",
+      },
+      {
+        label: "Describe Your Project",
+        type: "text",
+        name: "Project", // ✅ uppercase P to match backend
+        placeholder: "Write about your project",
+      },
+    ],
+    button: {
+      text: "Submit",
+      icon: Helper.Arrow,
     },
-    image: Helper.HelpImage, // ✅ full right-side image
   },
+  image: Helper.HelpImage, // ✅ full right-side image
+},
+
 
   FoundationSection: {
     title: "A Special Thanks",

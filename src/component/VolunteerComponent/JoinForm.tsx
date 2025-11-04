@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { calistoga, sueEllen } from "../../app/font";
 import { Helper } from "@/Helper/OurTeamHelper";
-import { sendJoinMessage } from "../../api/index";
+import { sendJoinMessage } from "../../api/Intern";
 import { motion } from "framer-motion";
 
 interface FormData {

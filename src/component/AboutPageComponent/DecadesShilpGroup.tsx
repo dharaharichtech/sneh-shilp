@@ -45,17 +45,25 @@ const DecadesShilpGroup = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-[85%] aspect-square bg-[#D9D9D9] rounded-2xl overflow-hidden flex justify-end items-end">
-            <div className="w-full h-[70%] relative">
+          <div className="relative w-[85%] aspect-square bg-[#E8FBE6] rounded-2xl overflow-visible flex justify-center items-center">
+            {/* Bottom big gray block */}
+            <div className="relative w-[100%] h-[100%] bg-[#D9D9D9] rounded-2xl ml-auto">
               <Image
                 src={images[1]}
                 alt="Shilp Gray"
                 fill
-                className="object-cover rounded-b-2xl"
+                className="object-cover rounded-2xl"
               />
             </div>
-            <div className="absolute top-0 left-0 w-[40%] h-[40%] bg-[#1D1D1D] rounded-tl-2xl rounded-br-[40px] overflow-hidden shadow-lg">
-              <Image src={images[0]} alt="Shilp Logo" fill className="object-contain" />
+
+            {/* Top black block with space between */}
+            <div className="absolute -top-6 -left-6 w-[45%] h-[45%] bg-[#1D1D1D] rounded-2xl overflow-hidden shadow-lg border-4 border-[#E8FBE6]">
+              <Image
+                src={images[0]}
+                alt="Shilp Logo"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </motion.div>

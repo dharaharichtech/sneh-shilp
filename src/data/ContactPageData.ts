@@ -57,7 +57,7 @@ export const ContactSectionData = {
       {
         id: 4,
         label: "Subject",
-        name: "subject",
+        name: "Subject",
         type: "text",
         placeholder: "",
       },
