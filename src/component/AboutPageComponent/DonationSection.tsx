@@ -26,22 +26,23 @@ export default function DonationSection({ data }: DonationSectionProps) {
   const { title, heading, description, image, button } = data;
 
   return (
-    <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-14 md:py-20 flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl shadow-md mt-10">
-      
-      {/* Left Content */}
+    <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-6 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8 rounded-2xl shadow-md mt-10">
+      {/* LEFT CONTENT */}
       <motion.div
-        className="w-full md:w-1/2 space-y-6 md:space-y-8 text-center md:text-left"
+        className="w-full md:w-1/2 space-y-4 md:space-y-4 text-center md:text-left"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h4 className={`${sueEllen.className} text-4xl md:text-5xl text-[#2E4049]`}>
+        <h4
+          className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
+        >
           {title}
         </h4>
 
         <h2
-          className={`${calistoga.className} text-4xl md:text-6xl font-bold text-[#73BE5F] leading-tight`}
+          className={`${calistoga.className} text-3xl md:text-5xl font-bold text-[#73BE5F] leading-snug`}
         >
           {heading}
         </h2>
@@ -50,12 +51,12 @@ export default function DonationSection({ data }: DonationSectionProps) {
           {description}
         </p>
 
-        <div className="flex justify-center md:justify-start mt-6">
+        <div className="flex justify-center md:justify-start mt-4">
           <AboutusButtons text={button.text} />
         </div>
       </motion.div>
 
-      {/* Right Image */}
+      {/* RIGHT IMAGE */}
       <motion.div
         className="relative w-full md:w-1/2 flex justify-center items-center"
         initial={{ opacity: 0, scale: 0.9 }}
@@ -63,14 +64,16 @@ export default function DonationSection({ data }: DonationSectionProps) {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <div className="relative w-full max-w-md aspect-square">
-          <Image
-            src={image}
-            alt="donation"
-            fill
-            className="object-cover rounded-2xl shadow-lg"
-          />
-        </div>
+        {/* Rectangular (Landscape) image box */}
+ <div className="relative w-full max-w-md aspect-[16/9] rounded-2xl overflow-hidden">
+  <Image
+    src={image}
+    alt="donation"
+    fill
+    className="object-cover rounded-2xl"
+  />
+</div>
+
       </motion.div>
     </section>
   );

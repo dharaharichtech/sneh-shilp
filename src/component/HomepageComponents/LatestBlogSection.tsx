@@ -1,4 +1,3 @@
-// components/LatestBlogSection.tsx
 "use client";
 
 import React from "react";

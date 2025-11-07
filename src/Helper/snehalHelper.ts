@@ -1,8 +1,7 @@
-// Snehal image imports
-import snehalMain from "../../public/Image/Donation/RahelaBa-Gallery-5.png";
-import snehalGallery1 from "../../public/Image/Donation/RahelaBa-Gallery-5.png";
-import snehalGallery2 from "../../public/Image/Donation/Rectangle-17.png";
-import snehalGallery3 from "../../public/Image/Donation/Rectangle-16.png";
+import snehalMain from "../../public/Image/Snehal-Brahmbhatt/SnehalBrahmbhatt.png";
+import snehalGallery1 from "../../public/Image/Snehal-Brahmbhatt/Overview1.png";
+import snehalGallery2 from "../../public/Image/Snehal-Brahmbhatt/Overview2.png";
+import snehalGallery3 from "../../public/Image/Snehal-Brahmbhatt/Overview3.png";
 
 // Her Works images
 import shilpLogo from "../../public/Image/Snehal-Brahmbhatt/shilpLogo.png";

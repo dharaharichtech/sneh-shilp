@@ -46,8 +46,8 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
 
   return (
     <section className="bg-white w-full overflow-hidden">
-      {/* 🖼️ Banner */}
-      <motion.div
+
+      {/* <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -86,9 +86,8 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
             Explore Now <ArrowRightCircle size={18} />
           </motion.button>
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      {/* 🗓️ Events List */}
       <div className="max-w-6xl mx-auto px-4 py-14 space-y-10">
         {events.map((event, index) => (
           <motion.div
@@ -146,7 +145,7 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
       </div>
 
       {/* 🙌 Volunteer Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -154,7 +153,7 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
         className="max-w-7xl mx-auto my-20 px-6"
       >
         <div className="bg-[#73BE5F] rounded-3xl flex flex-col md:flex-row items-center justify-between px-8 md:px-14 py-12 md:py-16 shadow-lg relative overflow-hidden">
-          {/* Text */}
+
           <div className="flex-1 text-white text-center md:text-left md:pr-10">
             <h3
               className={`${sueEllen.className} text-3xl md:text-4xl font-normal mb-3`}
@@ -176,7 +175,6 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
             </motion.button>
           </div>
 
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -192,10 +190,9 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
             />
           </motion.div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      {/* 🕰️ Past Events */}
-      <div className="text-center py-16 px-4">
+      {/* <div className="text-center py-16 px-4">
         <motion.h4
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -231,7 +228,7 @@ const UpcomingEventsSection: React.FC<UpcomingEventsProps> = ({
             </motion.div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

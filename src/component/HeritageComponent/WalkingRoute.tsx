@@ -11,14 +11,14 @@ const WalkingRoute: React.FC = () => {
 
   return (
     <section className="w-full bg-white mt-20 overflow-hidden">
-      {/* 🌿 Intro Section */}
+      {/* Intro Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 py-16"
       >
-        {/* Left Content */}
+        {/*Left Content */}
         <div className="flex-1 space-y-5 text-center md:text-left">
           <h3 className={`${sueEllen.className} text-xl text-gray-700`}>
             {intro.title}
@@ -37,7 +37,7 @@ const WalkingRoute: React.FC = () => {
             </p>
           ))}
 
-          {/* ✅ Highlights */}
+          {/*Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
             {highlights.map((item, i) => (
               <motion.div
@@ -82,7 +82,7 @@ const WalkingRoute: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* 💚 Volunteer Section */}
+      {/*Volunteer Section */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}

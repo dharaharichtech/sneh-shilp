@@ -11,15 +11,13 @@ import Donation6 from "../../public/Image/Donation/Clothing-Matters-6.png";
 import Donation7 from "../../public/Image/Donation/Clothing-Matters-7.png";
 import Donation8 from "../../public/Image/Donation/Clothing-Matters-8.png";
 
-
-// Homepage SVG icons
 import Heart from "../../public/Svg/heart.svg";
 import Clothes from "../../public/Svg/Homepagesvg/clothes.svg";
 import Toys from "../../public/Svg/Homepagesvg/toys.svg";
 import FootWear from "../../public/Svg/Homepagesvg/footwear.svg";
 import Stationary from "../../public/Svg/Homepagesvg/stationary.svg";
 
-import dontiondifference from "../../public/Image/Donation/dontiondifference.png";
+import Clothingdontiond from "../../public/Image/Donation/Weclothe.png";
 
 import Banner1 from "../../public/Image/BlogPage/blog1.png";
 import Banner2 from "../../public/Image/BlogPage/Blogs2.png";
@@ -44,7 +42,7 @@ export const DonationHelper = {
   Toys,
   FootWear,
   Stationary,
-  dontiondifference,
+  Clothingdontiond,
   Banner1,
   Banner2,
   Banner3,

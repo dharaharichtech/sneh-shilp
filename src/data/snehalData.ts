@@ -1,7 +1,6 @@
 import { ImageHelper } from "@/Helper/snehalHelper";
 
 export const snehalData = {
-  // 🟢 Banner Section
   banner: {
     title: "Behind the everything",
     name: "Snehal Brahmbhatt",
@@ -11,8 +10,6 @@ export const snehalData = {
     buttonLink: "https://snehalbrahmbhatt.com/",
     image: ImageHelper.snehal.main,
   },
-
-  // 🟢 Overview Section
   overview: {
     title: "A sneak peek about her",
     heading: "Overview",
@@ -29,7 +26,6 @@ export const snehalData = {
     ],
   },
 
-  // 🟢 Her Works Section
   herworks: {
     title: "Let the good work speak for itself",
     heading: "Her works",
@@ -53,7 +49,6 @@ export const snehalData = {
     ],
   },
 
-  // 🟢 Media Coverage Section
   media: {
     title: "Something to flaunt",
     heading: "Media Coverage",

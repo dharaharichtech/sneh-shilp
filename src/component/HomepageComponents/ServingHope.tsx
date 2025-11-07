@@ -27,8 +27,8 @@ interface ServingHopeProps {
     higlight: string;
     cards: CardData[];
     subheading: string;
-    image?: StaticImageData | string; // arrow icon
-    Image: StaticImageData | string; // main right image
+    image?: StaticImageData | string; 
+    Image: StaticImageData | string; 
     buttons: {
       donate: ButtonData;
       contact: ButtonData;
@@ -54,7 +54,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
     Image: mainImage,
   } = data;
 
-  // ✅ Helper function to safely handle string or StaticImageData
+  // Helper function to safely handle string or StaticImageData
   const resolveSrc = (src: string | StaticImageData | undefined) => {
     if (!src) return "";
     return typeof src === "string" ? src : src;
@@ -136,13 +136,15 @@ export default function ServingHope({ data }: ServingHopeProps) {
             )}
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-4">
-            <DonateNow text={buttons.donate.text} />
-            <ContactButton
-              text={buttons.contact.text}
-              icon={buttons.contact.icon}
-            />
-          </div>
+        <div className="flex flex-row flex-nowrap overflow-x-auto items-center justify-center lg:justify-start gap-1 mt-3">
+        <DonateNow text={buttons.donate.text} />
+        <ContactButton
+          text={buttons.contact.text}
+          icon={buttons.contact.icon}
+        />
+      </div>
+
+
         </motion.div>
 
         {/* RIGHT IMAGE */}

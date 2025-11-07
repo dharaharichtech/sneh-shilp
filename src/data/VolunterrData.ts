@@ -1,10 +1,6 @@
-// data/VolunteerData.ts
 import { Helper } from "@/Helper/VolunteerHelper";
 
 export const VolunteerData = {
-  // -------------------------------
-  // 🩵 Existing Humanity Section
-  // -------------------------------
   HumanitySection: {
     subtitle: "To help the humanity",
     title: "Why being a part of SnehShilp?",

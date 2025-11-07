@@ -1,4 +1,3 @@
-// Image Imports
 import upcomingBanner from "../../public/Image/Events/Bannerevevts.png";
 
 // Event Images
@@ -6,7 +5,8 @@ import StartupFest from "../../public/Image/Events/SonuSood.png";
 import InnovationConclave from "../../public/Image/Events/Aarabh.png";
 import startupfest from "../../public/Image/Events/StartUp.png";
 import Aarmbh from "../../public/Image/Events/Aarabh(2).png";
-
+import Startup from "../../public/Image/Events/SonuSood.jpg";
+import Innovation from "../../public/Image/Events/Aarabh(2).png";
 import volunteerimage from "../../public/Image/Donation/rightside.png";
 // Donation / Volunteer Gallery
 import Donation1 from "../../public/Image/Events/up-1.jpg";
@@ -23,6 +23,8 @@ export const PastHelper = {
   StartupFest,
   InnovationConclave,
   startupfest,
+  Innovation,
+  Startup,
   Aarmbh,
   volunteerimage,
   Donation1,

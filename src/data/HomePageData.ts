@@ -56,7 +56,7 @@ export const HelpSectionData = {
     buttons: {
       sponser: {
         text: "Sponsor Now",
-        icon: Helper.Arrow,
+        icon: Helper.Arrow1,
       },
     },
     image: Helper.OurProjectImage,
@@ -175,7 +175,7 @@ export const HelpSectionData = {
       {
         id: 3,
         heading: "Skills Developed",
-        description: "read,write,count",
+        description: "read, write, count",
         logo: Helper.SkillsDeveloped,
       },
       {
@@ -189,10 +189,10 @@ export const HelpSectionData = {
     buttons: {
       sponser: {
         text: "Sponsor Now",
-        icon: Helper.Arrow,
+        icon: Helper.Arrow1,
       },
     },
-    Image: Helper.ServingHopeImage,
+    Image: Helper.Unlocking,
   },
 
   SuccessSection: {
@@ -280,16 +280,16 @@ There is a lot of power in giving. Lending a hand to someone not only helps the 
       {
         label: "Describe Your Project",
         type: "text",
-        name: "Project", // ✅ uppercase P to match backend
+        name: "Project", 
         placeholder: "Write about your project",
       },
     ],
     button: {
       text: "Submit",
-      icon: Helper.Arrow,
+      icon: Helper.Arrow1,
     },
   },
-  image: Helper.HelpImage, // ✅ full right-side image
+  image: Helper.HelpImage,
 },
 
 

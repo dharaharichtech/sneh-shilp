@@ -66,7 +66,7 @@ export const RahelBaData = {
         "Snehshilp Foundation extends its compassionate reach to the elderly residents of Vriddhashram, offering essential support and companionship. Through dedicated sponsorship, they ensure that the elderly community experiences enhanced care, a better quality of life, and a sense of belonging. By joining hands with Snehshilp Foundation, you contribute to providing much-needed comfort and dignity to our seniors. Together, we create a world where our elders are cherished, their needs met, and their wisdom and experiences celebrated. Join us in making a difference for those who have enriched our lives.",
       buttonText: "Donate Now",
       buttonIcon: RahelBaHelper.Heart.src,
-      imageMain: RahelBaHelper.dontiondifference.src,
+      imageMain: RahelBaHelper.dontiond.src,
     },
   },
 

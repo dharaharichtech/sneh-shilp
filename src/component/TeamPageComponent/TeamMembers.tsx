@@ -17,7 +17,7 @@ const TeamMembers = () => {
   return (
     <section className="py-16 px-4 md:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* 🌿 Heading */}
+        {/*Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const TeamMembers = () => {
           {heading}
         </motion.h2>
 
-        {/* 👥 Team Grid */}
+        {/*Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {members.map((member, index) => (
             <motion.div
@@ -38,7 +38,7 @@ const TeamMembers = () => {
               viewport={{ once: true }}
               className="bg-[#EEFFE9] rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             >
-              {/* 🖼️ Image */}
+              {/* Image */}
               <div className="relative h-64 sm:h-72 w-full flex items-center justify-center bg-gradient-to-t from-[#e3f8dc] to-[#f6fff3]">
                 {member.image ? (
                   <Image
@@ -53,14 +53,14 @@ const TeamMembers = () => {
                 )}
               </div>
 
-              {/* 👤 Info Section */}
+              {/*Info Section */}
               <div className="p-6 text-center">
                 <p className="text-xs text-gray-600 mb-1">{member.role}</p>
                 <h3 className="text-lg font-bold text-gray-800 mb-4">
                   {member.name}
                 </h3>
 
-                {/* 🌐 Social Links */}
+                {/* Social Links */}
                 <div className="flex justify-center gap-3 flex-wrap">
                   {member.socialLinks.facebook && (
                     <a

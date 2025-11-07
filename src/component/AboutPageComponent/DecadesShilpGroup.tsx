@@ -17,7 +17,7 @@ const DecadesShilpGroup = () => {
 
         {/* --- Left Content --- */}
         <motion.div
-          className="w-full lg:w-[50%] border border-[#73BE5F] p-6 md:p-8 rounded-2xl bg-white/80 shadow-sm"
+          className="w-full lg:w-[50%] p-6 md:p-8 "
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

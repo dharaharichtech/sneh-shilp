@@ -65,8 +65,6 @@ export const AboutUsData = {
     chairmanName: "Snehal Brahmbhatt",
     images: [
       Helper.msg1,
-      Helper.msg2,
-      Helper.msg3
     ]
   },
 

@@ -24,7 +24,7 @@ export default function VisionMissionSection() {
       {/* Content */}
       <div className="relative z-10 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 text-gray-800 backdrop-blur-[2px]">
         <motion.div
-          className="w-full md:w-1/2 space-y-12 bg-white/70 p-6 md:p-10 rounded-2xl shadow-sm"
+          className="w-full md:w-1/2 space-y-12 bg-white/70 p-6 md:p-10 rounded-2xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

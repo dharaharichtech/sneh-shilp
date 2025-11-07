@@ -25,10 +25,8 @@ export const blogPageImages = {
   Banner8,
   Banner9,
   Banner10,
-
   ReadMoreArrow,
   Arrow,
   arrowIcon,
-
   JoinOurImage,
 };

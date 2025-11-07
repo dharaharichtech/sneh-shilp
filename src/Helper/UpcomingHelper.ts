@@ -1,7 +1,5 @@
-// Image Imports
 import upcomingBanner from "../../public/Image/Events/Bannerevevts.png";
 
-// Event Images
 import StartupFest from "../../public/Image/Events/SonuSood.jpg";
 import InnovationConclave from "../../public/Image/Events/Aarabh(2).png";
 

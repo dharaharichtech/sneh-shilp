@@ -2,7 +2,7 @@ import ChairmanMessageSection from "@/component/AboutPageComponent/ChairmanMessa
 import DecadesShilpGroup from "@/component/AboutPageComponent/DecadesShilpGroup";
 import DonationSection from "@/component/AboutPageComponent/DonationSection";
 import JourneySection from "@/component/AboutPageComponent/JourneySection";
-import TeamStory from "@/component/AboutPageComponent/TeamStory";
+// import TeamStory from "@/component/AboutPageComponent/TeamStory";
 import VisionMissionSection from "@/component/AboutPageComponent/VisionMissionSection";
 import { AboutUsData } from "@/data/AboutUsData";
 
@@ -14,7 +14,7 @@ export default function Aboutus() {
       <VisionMissionSection />
       <ChairmanMessageSection/>
       <DecadesShilpGroup/>
-      <TeamStory/>
+      {/* <TeamStory/> */}
     </main>
   );
 }

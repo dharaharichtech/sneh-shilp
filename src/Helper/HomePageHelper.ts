@@ -12,8 +12,8 @@ import InnerHappiness from "../../public/Svg/Homepagesvg/inner-happiness.svg";
 // Svg
 import GivingSharing from "../../public/Svg/Homepagesvg/giving-share.svg";
 import RespectElders from "../../public/Svg/Homepagesvg/respect-elders.svg";
-import Arrow from "../../public/Svg/arrow.svg";
-
+import Arrow from "../../public/Svg/arrow-2.svg";
+import Arrow1 from "../../public/Svg/arrow.svg";
 
 // Serving Hope
 import ServingHopeImage from "../../public/Image/HomePage/servinghopeimage.png";
@@ -33,6 +33,7 @@ import FootWear from "../../public/Svg/Homepagesvg/footwear.svg";
 import Stationary from "../../public/Svg/Homepagesvg/stationary.svg";
 
 // Unlocking Potential
+import Unlocking from "../../public/Image/HomePage/unlocking.png"
 // Svg
 import Subject from "../../public/Svg/Homepagesvg/subjects.svg";
 import Teaching from "../../public/Svg/Homepagesvg/teaching.svg";
@@ -55,8 +56,6 @@ import DonationImage from "../../public/Image/HomePage/donationimage.png";
 // How We Help 
 import HelpImage from "../../public/Image/HomePage/helpimage.png";      
 
-// Foundation Partner
-// Svg
 import ShilpLogo from "../../public/Svg/Homepagesvg/shilplogo.svg";
 import AsteralPipes from "../../public/Svg/Homepagesvg/astralpipes.svg";
 import Steefo from "../../public/Svg/Homepagesvg/steefo.svg";
@@ -119,6 +118,7 @@ export const Helper = {
     Stationary,
 
     // Unlocking potential
+    Unlocking,
     Subject,
     Teaching,
     SkillsDeveloped,
@@ -163,4 +163,5 @@ export const Helper = {
     Banner1,
     Banner2,
     Banner3,
+    Arrow1,
 }

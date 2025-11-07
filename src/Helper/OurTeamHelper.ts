@@ -1,5 +1,3 @@
-// Image Imports
-
 import teamBg from "../../public/Image/TeamPage/teamBg.svg";
 import VolunteerIcon from "../../public/Image/TeamPage/VolunteerIcon.svg";
 import InternshipIcon from "../../public/Image/TeamPage/InternshipIcon.svg";
@@ -12,12 +10,6 @@ import darshil from "../../public/Image/TeamPage/members/darshil.png";
 import harsh from "../../public/Image/TeamPage/members/harsh.png";
 import sachin from "../../public/Image/TeamPage/members/sachin.png";
 import snehal from "../../public/Image/TeamPage/members/snehal.png";
-
-
-
-
-
-
 
 export const Helper = {
     teamBg,

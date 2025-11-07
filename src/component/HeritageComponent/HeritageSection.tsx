@@ -11,7 +11,7 @@ const HeritageSection: React.FC = () => {
 
   return (
     <section className="w-full mt-20 overflow-hidden">
-      {/* 🌿 Banner Section */}
+      {/* Banner Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const HeritageSection: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* 🌾 Overview Section */}
+      {/* Overview Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const HeritageSection: React.FC = () => {
         ))}
       </motion.div>
 
-      {/* 🕊️ Mission Section */}
+      {/* Mission Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

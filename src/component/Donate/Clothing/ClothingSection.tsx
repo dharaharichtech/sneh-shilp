@@ -24,7 +24,7 @@ const ClothingSection: React.FC<{
 }> = ({ clothingData, donationData }) => {
   return (
     <section className="bg-white w-full">
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-20 w-full">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 w-full">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT */}
           <div>
@@ -84,7 +84,7 @@ const ClothingSection: React.FC<{
           </p>
         </div>
 
-        {/* 🖼 Staggered Masonry Grid */}
+        {/* Staggered Masonry Grid */}
         <div className="max-w-7xl mx-auto">
           {/* Desktop Layout - 4 Column Staggered */}
           <div className="hidden md:grid grid-cols-4 gap-5">

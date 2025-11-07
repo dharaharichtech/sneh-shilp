@@ -12,7 +12,7 @@ interface FormField {
   placeholder: string;
 }
 
-interface FormData {
+interface FormData {  
   fields: FormField[];
   button: {
     text: string;
@@ -86,7 +86,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
 
   return (
     <section className="bg-[#E7F5E1] py-12 px-6 md:px-12 lg:px-20 rounded-xl overflow-hidden relative">
-      {/* ✅ Popup Section */}
+      {/* Popup Section */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -96,7 +96,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
             transition={{ duration: 0.4 }}
             className="absolute top-5 left-1/2 transform -translate-x-1/2 bg-white shadow-lg border border-green-400 rounded-xl px-8 py-4 text-green-700 font-semibold z-50"
           >
-            🎉 Thank you! Your form has been submitted.
+            Thank you! Your form has been submitted.
           </motion.div>
         )}
       </AnimatePresence>
@@ -113,7 +113,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
             {data.title}
           </h4>
           <h2
-            className={`${calistoga.className} text-2xl md:text-4xl font-bold text-[#4C9A2A] mb-4`}
+            className={`${calistoga.className} text-2xl md:text-4xl font-bold text-[#73BE5F] mb-4`}
           >
             {data.heading}
           </h2>
@@ -132,7 +132,6 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
                   name={field.name}
                   type={field.type}
                   placeholder={field.placeholder}
-                  // value={formValues[field.name] || ""} // Fixed type issue
                   onChange={handleChange}
                   className="w-full bg-transparent border-b border-[#4C9A2A] py-2 focus:outline-none"
                   required
@@ -143,7 +142,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
             <button
               type="submit"
               disabled={loading}
-              className={`inline-flex items-center gap-3 bg-[#4C9A2A] text-white px-5 py-2 rounded-full hover:bg-green-700 transition ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+              className={`inline-flex items-center gap-3 bg-[#73BE5F] text-white px-5 py-2 rounded-full hover:bg-[#73BE5F] transition ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
             >
               {data.form.button.icon && (
                 <span className="w-4 h-4">
@@ -169,7 +168,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
           transition={{ delay: 0.08 }}
           className="w-full lg:w-1/2 flex justify-center"
         >
-          <div className="relative w-full h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+          <div className="relative w-full h-[420px] md:h-[650px] rounded-lg overflow-hidden ">
             <Image src={data.image} alt="Helping hands" fill className="object-cover" />
           </div>
         </motion.div>

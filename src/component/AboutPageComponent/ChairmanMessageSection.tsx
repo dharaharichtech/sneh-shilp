@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { calistoga } from "../../app/font";
+import { calistoga, sueEllen } from "../../app/font";
 import { AboutUsData } from "@/data/AboutUsData";
 
 const ChairmanMessageSection = () => {
@@ -10,56 +10,65 @@ const ChairmanMessageSection = () => {
   const { heading, message, chairmanName, images } = ChairmanMessageSection;
 
   return (
-    <section className="relative w-full py-14 md:py-20 px-4 md:px-8 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+    <section className="relative w-full py-20 md:py-28 bg-gradient-to-b from-white to-[#f9fafb] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
-        {/* --- Left Images --- */}
+        {/* --- Left Single Image --- */}
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-3"
-          initial={{ opacity: 0, x: -50 }}
+          className="w-full lg:w-1/2 flex justify-center"
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="relative w-full lg:w-[55%] aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-            <Image src={images[0]} alt="Chairman" fill className="object-cover" />
+          <div className="relative w-[90%] md:w-[80%] lg:w-[85%] rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+              <Image
+                src={images[0]}
+                alt="Chairman Portrait"
+                width={700}
+                height={850}
+                className="object-contain w-full h-auto mx-auto bg-gray-50 rounded-3xl p-2"
+                priority
+              />
           </div>
 
-          <div className="flex flex-col w-full lg:w-[45%] justify-between gap-3">
-            {images.slice(1).map((img, i) => (
-              <div
-                key={i}
-                className="relative w-full aspect-[4/3.2] rounded-2xl overflow-hidden shadow-lg"
-              >
-                <Image src={img} alt={`Foundation Work ${i + 1}`} fill className="object-cover" />
-              </div>
-            ))}
-          </div>
         </motion.div>
 
-        {/* --- Right Text --- */}
+        {/* --- Right Text Content --- */}
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left"
-          initial={{ opacity: 0, x: 50 }}
+          className="w-full lg:w-1/2 text-center lg:text-left"
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
+          <h3
+            className={`${sueEllen.className} text-2xl md:text-3xl text-[#2E4049] mb-2`}
+          >
+            Chairman’s Message
+          </h3>
+
           <h2
-            className={`${calistoga.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#73BE5F] mb-4`}
+            className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#73BE5F] mb-6`}
           >
             {heading}
           </h2>
-          <p className="text-gray-700 leading-relaxed text-base md:text-[15px] mb-6 max-w-[90%] mx-auto lg:mx-0">
+
+          <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-8 max-w-[95%] mx-auto lg:mx-0">
             {message}
           </p>
+
           <p
-            className={`${calistoga.className} text-lg md:text-xl font-bold text-[#73BE5F]`}
+            className={`${calistoga.className} text-lg md:text-xl font-semibold text-[#73BE5F]`}
           >
-            - {chairmanName}
+            — {chairmanName}
           </p>
         </motion.div>
       </div>
+
+      {/* Decorative blur backgrounds */}
+      <div className="absolute -bottom-24 -left-20 w-72 h-72 bg-[#73BE5F]/20 rounded-full blur-3xl" />
+      <div className="absolute -top-24 -right-20 w-72 h-72 bg-[#73BE5F]/10 rounded-full blur-3xl" />
     </section>
   );
 };

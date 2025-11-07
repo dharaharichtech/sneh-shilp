@@ -42,7 +42,7 @@ export default function UnlockingPotential({ data }: UnlockingPotentialSectionPr
           viewport={{ once: true }}
           className="w-full md:w-1/2"
         >
-          <h2 className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}>
+          <h2 className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049] mb-5`}>
             {title}
           </h2>
           <h3
@@ -108,8 +108,8 @@ export default function UnlockingPotential({ data }: UnlockingPotentialSectionPr
           transition={{ delay: 0.08 }}
           className="w-full md:w-1/2 flex justify-center"
         >
-          {/* ✅ Fixed height & relative positioning for image visibility */}
-          <div className="w-[90%] max-w-lg relative rounded-xl overflow-hidden h-64 md:h-80 lg:h-[420px]">
+          {/* Fixed height & relative positioning for image visibility */}
+          <div className="w-[100%] max-w-lg relative rounded-xl overflow-hidden h-64 md:h-80 lg:h-[500px]">
             <Image
               src={mainImage}
               alt="Unlocking potential"

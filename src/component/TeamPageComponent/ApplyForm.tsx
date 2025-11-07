@@ -20,7 +20,7 @@ const ApplyForm = () => {
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, files } = e.target as HTMLInputElement; // Casting to HTMLInputElement
+    const { name, value, files } = e.target as HTMLInputElement;
     if (name === "Resume" && files) {
       setFormValues((prev) => ({ ...prev, Resume: files[0] }));
     } else {
@@ -65,11 +65,11 @@ const ApplyForm = () => {
           Resume: null,
         });
       } else {
-        setError(result.error || "❌ Failed to submit. Please check all fields.");
+        setError(result.error || "Failed to submit. Please check all fields.");
       }
     } catch (error) {
-      console.error("❌ Submit Error:", error);
-      setError("❌ Server not responding. Please try again later.");
+      console.error("Submit Error:", error);
+      setError("Server not responding. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -77,7 +77,7 @@ const ApplyForm = () => {
 
   return (
     <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative">
-      {/* ✅ Success Popup */}
+      {/* Success Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -87,7 +87,7 @@ const ApplyForm = () => {
             transition={{ duration: 0.4 }}
             className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-white border border-green-400 shadow-lg rounded-xl px-8 py-4 text-green-700 font-semibold z-50"
           >
-            🎉 Thank you! Your application has been submitted successfully.
+            Thank you! Your application has been submitted successfully.
           </motion.div>
         )}
       </AnimatePresence>

@@ -18,7 +18,7 @@ import Toys from "../../public/Image/Donation/Promotes.png";
 import FootWear from "../../public/Image/Donation/Importance.png";
 import Stationary from "../../public/Image/Donation/Teach.png";
 
-import dontiondifference from "../../public/Image/Donation/dontiondifference.png";
+import dontiond from "../../public/Image/Donation/Elders.png";
 
 import Banner1 from "../../public/Image/BlogPage/blog1.png";
 import Banner2 from "../../public/Image/BlogPage/Blogs2.png";
@@ -43,7 +43,7 @@ export const RahelBaHelper = {
   Toys,
   FootWear,
   Stationary,
-  dontiondifference,
+  dontiond,
   Banner1,
   Banner2,    
   Banner3,

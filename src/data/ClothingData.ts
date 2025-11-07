@@ -1,7 +1,6 @@
 import { DonationHelper } from "@/Helper/ClothingHelper";
 
 export const ClothingData = {
-  // 🧥 CLOTHING SECTION
   ClothingSection: {
     title: "Clothing Matters",
     description:
@@ -11,7 +10,6 @@ export const ClothingData = {
     images: [DonationHelper.ClothingMain1.src],
   },
 
-  // 💖 DONATION SECTION
   DonationSection: {
     title: "Happy to help",
     heading: "Donation",
@@ -29,7 +27,6 @@ export const ClothingData = {
     ],
   },
 
-  // 🧣 CLOTHING PAGE (WARDROBE SECTION)
   ClothingPageData: {
     title: "Investing In People",
     heading: "Wardrobe of love, donate to help.",
@@ -70,7 +67,7 @@ export const ClothingData = {
         "Snehshilp Foundation, a beacon of compassion, extends its warm embrace to the less fortunate by spearheading a transformative clothing donation initiative. With boundless empathy, they collect gently used clothes and distribute them to those in need, offering not just garments but also dignity and hope. Through their relentless commitment, they ensure that the marginalized feel the warmth of community support.",
       buttonText: "Donate Now",
       buttonIcon: DonationHelper.Heart.src,
-      imageMain: DonationHelper.dontiondifference.src,
+      imageMain: DonationHelper.Clothingdontiond.src,
       imageSmall: DonationHelper.Donation2.src,
     },
   },

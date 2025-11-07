@@ -21,7 +21,7 @@ export const ContactSectionData = {
         id: 3,
         title: "Address",
         description:
-          "Snehshilp Foundation :  Shilp House, Rajpath Rangoli Rd, near Rajpath Club, Bodakdev, Ahmedabad, Gujarat 380054",
+          "Snehshilp Foundation :SHILP 3, 3rd Floor, Sindhu bhavan road, Shilp circle, above bajarang grocery, Bodakdev, Ahmedabad, Gujarat 380059",
       },
     ],
     button: {

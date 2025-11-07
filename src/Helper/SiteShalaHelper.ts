@@ -18,7 +18,7 @@ import Toys from "../../public/Image/Donation/Teaching.png";
 import FootWear from "../../public/Image/Donation/Skills.png";
 import Stationary from "../../public/Image/Donation/Languages.png";
 
-import dontiondifference from "../../public/Image/Donation/dontiondifference.png";
+import dontiondifference from "../../public/Image/Donation/Support.png";
 
 import Banner1 from "../../public/Image/BlogPage/blog1.png";
 import Banner2 from "../../public/Image/BlogPage/Blogs2.png";

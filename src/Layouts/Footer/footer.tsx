@@ -16,21 +16,12 @@ interface FooterLinkGroup {
 
 const footerLinks: FooterLinkGroup[] = [
   {
-    title: "About Snehshilp",
-    links: [
-      {
-        label:
-          "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-      },
-    ],
-  },
-  {
     title: "About Us",
     links: [
       { label: "About SnehShilp", href: "/about" },
       { label: "Snehal Brahmbhatt", href: "/snehalbrahmbhatt" },
       { label: "Our Blogs", href: "/blog" },
-      { label: "Get Involved", href: "/get-involved" },
+      { label: "Join as a Volunteer", href: "/get-involved" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -40,7 +31,7 @@ const footerLinks: FooterLinkGroup[] = [
       { label: "Help On Wheels", href: "/donate/help-on-wheels" },
       { label: "Clothing Matters", href: "/donate/clothing" },
       { label: "RahelBa – Old Age Home", href: "/donate/rahelba" },
-      { label: "Site Shala", href: "/donate/stie-shala" },
+      { label: "Site Shala", href: "/donate/site-shala" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -56,25 +47,36 @@ const footerLinks: FooterLinkGroup[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#6BB45B] text-white py-10 px-6 sm:px-10 lg:px-24">
+    <footer className="w-full bg-[#73BE5F] text-white pt-12 pb-6 px-6 sm:px-10 lg:px-24">
       {/* Logo */}
       <div className="flex justify-center lg:justify-start mb-8">
-        <Image src={footerLogo} alt="Snehshilp Foundation Logo" width={150} height={50} />
+        <Image
+          src={footerLogo}
+          alt="Snehshilp Foundation Logo"
+          width={160}
+          height={55}
+          className="object-contain"
+        />
       </div>
 
-      {/* Top Divider */}
-      <div className="border-t border-white w-full mb-10"></div>
+      {/* Divider */}
+      <div className="border-t border-white/40 mb-10"></div>
 
       {/* Link Sections */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto text-center sm:text-left">
         {footerLinks.map((group, idx) => (
           <div key={idx}>
-            <h3 className="font-semibold text-lg mb-4">{group.title}</h3>
-            <ul className="space-y-3 text-sm leading-relaxed">
+            <h3 className="font-semibold text-xl mb-4 border-b border-white/40 inline-block pb-1">
+              {group.title}
+            </h3>
+            <ul className="space-y-2 text-sm">
               {group.links.map((link, i) => (
                 <li key={i}>
                   {link.href ? (
-                    <a href={link.href} className="hover:underline transition-colors">
+                    <a
+                      href={link.href}
+                      className="hover:underline hover:opacity-90 transition-opacity"
+                    >
                       {link.label}
                     </a>
                   ) : (
@@ -87,11 +89,13 @@ const Footer: React.FC = () => {
         ))}
       </div>
 
-      {/* Bottom Divider */}
-      <div className="border-t border-white w-full mt-10 mb-4"></div>
+      {/* Divider */}
+      <div className="border-t border-white/40 mt-10 mb-4"></div>
 
       {/* Copyright */}
-      <p className="text-center text-sm">© {new Date().getFullYear()} Snehshilp Foundation</p>
+      <p className="text-center text-sm opacity-90">
+        Copyright © {new Date().getFullYear()} Snehshilp Foundation
+      </p>
     </footer>
   );
 };

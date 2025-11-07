@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { calistoga } from "@/app/font";
 import { sendJoinMessage } from "@/api/contact";
 
-// Define the structure of the form data to match the required fields
 interface JoinMessageData {
   name: string;
   email: string;
@@ -35,7 +34,6 @@ interface JoinUsSectionProps {
 }
 
 const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
-  // Initialize state with the correct type (JoinMessageData)
   const initialState: JoinMessageData = {
     name: "",
     email: "",

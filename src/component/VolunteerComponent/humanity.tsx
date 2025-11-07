@@ -13,7 +13,7 @@ const Humanity: React.FC = () => {
 
   return (
     <section className="w-full bg-white overflow-hidden">
-      {/* 🌿 Hero Section */}
+      {/*Hero Section */}
       <div className="w-full px-4 md:px-24 mt-10">
         <div className="relative w-full rounded-2xl overflow-hidden">
           <Image
@@ -47,7 +47,7 @@ const Humanity: React.FC = () => {
         </div>
       </div>
 
-      {/* 🌱 Content */}
+      {/*Content */}
       <div className="relative w-full py-12 md:py-24 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

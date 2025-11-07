@@ -5,11 +5,10 @@ import Image, { StaticImageData } from "next/image";
 
 interface ContactButtonProps {
   text: string;
-  icon?: string | StaticImageData; // ✅ fixed: allow both string & StaticImageData
+  icon?: string | StaticImageData; 
 }
 
 const ContactButton: React.FC<ContactButtonProps> = ({ text, icon }) => {
-  // ✅ helper to safely handle both types
   const resolveSrc = (src: string | StaticImageData | undefined) => {
     if (!src) return "";
     return typeof src === "string" ? src : src;

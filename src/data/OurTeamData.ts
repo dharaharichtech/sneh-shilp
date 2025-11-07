@@ -54,7 +54,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Hetal Patel
+        image: null, 
         name: "Hetal Patel",
         role: "Trustee",
         socialLinks: {
@@ -65,7 +65,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Arpan Barot
+        image: null, 
         name: "Arpan Barot",
         role: "Trustee",
         socialLinks: {
@@ -76,7 +76,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Dimpi Barot
+        image: null,
         name: "Dimpi Barot",
         role: "Trustee",
         socialLinks: {
@@ -87,7 +87,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Raj Rakesh Rao
+        image: null, 
         name: "Raj Rakesh Rao",
         role: "Trustee",
         socialLinks: {
@@ -98,7 +98,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Pannaben Rao
+        image: null,
         name: "Pannaben Rao",
         role: "Trustee",
         socialLinks: {
@@ -120,7 +120,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, // Placeholder for Richa Mishra
+        image: null, 
         name: "Richa Mishra",
         role: "Administrative coordinator",
         socialLinks: {

@@ -12,7 +12,7 @@ export default function Team() {
      <Humanity/>
      <OurTeam />
       <JoinForm/>
-      <TeamStory/>
+      {/* <TeamStory/> */}
       </div>
     </main>
   );

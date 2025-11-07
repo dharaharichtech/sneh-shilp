@@ -5,16 +5,16 @@ export const UpcomingEventsData = {
 
   events: [
     {
-      title: "Start - Up Fest Gujarat 2024",
-      location: "Vigyan Bhavan, Science City, Ahmedabad, Gujarat, India",
-      date: "October 20 & 21, 2024",
+      title: "Startup fest gujarat season 3",
+      location: "Gujarat University, Navrangpura, Ahmedabad, Gujarat"
+,      date: "December 13th & 14th, 2025",
       image: UpcomingHelper.StartupFest,
       link: "https://startupfestgujarat.com/",
     },
     {
-      title: "Shilp Aarambh Gift City Run 2024",
-      location: "Vigyan Bhavan, Science City, Ahmedabad, Gujarat, India.",
-      date: "December 15, 2024",
+      title: "Shilp Aarambh Gift City Run season 4",
+      location: "Gujarat University, Navrangpura, Ahmedabad, Gujarat",
+      date: "December 13th & 14th, 2025",
       image: UpcomingHelper.InnovationConclave,
       link: "https://shilpaarambh.com/",
     },

@@ -11,7 +11,7 @@ const SnehalSection: React.FC = () => {
 
   return (
     <section className="w-full mt-24">
-      {/* 🌿 Top Banner Section */}
+      {/*Top Banner Section */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const SnehalSection: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* 🪶 Overview Section */}
+      {/*Overview Section */}
       <div
         id="overview"
         className="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start p-4 md:p-6"

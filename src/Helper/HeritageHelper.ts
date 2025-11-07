@@ -7,7 +7,6 @@ import medicalIcon from "../../public/Image/heritage/Medical.png";
 import waterIcon from "../../public/Image/heritage/Water.svg";
 import volunteerIcon from "../../public/Image/Donation/rightside.png";
 
-// 👇 New images for "Participate" and "Past Events" section
 import past1 from "../../public/Image/heritage/past1.png";
 import past2 from "../../public/Image/heritage/past2.png";
 import past3 from "../../public/Image/heritage/past3.png";

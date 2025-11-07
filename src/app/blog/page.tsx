@@ -2,7 +2,7 @@
 
 import React from "react";
 import { BlogSectionData } from "@/data/BlogPageData";
-import JoinOurSection from "../../component/BlogpageComponent/JoinOurSection";
+// import JoinOurSection from "../../component/BlogpageComponent/JoinOurSection";
 import TheBlogSection from "../../component/BlogpageComponent/TheBlogSection";
 
 //comment added
@@ -15,12 +15,12 @@ export default function BlogPage() {
       <TheBlogSection data={blogData} />
 
       {/* Join Our Section */} 
-      <JoinOurSection
+      {/* <JoinOurSection
         title={joinData.title}
         description={joinData.description}
         image={joinData.image}
         button={joinData.button}
-      />
+      /> */}
     </main>
   );
 }

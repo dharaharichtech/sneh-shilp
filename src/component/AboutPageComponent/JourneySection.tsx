@@ -93,20 +93,22 @@ const JourneySection: React.FC = () => {
                   </p>
 
                   {/* Animated Image */}
-                  <motion.div
-                    className="relative w-full max-w-sm h-48 rounded-2xl overflow-hidden shadow-lg mx-auto md:mx-0"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.heading}
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </motion.div>
+              <motion.div
+                className="relative w-full sm:w-[85%] md:w-[90%] lg:w-[80%] max-w-lg h-60 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-xl mx-auto md:mx-0"
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.heading}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 ease-out hover:scale-105"
+                  priority
+                />
+              </motion.div>
+
                 </div>
 
                 {/* Spacers for desktop symmetry */}

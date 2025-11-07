@@ -61,7 +61,7 @@ const Participate: React.FC = () => {
   return (
     <section className="w-full bg-white py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        {/* 🌿 Title */}
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Participate: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* 🌿 Form Section */}
+        {/* Form Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -154,7 +154,7 @@ const Participate: React.FC = () => {
           </form>
         </motion.div>
 
-        {/* 🌿 Past Events */}
+        {/* Past Events */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ const Participate: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* 🌿 Event Image Grid */}
+        {/*Event Image Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {pastEvents.images.map((img, i) => (
             <motion.div
