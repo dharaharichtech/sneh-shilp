@@ -28,7 +28,7 @@ const HerWorks: React.FC = () => {
           >
             {herworks.heading}
           </h1>
-          <p className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-sm md:text-base font-medium">
+          <p className="text-gray-600 mt-4 max-w-7xl mx-auto leading-relaxed text-sm md:text-base font-medium">
             {herworks.description}
           </p>
         </div>

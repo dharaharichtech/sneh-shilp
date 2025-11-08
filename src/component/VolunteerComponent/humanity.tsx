@@ -89,7 +89,7 @@ const Humanity: React.FC = () => {
                   />
                 </div>
                 <h3
-                  className={`${calistoga.className} text-lg md:text-xl font-semibold text-[#258E2E] mb-2`}
+                  className={`${calistoga.className} text-lg md:text-xl font-semibold text-[#73BE5F ] mb-2`}
                 >
                   {card.heading}
                 </h3>

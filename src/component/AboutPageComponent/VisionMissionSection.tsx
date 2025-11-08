@@ -11,16 +11,16 @@ export default function VisionMissionSection() {
   const { Vision, Mission, bgImage } = VisionMissionSection;
 
   return (
-    <section className="relative w-[90%] mx-auto py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden shadow-md">
-      {/* Background Image */}
-      <Image
-        src={bgImage}
-        alt="Vision and Mission Background"
-        fill
-        className="object-cover object-center"
-        priority
-      />
-
+    <section className="relative w-[90%] mx-auto py-16 md:py-24 mt-10 md:mt-20 rounded-2xl overflow-hidden">
+{/* Height set karni zaruri hai */}
+    <Image
+      src={bgImage}
+      alt="Vision and Mission Background"
+      fill
+      className="object-contain object-center relative w-full h-[500px]"
+      priority
+    />
+  
       {/* Content */}
       <div className="relative z-10 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 text-gray-800 backdrop-blur-[2px]">
         <motion.div

@@ -154,7 +154,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
           </form>
 
           {message && (
-            <p className={`mt-4 text-sm ${message.startsWith("✅") ? "text-green-600" : "text-red-600"}`}>
+            <p className={`mt-4 text-sm ${message.startsWith("✅") ? "text-green-600" : "text-green-600"}`}>
               {message}
             </p>
           )}

@@ -5,7 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { MapPin, CalendarDays, ArrowRightCircle } from "lucide-react";
-import { calistoga, sueEllen } from "../../../app/font";
 
 interface EventItem {
   title: string;

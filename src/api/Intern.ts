@@ -1,16 +1,18 @@
-import axios from "axios";
+export const sendJoinMessage = async (data: any) => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const url = process.env.NEXT_PUBLIC_API_BASE;
+  try {
+    const response = await fetch(`${API_URL}/intern`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-export const sendJoinMessage = async (data: {
-  name: string;
-  email: string;
-  mobile: string;
-  position: string;
-  message: string;
-}) => {
-  const payload = { ...data }; 
-  return await axios.post(`${url}/intern`, payload, {
-    headers: { "Content-Type": "application/json" },
-  });
+    return response;
+  } catch (error) {
+    console.error("Error sending join message:", error);
+    throw error;
+  }
 };
