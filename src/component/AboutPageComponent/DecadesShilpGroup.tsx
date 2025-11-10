@@ -11,13 +11,17 @@ const DecadesShilpGroup = () => {
   const { DecadesShilpGroup } = AboutUsData;
   const { subtitle, title, description, images, button } = DecadesShilpGroup;
 
+  // ✅ Function to open external link
+  const handleExploreClick = () => {
+    window.open("https://shilpgroup.com/", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section className="bg-[#E8FBE6] w-[90%] mx-auto py-12 md:py-16 px-4 md:px-10 rounded-2xl shadow-md mt-10">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
-
         {/* --- Left Content --- */}
         <motion.div
-          className="w-full lg:w-[50%] p-6 md:p-8 "
+          className="w-full lg:w-[50%] p-6 md:p-8"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -26,15 +30,21 @@ const DecadesShilpGroup = () => {
           <h4 className={`${sueEllen.className} text-xl md:text-2xl text-black mb-2`}>
             {subtitle}
           </h4>
+
           <h2
             className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F] font-bold mb-4`}
           >
             {title}
           </h2>
+
           <p className="text-gray-700 text-sm md:text-[15px] leading-relaxed whitespace-pre-line mb-6">
             {description}
           </p>
-          <AboutusButtons text={button.text} />
+
+          {/* ✅ Button opens link in new tab */}
+          <div onClick={handleExploreClick}>
+            <AboutusButtons text={button.text} />
+          </div>
         </motion.div>
 
         {/* --- Right Images --- */}
@@ -56,7 +66,7 @@ const DecadesShilpGroup = () => {
               />
             </div>
 
-            {/* Top black block with space between */}
+            {/* Top black block */}
             <div className="absolute -top-6 -left-6 w-[45%] h-[45%] bg-[#1D1D1D] rounded-2xl overflow-hidden shadow-lg border-4 border-[#E8FBE6]">
               <Image
                 src={images[0]}

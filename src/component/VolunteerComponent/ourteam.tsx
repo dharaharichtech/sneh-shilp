@@ -41,8 +41,8 @@ const OurTeam: React.FC = () => {
               <Image
                 src={item.icon}
                 alt={item.heading}
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="object-contain"
               />
             </div>

@@ -18,7 +18,7 @@ const footerLinks: FooterLinkGroup[] = [
   {
     title: "About Us",
     links: [
-      { label: "About SnehShilp", href: "/about" },
+      { label: "About SnehShilp", href: "/aboutus" },
       { label: "Snehal Brahmbhatt", href: "/snehalbrahmbhatt" },
       { label: "Our Blogs", href: "/blog" },
       { label: "Join as a Volunteer", href: "/get-involved" },
@@ -31,7 +31,7 @@ const footerLinks: FooterLinkGroup[] = [
       { label: "Help On Wheels", href: "/donate/help-on-wheels" },
       { label: "Clothing Matters", href: "/donate/clothing" },
       { label: "RahelBa – Old Age Home", href: "/donate/rahelba" },
-      { label: "Site Shala", href: "/donate/site-shala" },
+      { label: "Site Shala", href: "/donate/stie-shala" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -90,13 +90,13 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-white/40 mt-10 mb-4"></div>
+        <div className="border-t border-white/40 mt-10 mb-4"></div>
 
-      {/* Copyright */}
-      <p className="text-center text-sm opacity-90">
-        Copyright © {new Date().getFullYear()} Snehshilp Foundation
-      </p>
-    </footer>
+        {/* Copyright */}
+        <p className="text-left text-sm opacity-90 pl-4 md:pl-1">
+          Copyright © {new Date().getFullYear()} Snehshilp Foundation
+        </p>
+      </footer>
   );
 };
 

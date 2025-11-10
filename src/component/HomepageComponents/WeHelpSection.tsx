@@ -131,7 +131,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
                   id={field.name}
                   name={field.name}
                   type={field.type}
-                  placeholder={field.placeholder}
+                  // placeholder={field.placeholder}
                   onChange={handleChange}
                   className="w-full bg-transparent border-b border-[#4C9A2A] py-2 focus:outline-none"
                   required
@@ -168,7 +168,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
           transition={{ delay: 0.08 }}
           className="w-full lg:w-1/2 flex justify-center"
         >
-          <div className="relative w-full h-[420px] md:h-[650px] rounded-lg overflow-hidden ">
+          <div className="relative w-[600px] h-[420px] md:h-[630px] rounded-lg overflow-hidden ">
             <Image src={data.image} alt="Helping hands" fill className="object-cover" />
           </div>
         </motion.div>

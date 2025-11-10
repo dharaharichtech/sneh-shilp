@@ -43,7 +43,7 @@ const HerWorks: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-3 flex justify-center"
+              className="bg-white rounded-2xl hover:shadow-xl transition p-3 flex justify-center"
             >
               <Image
                 src={item.img}
@@ -58,12 +58,12 @@ const HerWorks: React.FC = () => {
       </motion.div>
 
       {/* --- Media Coverage --- */}
-      <div className="text-center mt-20 mb-10">
-        <h2 className={`${sueEllen.className} text-lg md:text-xl text-gray-700`}>
+      <div className="text-center mt-20 mb-10 ">
+        <h2 className={`${sueEllen.className} text-lg md:text-xl text-gray-700 mr-240`}>
           {media.title}
         </h2>
         <h1
-          className={`${calistoga.className} text-3xl md:text-4xl font-bold text-[#73BE5F] mt-2`}
+          className={`${calistoga.className} text-3xl md:text-4xl font-bold text-[#73BE5F] mt-2 mr-200`}
         >
           {media.heading}
         </h1>

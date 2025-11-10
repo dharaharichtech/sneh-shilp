@@ -58,40 +58,45 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
         >
           {data.heading}
         </h2>
-        <p className="text-gray-600 max-w-3xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
+        <p className="text-gray-600 max-w-6xl mx-auto mt-4 text-sm md:text-base leading-relaxed">
           {data.description}
         </p>
 
         {/* Boxes */}
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-          {data.boxes.map((box, i) => (
-            <motion.div
-              key={box.id}
-              variants={fadeIn}
-              initial="hidden"
-              animate="visible"
-              custom={i}
-              whileHover={{ scale: 1.05 }}
-              className={`rounded-2xl p-6 border hover:shadow-lg transition-all ${
-                box.bg || "bg-white"
-              }`}
-            >
-              <Image
-                src={box.icon}
-                alt={box.title}
-                width={60}
-                height={60}
-                className="mx-auto mb-4"
-              />
-              <p className="text-gray-600 text-sm">{box.subtitle}</p>
-              <h4
-                className={`${calistoga.className} text-[#73BE5F] text-xl mt-1`}
-              >
-                {box.title}
-              </h4>
-            </motion.div>
-          ))}
-        </div>
+  {data.boxes.map((box, i) => (
+    <motion.div
+      key={box.id}
+      variants={fadeIn}
+      initial="hidden"
+      animate="visible"
+      custom={i}
+      whileHover={{ scale: 1.05 }}
+      className={`rounded-2xl p-6 border hover:shadow-lg transition-all ${
+        box.bg || "bg-white"
+      }`}
+    >
+      {/* ✅ ICON WRAPPER FOR UNIFORM SIZE */}
+      <div className="w-30 h-30 flex items-center justify-center mx-auto mb-4 rounded-full">
+        <Image
+          src={box.icon}
+          alt={box.title}
+          width={80}
+          height={50}
+          className="object-contain"
+        />
+      </div>
+
+      <p className="text-gray-600 text-sm text-center mt-2">{box.subtitle}</p>
+      <h4
+        className={`${calistoga.className} text-[#73BE5F] text-xl text-center mt-1`}
+      >
+        {box.title}
+      </h4>
+    </motion.div>
+  ))}
+</div>
+
       </motion.div>
 
       {/* Difference Section */}

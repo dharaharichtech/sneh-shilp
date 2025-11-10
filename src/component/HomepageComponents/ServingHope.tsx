@@ -61,7 +61,8 @@ export default function ServingHope({ data }: ServingHopeProps) {
   };
 
   return (
-    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 rounded-xl overflow-hidden">
+<section className="bg-white px-6 md:px-12 lg:px-20 py-12 mt-[-50px] md:mt-[-80px] rounded-xl overflow-hidden">
+
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* LEFT CONTENT */}
         <motion.div
@@ -73,13 +74,13 @@ export default function ServingHope({ data }: ServingHopeProps) {
           className="w-full md:w-1/2 flex flex-col gap-4"
         >
           <h4
-            className={`${sueEllen.className} text-3xl md:text-5xl text-[#2E4049]`}
+            className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
           >
             {title}
           </h4>
 
           <h2
-            className={`${calistoga.className} text-4xl md:text-6xl text-[#73BE5F] font-bold leading-tight`}
+            className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] font-bold leading-tight`}
           >
             {heading}
           </h2>
@@ -136,13 +137,13 @@ export default function ServingHope({ data }: ServingHopeProps) {
             )}
           </div>
 
-        <div className="flex flex-row flex-nowrap overflow-x-auto items-center justify-center lg:justify-start gap-1 mt-3">
-        <DonateNow text={buttons.donate.text} />
-        <ContactButton
-          text={buttons.contact.text}
-          icon={buttons.contact.icon}
-        />
-      </div>
+        <div className="flex items-center justify-center gap-1 flex-nowrap mt-3 text-sm md:text-base">
+            <DonateNow text={buttons.donate.text} />
+            <ContactButton text={buttons.contact.text} icon={buttons.contact.icon} />
+        </div>
+
+
+
 
 
         </motion.div>

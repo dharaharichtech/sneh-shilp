@@ -3,6 +3,7 @@ import snehalGallery1 from "../../public/Image/Snehal-Brahmbhatt/Overview1.png";
 import snehalGallery2 from "../../public/Image/Snehal-Brahmbhatt/Overview2.png";
 import snehalGallery3 from "../../public/Image/Snehal-Brahmbhatt/Overview3.png";
 
+
 // Her Works images
 import shilpLogo from "../../public/Image/Snehal-Brahmbhatt/shilpLogo.png";
 import entrepreneurFest from "../../public/Image/Snehal-Brahmbhatt/entrepreneurFest.png";

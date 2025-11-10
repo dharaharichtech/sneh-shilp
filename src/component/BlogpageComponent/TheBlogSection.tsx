@@ -30,30 +30,30 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
   const { title, heading, description, cards } = data;
 
   return (
-    <section className="w-full py-10 sm:py-14 md:py-20 px-4 sm:px-8 md:px-14 lg:px-20 bg-white overflow-hidden">
-      {/* Title & Heading */}
+    <section className="w-full py-14 md:py-20 px-5 sm:px-10 lg:px-20 bg-white overflow-hidden mt-[-50px] md:mt-[-120px] ">
+      {/* Section Header */}
       <motion.div
-        className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
+        className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
         <h4
-          className={`${sueEllen.className} text-base sm:text-2xl md:text-3xl text-gray-700 mb-2 sm:mb-3`}
+          className={`${sueEllen.className} text-lg sm:text-2xl text-gray-700 mb-2`}
         >
           {title}
         </h4>
         <h2
-          className={`${calistoga.className} text-xl sm:text-3xl md:text-5xl text-[#73BE5F]`}
+          className={`${calistoga.className} text-3xl sm:text-4xl md:text-5xl font-bold text-[#73BE5F] mb-4`}
         >
           {heading}
         </h2>
-        <div className="mt-3 sm:mt-4 space-y-2">
-          {description.map((line, index) => (
+        <div className="space-y-2 text-gray-500">
+          {description.map((line, i) => (
             <p
-              key={index}
-              className="text-[#9F9F9F] text-sm sm:text-base leading-relaxed px-2"
+              key={i}
+              className="text-sm sm:text-base leading-relaxed max-w-xl mx-auto"
             >
               {line}
             </p>
@@ -61,31 +61,30 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* Blog Cards Grid */}
+      {/* Blog Cards */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto"
         initial="hidden"
         whileInView="visible"
         variants={{
           hidden: {},
-          visible: {
-            transition: { staggerChildren: 0.15 },
-          },
+          visible: { transition: { staggerChildren: 0.15 } },
         }}
         viewport={{ once: true }}
       >
         {cards.map((card) => (
           <motion.div
             key={card.id}
-            className="rounded-2xl shadow-sm overflow-hidden bg-white border border-gray-100 hover:shadow-md transition-all duration-300"
             variants={{
-              hidden: { opacity: 0, y: 60 },
+              hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-white border border-[#E5F4E2] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
           >
-            {/* Blog Image */}
-            <div className="relative w-full h-48 sm:h-56 md:h-64">
+            {/* Image */}
+            <div className="relative w-full h-52 sm:h-60 md:h-64">
               <Image
                 src={card.image}
                 alt={card.highlight}
@@ -94,48 +93,52 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
               />
             </div>
 
-            {/* Blog Content */}
-            <div className="p-4 sm:p-5 space-y-2 sm:space-y-3">
-              <p className="text-gray-500 text-xs sm:text-sm">{card.date}</p>
-              <h3 className="text-[#73BE5F] font-semibold text-sm sm:text-base md:text-lg leading-snug">
+            {/* Content */}
+            <div className="p-5 sm:p-6 flex flex-col flex-grow">
+              <p className="text-gray-500 text-xs sm:text-sm mb-2">
+                {card.date}
+              </p>
+              <h3 className="text-[#73BE5F] font-bold text-base sm:text-lg mb-2 leading-snug">
                 {card.highlight}
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed flex-grow">
                 {card.description}
               </p>
             </div>
 
-            {/* Read More Button */}
-            <div className="flex items-center justify-between px-4 sm:px-5 pb-4 sm:pb-5">
+            {/* Full Green Read More Bar */}
+            <div className="mt-auto">
               {card.link ? (
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <Link href={card.link}>
-                    <button className="flex items-center gap-2 text-[#73BE5F] text-xs sm:text-sm md:text-base font-medium hover:underline transition-all">
-                      {card.belowtext}
+                <Link href={card.link}>
+                  <motion.div
+                    whileHover={{ backgroundColor: "#ECECEC" }}
+                    className="bg-[#ECECEC] border-t border-[#73BE5F] cursor-pointer"
+                  >
+                    <div className="flex items-center justify-between px-5 py-3">
+                      <span className="text-[#73BE5F] text-sm sm:text-base font-semibold">
+                        {card.belowtext}
+                      </span>
                       <Image
                         src={card.icon}
                         alt="arrow"
-                        width={16}
-                        height={16}
-                        className="object-contain"
+                        width={18}
+                        height={18}
+                        className="object-contain text-[#73BE5F]"
                       />
-                    </button>
-                  </Link>
-                </motion.div>
+                    </div>
+                  </motion.div>
+                </Link>
               ) : (
-                <button
-                  disabled
-                  className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm md:text-base font-medium cursor-not-allowed"
-                >
+                <div className="bg-gray-100 border-t border-gray-300 px-5 py-3 text-gray-400 text-sm font-medium flex items-center justify-between">
                   {card.belowtext}
                   <Image
                     src={card.icon}
                     alt="arrow"
-                    width={16}
-                    height={16}
-                    className="object-contain opacity-50"
+                    width={18}
+                    height={18}
+                    className="opacity-40"
                   />
-                </button>
+                </div>
               )}
             </div>
           </motion.div>

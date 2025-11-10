@@ -7,6 +7,8 @@ import BannerImage from "../../public/Image/HomePage/bannerimage.png";
 
 // Our Projects
 import OurProjectImage from "../../public/Image/HomePage/ourprojectimage.png";
+import RahelBa1 from "../../public/Image//HomePage/Rectangle8.png"
+import RahelBa2 from "../../public/Image//HomePage/Rectangle9.png"
 import Gratitude from "../../public/Svg/Homepagesvg/gratitude.svg";
 import InnerHappiness from "../../public/Svg/Homepagesvg/inner-happiness.svg";
 // Svg
@@ -96,6 +98,8 @@ export const Helper = {
 
     // Our Projects
     OurProjectImage,
+    RahelBa1,
+    RahelBa2,
     Gratitude,
     InnerHappiness,
     GivingSharing,

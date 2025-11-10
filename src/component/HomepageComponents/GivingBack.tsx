@@ -34,7 +34,7 @@ export default function GivingBack({ data }: GivingBackSectionProps) {
   const { title, heading, description, higlight, subdescription, cards, buttons, Image: mainImage } = data;
 
   return (
-    <section className="bg-white px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10 rounded-xl overflow-hidden py-16">
+    <section className="bg-white px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10 rounded-xl overflow-hidden py-16 mt-[-50px] md:mt-[-80px] ">
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -54,10 +54,10 @@ export default function GivingBack({ data }: GivingBackSectionProps) {
         transition={{ duration: 0.8 }}
         className="w-full md:w-1/2 flex flex-col justify-center space-y-5"
       >
-        <h4 className={`${sueEllen.className} text-4xl text-[#2E4049]`}>
+        <h4 className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}>
           {title}
         </h4>
-        <h2 className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F]`}>
+        <h2 className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}>
           {heading}
         </h2>
         <p className="text-gray-600 leading-relaxed">{description}</p>

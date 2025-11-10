@@ -36,7 +36,7 @@ const MeetTeam = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative max-w-6xl mx-auto mt-10 rounded-[40px] overflow-hidden shadow-md"
+        className="relative max-w-6xl mx-auto mt-10 rounded-[40px] overflow-hidden"
       >
         <Image
           src={bgImage}

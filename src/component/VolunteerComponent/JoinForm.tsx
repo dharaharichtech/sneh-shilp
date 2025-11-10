@@ -87,9 +87,9 @@ const JoinForm: React.FC = () => {
             Ready to Join as Volunteer or Intern?
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Join us on our mission. Click{" "}
-            <span className="text-[#73BE5F] font-medium">Submit</span> to start
-            your journey with SnehShilp Foundation.
+           If you’re ready to make a positive impact and be a force for good, join us on our mission.
+            Click the{" "}
+            <span className="text-[#73BE5F] font-medium">Submit</span> button to explore available volunteer opportunities and start your journey with SnehShilp Foundation.
           </p>
         </motion.div>
 
@@ -97,10 +97,13 @@ const JoinForm: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="bg-[#EEFFE9] rounded-2xl p-6 md:p-10 shadow-sm"
+          className="bg-[#EEFFE9] rounded-2xl p-6 md:p-10"
         >
-          <form
-            onSubmit={handleSubmit}
+      <p className="text-[#73BE5F] text-[50%] md:text-[100%] leading-relaxed">
+        Join as Volunteer to Intern
+      </p>
+      <form
+      onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {[
@@ -125,7 +128,7 @@ const JoinForm: React.FC = () => {
 
             <div className="relative">
               <label className="text-gray-700 text-sm mb-1 block">
-                Select Position
+                Select Join as Volunteer or Intern?
               </label>
               <select
                 name="position"
@@ -162,17 +165,34 @@ const JoinForm: React.FC = () => {
               ></textarea>
             </div>
 
-            <div className="md:col-span-2 mt-8 flex justify-start">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                disabled={loading}
-                className="bg-[#73BE5F] text-white px-8 py-3 rounded-lg hover:bg-[#5ea64b] transition-all"
-              >
-                {loading ? "Submitting..." : "Submit"}
-              </motion.button>
-            </div>
+       <div className="md:col-span-2 mt-8 flex justify-start">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    type="submit"
+    disabled={loading}
+    className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white px-8 py-3 rounded-full hover:bg-[#5ea64b] transition-all duration-300 shadow-md"
+  >
+    {loading ? (
+      "Submitting..."
+    ) : (
+      <>
+      <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+          <Image
+            src="/Svg/arrow.svg"
+            alt="Arrow Icon"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        </span>
+        <span className="text-lg font-medium">Submit</span>
+        
+      </>
+    )}
+  </motion.button>
+</div>
+
 
             {error && (
               <p className="text-red-600 mt-3 md:col-span-2">{error}</p>

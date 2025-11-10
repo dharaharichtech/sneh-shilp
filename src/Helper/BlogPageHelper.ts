@@ -13,6 +13,7 @@ import ReadMoreArrow from "../../public/Svg/readmorearrow.svg";
 import JoinOurImage from "../../public/Image/BlogPage/joinourimage.png";
 import Arrow from "../../public/Svg/arrow.svg";
 import arrowIcon from "../../public/Svg/arrow.svg";
+import downArrow from "../../public/Svg/down-arrow.svg";
 
 export const blogPageImages = {
   Banner1,
@@ -29,4 +30,5 @@ export const blogPageImages = {
   Arrow,
   arrowIcon,
   JoinOurImage,
+  downArrow,
 };

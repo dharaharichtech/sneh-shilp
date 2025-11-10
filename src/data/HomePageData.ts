@@ -17,50 +17,58 @@ export const HelpSectionData = {
     },
     image: Helper.BannerImage,
   },
+OurProjectSection: {
+  title: "Our Projects",
+  heading: "Illuminating lives",
+  subheading: "RahelBa Vrudhashram",
+  description:
+    "RahelBa Vrudhashram, located in Magodi, Gandhinagar is an old age home that provides shelter to the elderly who are often neglected by their families or have no one to look after them.",
+  highlight: "Celebrate Your Happiness",
+  subdescription:
+    "Anniversary  |  Birthday  |  Mother’s Day  |  Father’s Day",
 
-   OurProjectSection: {
-    title: "Our Projects",
-    heading: "Illuminating lives",
-    subheading: "RahelBa Vrudhashram",
-    description:
-      "RahelBa Vrudhashram, located in Magodi, Gandhinagar is an old age home that provides shelter to the elderly who are often neglected by their families or have no one to look after them.",
-    highlight: "Celebrate Your Happiness",
-    subdescription:
-      "Anniversary  |  Birthday  |  Mother’s Day  |  Father’s Day",
-    cards: [
-      {
-        id: 1,
-        heading: "Best opportunity to show",
-        description: "Gratitude",
-        logo: Helper.Gratitude,
-      },
-      {
-        id: 2,
-        heading: "Promotes your feelings of",
-        description: "Inner Happiness",
-        logo: Helper.InnerHappiness,
-      },
-      {
-        id: 3,
-        heading: "Importance of",
-        description: "Giving & sharing",
-        logo: Helper.GivingSharing,
-      },
-      {
-        id: 4,
-        heading: "Teach your kids to",
-        description: "Respect elders",
-        logo: Helper.RespectElders,
-      },
-    ],
-    buttons: {
-      sponser: {
-        text: "Sponsor Now",
-        icon: Helper.Arrow1,
-      },
+  cards: [
+    {
+      id: 1,
+      heading: "Best opportunity to show",
+      description: "Gratitude",
+      logo: Helper.Gratitude,
     },
-    image: Helper.OurProjectImage,
+    {
+      id: 2,
+      heading: "Promotes your feelings of",
+      description: "Inner Happiness",
+      logo: Helper.InnerHappiness,
+    },
+    {
+      id: 3,
+      heading: "Importance of",
+      description: "Giving & sharing",
+      logo: Helper.GivingSharing,
+    },
+    {
+      id: 4,
+      heading: "Teach your kids to",
+      description: "Respect elders",
+      logo: Helper.RespectElders,
+    },
+  ],
+
+  buttons: {
+    sponser: {
+      text: "Sponsor Now",
+      icon: Helper.Arrow1,
+      link: "/donate/rahelba", // ✅ Added link here
+    },
   },
+
+  images: [
+    Helper.OurProjectImage,
+    Helper.RahelBa1,
+    Helper.RahelBa2,
+  ],
+},
+
 
 
   ServingHopeSection: {

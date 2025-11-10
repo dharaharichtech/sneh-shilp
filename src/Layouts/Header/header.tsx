@@ -3,39 +3,38 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import DonateNow from "@/buttons/Donatenow";
 import { navLinks } from "./navLinks";
 import snehalshilpLogo from "../../../public/snehalshilplogo.svg";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleMenu = () => setMobileOpen((prev) => !prev);
 
   return (
-    <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-14 py-4">
+    <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50 border-b border-gray-100">
+      <div className="max-w-[1300px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-14 py-3 md:py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             src={snehalshilpLogo}
             alt="Snehal Shilp Foundation Logo"
-            width={140}
+            width={145}
             height={60}
             priority
-            className="h-11 w-auto cursor-pointer"
+            className="h-10 sm:h-11 w-auto cursor-pointer"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10 text-[#2E4049] text-[15px] font-medium">
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-10 text-[#2E4049] text-[15px] font-medium">
           {navLinks.map((link) => {
             const hasSub = !!(link.subLinks && link.subLinks.length > 0);
             return (
               <div key={link.id} className="relative group">
                 <Link
                   href={link.href}
-                  className="hover:text-[#6BB45B] transition flex items-center gap-1"
+                  className="hover:text-[#6BB45B] transition flex items-center"
                 >
                   {link.label}
                   {hasSub && (
@@ -51,15 +50,17 @@ const Header: React.FC = () => {
                   )}
                 </Link>
 
-                {/* Dropdown (only render when subLinks exist) */}
+                {/* Dropdown */}
                 {hasSub && (
                   <div className="absolute left-0 mt-3 w-56 bg-white border border-gray-100 shadow-lg rounded-lg py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {(link.subLinks ?? []).map((sub, idx) => (
                       <Link
                         key={sub.id}
                         href={sub.href}
-                        className={`block px-4 py-3 text-gray-700 hover:text-[#6BB45B] hover:bg-gray-50 transition-colors ${
-                          idx !== (link.subLinks?.length ?? 0) - 1 ? "border-b border-gray-200" : ""
+                        className={`block px-4 py-2.5 text-gray-700 hover:text-[#6BB45B] hover:bg-gray-50 transition-colors ${
+                          idx !== (link.subLinks?.length ?? 0) - 1
+                            ? "border-b border-gray-200"
+                            : ""
                         }`}
                       >
                         {sub.label}
@@ -72,14 +73,26 @@ const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* Donate Button (Desktop Only) */}
-        <div className="hidden lg:block">
-          <DonateNow text="Donate Now" />
+        {/* Donate Now Button */}
+        <div className="hidden lg:flex items-center">
+          <Link
+            href="/donate"
+            className="flex items-center gap-2 bg-[#6BB45B] text-white font-medium px-5 py-2.5 rounded-full shadow-sm hover:bg-[#5ca64f] transition-all"
+          >
+            <span className="flex items-center justify-center bg-white text-[#6BB45B] rounded-full w-6 h-6">
+              <Heart size={15} fill="#6BB45B" strokeWidth={0} />
+            </span>
+            Donate Now
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} aria-label="Toggle Menu" className="lg:hidden text-[#2E4049]">
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        <button
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+          className="lg:hidden text-[#2E4049] ml-2"
+        >
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
@@ -116,7 +129,11 @@ const Header: React.FC = () => {
                 {hasSub && (
                   <div className="pl-4 flex flex-col space-y-2 text-sm text-gray-600">
                     {(link.subLinks ?? []).map((sub) => (
-                      <Link key={sub.id} href={sub.href} className="hover:text-[#6BB45B] transition">
+                      <Link
+                        key={sub.id}
+                        href={sub.href}
+                        className="hover:text-[#6BB45B] transition"
+                      >
                         {sub.label}
                       </Link>
                     ))}
@@ -128,7 +145,15 @@ const Header: React.FC = () => {
 
           {/* Donate Button (Mobile) */}
           <div className="pt-4">
-            <DonateNow text="Donate Now" />
+            <Link
+              href="/donate"
+              className="flex items-center gap-2 bg-[#6BB45B] text-white font-medium px-5 py-2.5 rounded-full shadow-sm hover:bg-[#5ca64f] transition-all"
+            >
+              <span className="flex items-center justify-center bg-white text-[#6BB45B] rounded-full w-6 h-6">
+                <Heart size={15} fill="#6BB45B" strokeWidth={0} />
+              </span>
+              Donate Now
+            </Link>
           </div>
         </nav>
       </div>

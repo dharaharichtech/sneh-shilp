@@ -41,9 +41,10 @@ export default function HelpSection({ data }: HelpSectionProps) {
         </h2>
         <p className="text-gray-600 leading-relaxed">{description}</p>
         <div className="flex flex-wrap gap-4 mt-6">
-          <DonateNow text={buttons.donate.text} />
-          <ContactButton text={buttons.contact.text} icon={buttons.contact.icon} />
-        </div>
+  <DonateNow text={buttons.donate.text} />
+  <ContactButton text={buttons.contact.text} icon={buttons.contact.icon} />
+</div>
+
       </motion.div>
 
       <motion.div

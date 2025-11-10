@@ -38,12 +38,12 @@ const ClothingSection: React.FC<{
               {clothingData.description}
             </p>
 
-            <button className="flex items-center gap-4 bg-[#73BE5F] text-white font-semibold text-lg md:text-xl px-8 py-4 rounded-full shadow-lg hover:bg-[#58a34d] hover:shadow-xl transition-all duration-300">
+            <button className="flex items-center gap-4 bg-[#73BE5F] text-white font-semibold text-lg md:text-xl px-8 py-4 rounded-full hover:bg-[#58a34d] hover:shadow-xl transition-all duration-300">
               <Image
                 src={clothingData.buttonIcon}
                 alt="Donate Now"
-                width={28}
-                height={28}
+                width={32}
+                height={30}
               />
               {clothingData.buttonText}
             </button>
@@ -79,7 +79,7 @@ const ClothingSection: React.FC<{
           >
             {donationData.heading}
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 max-w-6xl mx-auto leading-relaxed">
             {donationData.description}
           </p>
         </div>

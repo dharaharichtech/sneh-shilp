@@ -11,22 +11,22 @@ const SnehalSection: React.FC = () => {
 
   return (
     <section className="w-full mt-24">
-      {/*Top Banner Section */}
+      {/* 🌿 Top Banner Section */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="bg-[#EEFFE9] rounded-2xl mx-auto max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-10 shadow-sm"
+        className="bg-[#EEFFE9] rounded-3xl mx-auto max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-10 shadow-md"
       >
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left">
-          <h3 className={`${sueEllen.className} text-lg text-gray-600 mb-1`}>
+          <h3 className={`${sueEllen.className} text-lg text-gray-700 mb-1`}>
             {banner.title}
           </h3>
 
           <h1
-            className={`${calistoga.className} text-3xl md:text-4xl font-bold text-[#6BB45B] mb-3`}
+            className={`${calistoga.className} text-4xl md:text-5xl font-bold text-[#6BB45B] mb-3`}
           >
             {banner.name}
           </h1>
@@ -39,22 +39,20 @@ const SnehalSection: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open(banner.buttonLink, "_blank")}
-            className="inline-flex items-center gap-2 bg-[#6BB45B] text-white px-5 py-3 rounded-full font-medium hover:bg-[#5ca14d] transition shadow-md"
+            className="inline-flex items-center gap-3 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ea34b] transition-all shadow-lg"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
+            <span className="bg-white rounded-full flex items-center justify-center">
+              <Image
+                src="/Svg/Group.png"
+                alt="Arrow"
+                width={30}
+                height={18}
+                className="object-contain"
+              />
+            </span>
             {banner.buttonText}
           </motion.button>
         </div>
-
         {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -128,7 +126,7 @@ const SnehalSection: React.FC = () => {
               {p}
             </p>
           ))}
-        </motion.div>
+        </motion.div> 
       </div>
     </section>
   );

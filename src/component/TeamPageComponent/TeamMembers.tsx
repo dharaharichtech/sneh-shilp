@@ -15,7 +15,7 @@ const TeamMembers = () => {
   const { heading, members } = OurTeamData.TeamMembersSection;
 
   return (
-    <section className="py-16 px-4 md:px-10 bg-white overflow-hidden">
+    <section className="py-16 px-4 md:px-10 bg-white overflow-hidden mt-[-50px] md:mt-[-100px] ">
       <div className="max-w-7xl mx-auto">
         {/*Heading */}
         <motion.h2

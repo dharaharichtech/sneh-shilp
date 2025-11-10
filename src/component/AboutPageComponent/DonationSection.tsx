@@ -26,10 +26,10 @@ export default function DonationSection({ data }: DonationSectionProps) {
   const { title, heading, description, image, button } = data;
 
   return (
-    <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-6 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8 rounded-2xl shadow-md mt-10">
+    <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl shadow-lg mt-10">
       {/* LEFT CONTENT */}
       <motion.div
-        className="w-full md:w-1/2 space-y-4 md:space-y-4 text-center md:text-left"
+        className="w-full md:w-1/2 space-y-5 text-center md:text-left"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
@@ -47,12 +47,17 @@ export default function DonationSection({ data }: DonationSectionProps) {
           {heading}
         </h2>
 
-        <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+        <p className="text-gray-700 leading-relaxed text-base md:text-lg max-w-[500px] mx-auto md:mx-0">
           {description}
         </p>
 
-        <div className="flex justify-center md:justify-start mt-4">
-          <AboutusButtons text={button.text} />
+        {/* ✅ Scroll Button */}
+        <div className="flex justify-center md:justify-start mt-6">
+          <AboutusButtons
+            text="Explore More"
+            scrollTo="next-section"
+            direction="down"
+          />
         </div>
       </motion.div>
 
@@ -64,16 +69,14 @@ export default function DonationSection({ data }: DonationSectionProps) {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        {/* Rectangular (Landscape) image box */}
- <div className="relative w-full max-w-md aspect-[16/9] rounded-2xl overflow-hidden">
-  <Image
-    src={image}
-    alt="donation"
-    fill
-    className="object-cover rounded-2xl"
-  />
-</div>
-
+        <div className="relative w-full max-w-md aspect-[16/9] rounded-2xl overflow-hidden">
+          <Image
+            src={image}
+            alt="donation"
+            fill
+            className="object-cover rounded-2xl"
+          />
+        </div>
       </motion.div>
     </section>
   );

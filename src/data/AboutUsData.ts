@@ -9,7 +9,7 @@ export const AboutUsData = {
     image: Helper.DonationBgImage,
     button: {
       text: "Explore More",
-      icon: Helper.Arrow,
+      icon: Helper.Arrow1,
     },
   },
 

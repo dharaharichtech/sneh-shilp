@@ -37,7 +37,7 @@ const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({ data }) => {
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-[#F8F9F8]/95 rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[55%] xl:w-[45%] 
+        className="bg-white/95 rounded-3xl shadow-lg w-[90%] sm:w-[80%] lg:w-[55%] xl:w-[45%] 
                    py-10 sm:py-14 px-6 sm:px-12 text-center ml-4 sm:ml-10 lg:ml-20"
       >
         {/* Title */}
@@ -72,9 +72,10 @@ const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({ data }) => {
                   className="object-contain opacity-90"
                 />
               </div>
-              <p className="text-sm sm:text-base text-gray-700 font-medium leading-tight">
-                {icon.description}
-              </p>
+           <p className="text-[12px] sm:text-[13px] md:text-[14px] text-gray-700 font-medium leading-tight text-center max-w-[120px]">
+            {icon.description}
+          </p>
+
             </motion.div>
           ))}
         </div>

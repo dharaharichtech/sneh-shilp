@@ -26,7 +26,7 @@ export const ContactSectionData = {
     ],
     button: {
       text: "Contact Us",
-      icon: blogPageImages.Arrow,
+      icon: blogPageImages.downArrow,
     },
   },
 

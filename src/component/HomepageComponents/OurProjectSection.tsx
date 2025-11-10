@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "@/app/font";
 
@@ -15,6 +16,7 @@ interface CardData {
 interface ButtonData {
   text: string;
   icon?: StaticImageData | string;
+  link?: string; // ✅ added link support
 }
 
 interface OurProjectSectionProps {
@@ -27,7 +29,7 @@ interface OurProjectSectionProps {
     subdescription: string;
     cards: CardData[];
     buttons: { sponser: ButtonData };
-    image: StaticImageData | string;
+    images: (StaticImageData | string)[];
   };
 }
 
@@ -43,12 +45,13 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
     subdescription,
     cards,
     buttons,
-    image,
+    images,
   } = data;
 
   return (
     <section className="bg-white px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Title */}
         <motion.h4
           initial="hidden"
           whileInView="show"
@@ -60,23 +63,44 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
         </motion.h4>
 
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
-          {/* LEFT SIDE IMAGE SECTION */}
+          {/* LEFT SIDE - 3 IMAGE LAYOUT */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={item}
             transition={{ delay: 0.08 }}
-            className="w-full md:w-1/2 flex flex-col gap-4"
+            className="w-full md:w-1/2 flex flex-col md:flex-row gap-4"
           >
-            <div className="w-full relative rounded-xl overflow-hidden h-64 md:h-80 lg:h-[420px]">
+            {/* Large Left Image */}
+            <div className="w-full md:w-2/3 relative rounded-xl overflow-hidden h-72 md:h-[420px]">
               <Image
-                src={image}
-                alt="Project image"
+                src={images[0]}
+                alt="Project main image"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center rounded-xl"
                 priority
               />
+            </div>
+
+            {/* Two Stacked Small Images */}
+            <div className="w-full md:w-1/3 flex flex-col gap-4">
+              <div className="relative w-full h-36 md:h-[200px] rounded-xl overflow-hidden">
+                <Image
+                  src={images[1]}
+                  alt="Project secondary image 1"
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
+              <div className="relative w-full h-36 md:h-[200px] rounded-xl overflow-hidden">
+                <Image
+                  src={images[2]}
+                  alt="Project secondary image 2"
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -95,11 +119,11 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               {heading}
             </h2>
             <h3
-              className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F]`}
+              className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}
             >
               {subheading}
             </h3>
-            <p className="text-gray-600">{description}</p>
+            <p className="text-gray-600 leading-relaxed">{description}</p>
 
             <div>
               <h4
@@ -110,11 +134,12 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               <p className="text-gray-500 text-sm mt-1">{subdescription}</p>
             </div>
 
+            {/* CARDS */}
             <div className="grid grid-cols-2 gap-3 mt-4">
               {cards.map((card) => (
                 <div
                   key={card.id}
-                  className="bg-[#FFF9E8] p-3 rounded-xl flex gap-3 items-center"
+                  className="bg-[#FFF9E8] p-3 rounded-xl flex gap-3 items-center shadow-sm"
                 >
                   <div className="w-10 h-10 flex-shrink-0">
                     <Image
@@ -137,20 +162,25 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               ))}
             </div>
 
+            {/* BUTTON */}
             <div className="mt-4">
-              <button className="inline-flex items-center gap-2 bg-[#73BE5F] text-white px-5 py-2 rounded-full font-medium hover:bg-[#5FA94E] transition">
+              <Link
+                href={buttons.sponser.link || "/donate"} // ✅ dynamically uses link from data
+                className="inline-flex items-center gap-2 bg-[#73BE5F] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#5FA94E] transition-all duration-200"
+              >
                 {buttons.sponser.icon && (
-                  <span className="w-4 h-4">
+                  <span className="flex items-center justify-center w-6 h-6">
                     <Image
                       src={buttons.sponser.icon}
                       alt="btn"
-                      width={16}
-                      height={16}
+                      width={25}
+                      height={25}
+                      className="object-contain"
                     />
                   </span>
                 )}
                 {buttons.sponser.text}
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

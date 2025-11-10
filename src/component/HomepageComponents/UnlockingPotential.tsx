@@ -33,7 +33,7 @@ export default function UnlockingPotential({ data }: UnlockingPotentialSectionPr
   const { title, heading, description, higlight, cards, Image: mainImage, buttons } = data;
 
   return (
-    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 rounded-xl overflow-hidden">
+    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 rounded-xl overflow-hidden mt-[-50px] md:mt-[-80px] ">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* LEFT CONTENT */}
         <motion.div

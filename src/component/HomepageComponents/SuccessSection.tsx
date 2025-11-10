@@ -43,7 +43,7 @@ const SuccessSection: React.FC<SuccessSectionProps> = ({ data }) => {
           >
             {heading}
           </h2>
-          <p className="text-gray-600 max-w-3xl">{description}</p>
+          <p className="text-gray-600 max-w-6xl">{description}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">

@@ -11,6 +11,9 @@ import Donation6 from "../../public/Image/Donation/Help-Gallery-6.png";
 import Donation7 from "../../public/Image/Donation/Help-Gallery-7.png";
 import Donation8 from "../../public/Image/Donation/Help-Gallery-8.png";
 
+import ContactUsArrow from "../../public/Svg/contactusarrow.svg";
+import Contactus from "../../public/Svg/Homepagesvg/contactus.svg";
+
 // Homepage SVG icons
 import Heart from "../../public/Svg/heart.svg";
 import AssociateRestaurants from "../../public/Image/Donation/AssociateRestaurants.png";
@@ -37,6 +40,8 @@ export const Helponwheels = {
   Donation6,
   Donation7,
   Donation8,
+  ContactUsArrow,
+  Contactus,
   Heart,
   AssociateRestaurants,
   Meals,
