@@ -15,6 +15,7 @@ export const AboutUsData = {
 
   VisionMissionSection: {
     bgImage: Helper.VisionMissionBg, 
+    bgimage: Helper.mission,
     Vision: {
       heading: "Our Vision",
       description:

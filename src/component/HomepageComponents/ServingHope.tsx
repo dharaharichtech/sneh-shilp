@@ -27,8 +27,8 @@ interface ServingHopeProps {
     higlight: string;
     cards: CardData[];
     subheading: string;
-    image?: StaticImageData | string; 
-    Image: StaticImageData | string; 
+    image?: StaticImageData | string;
+    Image: StaticImageData | string;
     buttons: {
       donate: ButtonData;
       contact: ButtonData;
@@ -54,15 +54,13 @@ export default function ServingHope({ data }: ServingHopeProps) {
     Image: mainImage,
   } = data;
 
-  // Helper function to safely handle string or StaticImageData
   const resolveSrc = (src: string | StaticImageData | undefined) => {
     if (!src) return "";
     return typeof src === "string" ? src : src;
   };
 
   return (
-<section className="bg-white px-6 md:px-12 lg:px-20 py-12 mt-[-50px] md:mt-[-80px] rounded-xl overflow-hidden">
-
+    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 mt-[-50px] md:mt-[-80px] rounded-xl overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* LEFT CONTENT */}
         <motion.div
@@ -73,31 +71,64 @@ export default function ServingHope({ data }: ServingHopeProps) {
           transition={{ duration: 0.8 }}
           className="w-full md:w-1/2 flex flex-col gap-4"
         >
-          <h4
-            className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
-          >
-            {title}
-          </h4>
+          {/* ✅ Mobile Header Section - Now LEFT ALIGNED */}
+          <div className="md:hidden mb-3 text-left">
+            <h4 className={`${sueEllen.className} text-xl text-[#2E4049]`}>
+              {title}
+            </h4>
+            <h2
+              className={`${calistoga.className} text-2xl text-[#73BE5F] font-bold`}
+            >
+              {heading}
+            </h2>
+            <p className="text-gray-600 text-sm mt-2 leading-relaxed">
+              {description}
+            </p>
+          </div>
 
-          <h2
-            className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] font-bold leading-tight`}
-          >
-            {heading}
-          </h2>
+          {/* ✅ Desktop Header (Unchanged) */}
+          <div className="hidden md:block">
+            <h4
+              className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
+            >
+              {title}
+            </h4>
+            <h2
+              className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] font-bold leading-tight`}
+            >
+              {heading}
+            </h2>
+            <p className="text-gray-600">{description}</p>
+          </div>
 
-          <p className="text-gray-600">{description}</p>
+          {/* ✅ Mobile Round Image - LEFT ALIGNED */}
+          <div className="md:hidden flex justify-start mt-4">
+            <div className="w-100 h-85 overflow-hidden">
+              <Image
+                src={resolveSrc(mainImage)}
+                alt="Help on Wheels"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
 
-          <h3
-            className={`${calistoga.className} text-lg text-[#73BE5F] font-semibold`}
-          >
-            {higlight}
-          </h3>
+          {/* ✅ Highlight Section */}
+          <div className="mt-5 text-left">
+            <h3
+              className={`${calistoga.className} text-base md:text-lg text-[#73BE5F] font-semibold`}
+            >
+              {higlight}
+            </h3>
+          </div>
 
-          <div className="grid grid-cols-2 gap-3 mt-4">
+          {/* ✅ Cards Section */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#FFF9E8] p-3 rounded-xl flex items-center gap-3"
+                className="bg-[#FFF9E8] p-3 rounded-xl flex items-center gap-3 shadow-sm"
               >
                 <div className="w-10 h-10">
                   <Image
@@ -120,12 +151,15 @@ export default function ServingHope({ data }: ServingHopeProps) {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 mt-4">
-            <p className={`${sueEllen.className} text-2xl text-[#2E4049]`}>
+          {/* ✅ Contact Line with Arrow */}
+          <div className="flex justify-start items-center gap-2 mt-5">
+            <p
+              className={`${sueEllen.className} text-lg text-[#2E4049] text-left`}
+            >
               {subheading}
             </p>
             {image && (
-              <div className="w-8 h-8">
+              <div className="w-7 h-7">
                 <Image
                   src={resolveSrc(image)}
                   alt="arrow"
@@ -137,25 +171,25 @@ export default function ServingHope({ data }: ServingHopeProps) {
             )}
           </div>
 
-        <div className="flex items-center justify-center gap-1 flex-nowrap mt-3 text-sm md:text-base">
-            <DonateNow text={buttons.donate.text} />
-            <ContactButton text={buttons.contact.text} icon={buttons.contact.icon} />
-        </div>
-
-
-
-
+    {/* ✅ Buttons (Responsive Alignment) */}
+<div className="flex flex-col sm:flex-row md:flex-row items-start md:items-center justify-start md:justify-start gap-3 mt-4">
+  <ContactButton
+    text={buttons.contact.text}
+    icon={buttons.contact.icon}
+  />
+  <DonateNow text={buttons.donate.text} />
+</div>
 
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* ✅ Desktop Image (Unchanged) */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeUp}
           transition={{ delay: 0.15, duration: 0.8 }}
-          className="w-full md:w-1/2 flex justify-center"
+          className="hidden md:flex w-full md:w-1/2 justify-center"
         >
           <div className="relative w-[90%] max-w-md rounded-xl overflow-hidden">
             <Image

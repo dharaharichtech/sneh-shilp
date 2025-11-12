@@ -110,7 +110,7 @@ OurProjectSection: {
         text: "Donate ₹51 for 1 Meal",
       },
       contact: {
-        text: "Contact us : +91 90544 91237",
+        text: "+91 90544 91237",
         icon: Helper.Contactus,
       },
     },

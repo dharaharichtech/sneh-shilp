@@ -16,7 +16,7 @@ interface CardData {
 interface ButtonData {
   text: string;
   icon?: StaticImageData | string;
-  link?: string; // ✅ added link support
+  link?: string;
 }
 
 interface OurProjectSectionProps {
@@ -72,34 +72,90 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             transition={{ delay: 0.08 }}
             className="w-full md:w-1/2 flex flex-col md:flex-row gap-4"
           >
-            {/* Large Left Image */}
-            <div className="w-full md:w-2/3 relative rounded-xl overflow-hidden h-72 md:h-[420px]">
-              <Image
-                src={images[0]}
-                alt="Project main image"
-                fill
-                className="object-cover object-center rounded-xl"
-                priority
-              />
+            {/* ✅ Mobile Text Section */}
+            <div className="md:hidden text-center mb-3">
+              <h2
+                className={`${sueEllen.className} text-lg text-[#2E4049] mb-1`}
+              >
+                {heading}
+              </h2>
+              <h3
+                className={`${calistoga.className} text-2xl text-[#73BE5F] font-semibold`}
+              >
+                {subheading}
+              </h3>
+              <p className="text-gray-600 text-sm mt-2 leading-relaxed px-2">
+                {description}
+              </p>
             </div>
 
-            {/* Two Stacked Small Images */}
-            <div className="w-full md:w-1/3 flex flex-col gap-4">
-              <div className="relative w-full h-36 md:h-[200px] rounded-xl overflow-hidden">
+            {/* ✅ Mobile Layout (your image style) */}
+            <div className="block md:hidden w-full">
+              <div className="grid grid-cols-[60%_auto] gap-3">
+                {/* Large Left Image */}
+                <div className="relative w-full h-60 rounded-xl overflow-hidden">
+                  <Image
+                    src={images[0]}
+                    alt="Project main image"
+                    fill
+                    className="object-cover rounded-xl"
+                    priority
+                  />
+                </div>
+
+                {/* Right Side - Two stacked small images */}
+                <div className="flex flex-col gap-3">
+                  <div className="relative w-full h-28 rounded-xl overflow-hidden">
+                    <Image
+                      src={images[1]}
+                      alt="Project secondary image 1"
+                      fill
+                      className="object-cover rounded-xl"
+                    />
+                  </div>
+                  <div className="relative w-full h-28 rounded-xl overflow-hidden">
+                    <Image
+                      src={images[2]}
+                      alt="Project secondary image 2"
+                      fill
+                      className="object-cover rounded-xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ✅ Desktop Layout (unchanged) */}
+            <div className="hidden md:flex w-full flex-row gap-4">
+              {/* Large Left Image */}
+              <div className="w-2/3 relative rounded-xl overflow-hidden h-[420px]">
                 <Image
-                  src={images[1]}
-                  alt="Project secondary image 1"
+                  src={images[0]}
+                  alt="Project main image"
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-cover object-center rounded-xl"
+                  priority
                 />
               </div>
-              <div className="relative w-full h-36 md:h-[200px] rounded-xl overflow-hidden">
-                <Image
-                  src={images[2]}
-                  alt="Project secondary image 2"
-                  fill
-                  className="object-cover rounded-xl"
-                />
+
+              {/* Two stacked small images */}
+              <div className="w-1/3 flex flex-col gap-4">
+                <div className="relative w-full h-[200px] rounded-xl overflow-hidden">
+                  <Image
+                    src={images[1]}
+                    alt="Project secondary image 1"
+                    fill
+                    className="object-cover rounded-xl"
+                  />
+                </div>
+                <div className="relative w-full h-[200px] rounded-xl overflow-hidden">
+                  <Image
+                    src={images[2]}
+                    alt="Project secondary image 2"
+                    fill
+                    className="object-cover rounded-xl"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -113,19 +169,25 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             transition={{ delay: 0.16 }}
             className="w-full md:w-1/2 flex flex-col justify-center gap-4"
           >
-            <h2
-              className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
-            >
-              {heading}
-            </h2>
-            <h3
-              className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}
-            >
-              {subheading}
-            </h3>
-            <p className="text-gray-600 leading-relaxed">{description}</p>
+            {/* Desktop Heading */}
+            <div className="hidden md:block">
+              <h2
+                className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
+              >
+                {heading}
+              </h2>
+              <h3
+                className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}
+              >
+                {subheading}
+              </h3>
+              <p className="text-gray-600 leading-relaxed mt-3">
+                {description}
+              </p>
+            </div>
 
-            <div>
+            {/* Highlight Section */}
+            <div className="text-center md:text-left mt-4">
               <h4
                 className={`${calistoga.className} text-lg text-[#73BE5F] font-semibold`}
               >
@@ -134,8 +196,8 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               <p className="text-gray-500 text-sm mt-1">{subdescription}</p>
             </div>
 
-            {/* CARDS */}
-            <div className="grid grid-cols-2 gap-3 mt-4">
+            {/* Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
               {cards.map((card) => (
                 <div
                   key={card.id}
@@ -162,11 +224,11 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               ))}
             </div>
 
-            {/* BUTTON */}
-            <div className="mt-4">
+            {/* Button */}
+            <div className="mt-6 flex justify-center md:justify-start">
               <Link
-                href={buttons.sponser.link || "/donate"} // ✅ dynamically uses link from data
-                className="inline-flex items-center gap-2 bg-[#73BE5F] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#5FA94E] transition-all duration-200"
+                href={buttons.sponser.link || "/donate"}
+                className="flex items-center gap-2 bg-[#73BE5F] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#5FA94E] transition-all duration-200"
               >
                 {buttons.sponser.icon && (
                   <span className="flex items-center justify-center w-6 h-6">

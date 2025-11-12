@@ -3,7 +3,6 @@
 import React from "react";
 import ClothingSection from "@/component/Donate/Clothing/ClothingSection";
 import Wardrobe from "@/component/Donate/Clothing/Wardrobe";
-// import LatestBlogs from "@/component/Donate/Clothing/latestblogs";
 import { SiteShalaData } from "@/data/SiteShalaData";
 
 const ClothingPage: React.FC = () => {
@@ -11,8 +10,6 @@ const ClothingPage: React.FC = () => {
     ClothingSection: clothingData,
     DonationSection: donationData,
     ClothingPageData,
-    BlogSection,
-    JoinOurSection,
   } = SiteShalaData ;
 
   return (
@@ -23,14 +20,7 @@ const ClothingPage: React.FC = () => {
         donationData={donationData}
       />
 
-      {/* 👕 Wardrobe Section */}
       <Wardrobe data={ClothingPageData} />
-
-      {/* 📰 Latest Blogs + Join Our Section */}
-      {/* <LatestBlogs
-        blogSection={BlogSection}
-        joinOurSection={JoinOurSection}
-      /> */}
       </div>
     </main>
   );

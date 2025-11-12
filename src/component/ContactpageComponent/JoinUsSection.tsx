@@ -61,7 +61,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
 
     const { name, email, mobile, Subject, message } = formValues;
     if (!name || !email || !mobile || !Subject || !message) {
-      setError("❌ Please fill all required fields.");
+      setError("Please fill all required fields.");
       setLoading(false);
       return;
     }
@@ -75,7 +75,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
       }
     } catch {
       setError(
-        "❌ Failed to submit. Please check all fields or try again later."
+        "Failed to submit. Please check all fields or try again later."
       );
     } finally {
       setLoading(false);
@@ -83,14 +83,15 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
   };
 
   return (
-    <section className="bg-white py-16 px-5 md:px-10 lg:px-20">
+   <section className="bg-white  pb-14 sm:pb-16 px-5 md:px-10 lg:px-20">
+
       {/* Form Section */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="w-full bg-[#EEFFE9] rounded-2xl p-6 md:p-10 shadow-sm"
+        className="w-full bg-[#EEFFE9] rounded-2xl p-6 md:p-10"
       >
         <h3
           className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F] mb-8`}
@@ -160,7 +161,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             disabled={loading}
-            className="mt-8 flex items-center justify-center gap-3 bg-[#73BE5F] text-white rounded-full px-10 py-3 hover:bg-[#5aa647]"
+            className="mt-8 flex items-center justify-center gap-3 bg-[#73BE5F] text-white rounded-full px-3 py-2 hover:bg-[#5aa647]"
           >
             <Image src={data.button.icon} alt="arrow" width={18} height={18} />
             <span className={`${calistoga.className} text-sm`}>

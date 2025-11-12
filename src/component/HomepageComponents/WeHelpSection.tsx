@@ -12,7 +12,7 @@ interface FormField {
   placeholder: string;
 }
 
-interface FormData {  
+interface FormData {
   fields: FormField[];
   button: {
     text: string;
@@ -31,12 +31,7 @@ interface WeHelpSectionProps {
 }
 
 export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data"] }) {
-  const [formValues, setFormValues] = useState<{
-    name: string;
-    email: string;
-    mobile: string;
-    Project: string;
-  }>({
+  const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     mobile: "",
@@ -86,7 +81,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
 
   return (
     <section className="bg-[#E7F5E1] py-12 px-6 md:px-12 lg:px-20 rounded-xl overflow-hidden relative">
-      {/* Popup Section */}
+      {/* ✅ Popup Section */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
@@ -102,7 +97,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
       </AnimatePresence>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
-        {/* Left Section */}
+        {/* ✅ Left Section (Form) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +126,6 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
                   id={field.name}
                   name={field.name}
                   type={field.type}
-                  // placeholder={field.placeholder}
                   onChange={handleChange}
                   className="w-full bg-transparent border-b border-[#4C9A2A] py-2 focus:outline-none"
                   required
@@ -142,7 +136,9 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
             <button
               type="submit"
               disabled={loading}
-              className={`inline-flex items-center gap-3 bg-[#73BE5F] text-white px-5 py-2 rounded-full hover:bg-[#73BE5F] transition ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+              className={`inline-flex items-center gap-3 bg-[#73BE5F] text-white px-5 py-2 rounded-full hover:bg-[#73BE5F] transition ${
+                loading ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
               {data.form.button.icon && (
                 <span className="w-4 h-4">
@@ -154,21 +150,21 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
           </form>
 
           {message && (
-            <p className={`mt-4 text-sm ${message.startsWith("✅") ? "text-green-600" : "text-green-600"}`}>
+            <p className={`mt-4 text-sm text-green-600`}>
               {message}
             </p>
           )}
         </motion.div>
 
-        {/* Right Section */}
+        {/* ✅ Right Section Image (Dashboard Only) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.08 }}
-          className="w-full lg:w-1/2 flex justify-center"
+          className="hidden lg:flex w-full lg:w-1/2 justify-center"
         >
-          <div className="relative w-[600px] h-[420px] md:h-[630px] rounded-lg overflow-hidden ">
+          <div className="relative w-[600px] h-[420px] md:h-[630px] rounded-lg overflow-hidden">
             <Image src={data.image} alt="Helping hands" fill className="object-cover" />
           </div>
         </motion.div>

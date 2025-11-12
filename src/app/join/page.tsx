@@ -1,5 +1,3 @@
-
-import TeamStory from "@/component/AboutPageComponent/TeamStory";
 import Humanity from "@/component/VolunteerComponent/humanity";
 import JoinForm from "@/component/VolunteerComponent/JoinForm";
 import OurTeam from "@/component/VolunteerComponent/ourteam";
@@ -12,7 +10,6 @@ export default function Team() {
      <Humanity/>
      <OurTeam />
       <JoinForm/>
-      {/* <TeamStory/> */}
       </div>
     </main>
   );

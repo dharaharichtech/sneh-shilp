@@ -1,6 +1,6 @@
 import upcomingBanner from "../../public/Image/Events/Bannerevevts.png";
 
-import StartupFest from "../../public/Image/Events/SonuSood.jpg";
+import StartupFest from "../../public/Image/Events/sonusoon.png";
 import InnovationConclave from "../../public/Image/Events/Aarabh(2).png";
 
 import volunteerimage from "../../public/Image/Donation/rightside.png";

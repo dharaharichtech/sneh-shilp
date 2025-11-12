@@ -10,6 +10,7 @@ import graybox from "../../public/Image/AboutUsPage/graybox.svg";
 import rightArrow from "../../public/Svg/arrow-2.svg";
 import Arrow1 from "../../public/Svg/down-arrow.svg"
 import JoinFrame from "../../public/Image/AboutUsPage/JoinFrame.svg";
+import mission from "../../public/Image/AboutUsPage/mission.png";
 
 export const Helper = {
   DonationBgImage,
@@ -24,4 +25,5 @@ export const Helper = {
   blackbox,
   graybox,
   Arrow1,
+  mission,
 };

@@ -72,6 +72,7 @@ const JoinForm: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="max-w-7xl mx-auto"
       >
+        {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,57 +88,81 @@ const JoinForm: React.FC = () => {
             Ready to Join as Volunteer or Intern?
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-           If you’re ready to make a positive impact and be a force for good, join us on our mission.
-            Click the{" "}
-            <span className="text-[#73BE5F] font-medium">Submit</span> button to explore available volunteer opportunities and start your journey with SnehShilp Foundation.
+            If you’re ready to make a positive impact and be a force for good,
+            join us on our mission. Click the{" "}
+            <span className="text-[#73BE5F] font-medium">Submit</span> button to
+            explore available volunteer opportunities and start your journey
+            with SnehShilp Foundation.
           </p>
         </motion.div>
 
+        {/* ✅ Green Form Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="bg-[#EEFFE9] rounded-2xl p-6 md:p-10"
+          className="bg-[#EEFFE9] rounded-2xl p-6 md:p-10 shadow-sm"
         >
-      <p className="text-[#73BE5F] text-[50%] md:text-[100%] leading-relaxed">
-        Join as Volunteer to Intern
-      </p>
-      <form
-      onSubmit={handleSubmit}
+          <h3
+            className={`${calistoga.className} text-xl md:text-2xl text-[#73BE5F] mb-6`}
+          >
+            Join as Volunteer to Intern
+          </h3>
+
+          {/* ✅ Form Layout */}
+          <form
+            onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {[
-              { label: "Your Name", name: "name", type: "text" },
-              { label: "Email Id", name: "email", type: "email" },
-              { label: "Mobile No.", name: "mobile", type: "text" },
-            ].map((input) => (
-              <div key={input.name}>
-                <label className="text-gray-700 text-sm mb-1 block">
-                  {input.label}
-                </label>
-                <input
-                  type={input.type}
-                  name={input.name}
-                  value={formData[input.name as keyof FormData]}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
-                />
-              </div>
-            ))}
+            {/* Name */}
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Your Name"
+                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 placeholder-gray-500"
+              />
+            </div>
 
+            {/* Email */}
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Email Id"
+                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 placeholder-gray-500"
+              />
+            </div>
+
+            {/* Mobile */}
+            <div>
+              <input
+                type="text"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                required
+                placeholder="Mobile No."
+                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 placeholder-gray-500"
+              />
+            </div>
+
+            {/* Dropdown */}
             <div className="relative">
-              <label className="text-gray-700 text-sm mb-1 block">
-                Select Join as Volunteer or Intern?
-              </label>
               <select
                 name="position"
                 value={formData.position}
                 onChange={handleChange}
                 required
-                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 appearance-none"
+                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 appearance-none placeholder-gray-500"
               >
-                <option value="">Select</option>
+                <option value="">Select Join as Volunteer or Intern?</option>
                 <option value="Internship">Internship</option>
                 <option value="Volunteer">Volunteer</option>
                 <option value="Partnership">Partnership</option>
@@ -151,48 +176,46 @@ const JoinForm: React.FC = () => {
               />
             </div>
 
+            {/* Message (Full width) */}
             <div className="md:col-span-2">
-              <label className="text-gray-700 text-sm mb-1 block">
-                Your Message
-              </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
                 required
-                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 resize-none"
+                placeholder="Your Message"
+                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 resize-none text-gray-800 placeholder-gray-500"
               ></textarea>
             </div>
 
-       <div className="md:col-span-2 mt-8 flex justify-start">
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    type="submit"
-    disabled={loading}
-    className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white px-8 py-3 rounded-full hover:bg-[#5ea64b] transition-all duration-300 shadow-md"
-  >
-    {loading ? (
-      "Submitting..."
-    ) : (
-      <>
-      <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
-          <Image
-            src="/Svg/arrow.svg"
-            alt="Arrow Icon"
-            width={20}
-            height={20}
-            className="object-contain"
-          />
-        </span>
-        <span className="text-lg font-medium">Submit</span>
-        
-      </>
-    )}
-  </motion.button>
-</div>
-
+            {/* Submit Button */}
+            <div className="mt-6 flex justify-start md:col-span-2">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                disabled={loading}
+                className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white px-8 py-3 rounded-full hover:bg-[#5ea64b] transition-all duration-300 shadow-md"
+              >
+                {loading ? (
+                  "Submitting..."
+                ) : (
+                  <>
+                    <span className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+                      <Image
+                        src="/Svg/arrow.svg"
+                        alt="Arrow Icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
+                    </span>
+                    <span className="text-lg font-medium">Submit</span>
+                  </>
+                )}
+              </motion.button>
+            </div>
 
             {error && (
               <p className="text-red-600 mt-3 md:col-span-2">{error}</p>
@@ -200,6 +223,7 @@ const JoinForm: React.FC = () => {
           </form>
         </motion.div>
 
+        {/* ✅ Success Popup */}
         {popup && (
           <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
             <motion.div

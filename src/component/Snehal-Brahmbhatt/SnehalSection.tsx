@@ -35,11 +35,12 @@ const SnehalSection: React.FC = () => {
             {banner.subtitle}
           </p>
 
+          {/* ✅ Desktop Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open(banner.buttonLink, "_blank")}
-            className="inline-flex items-center gap-3 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ea34b] transition-all shadow-lg"
+            className="hidden md:inline-flex items-center gap-3 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ea34b] transition-all shadow-lg"
           >
             <span className="bg-white rounded-full flex items-center justify-center">
               <Image
@@ -53,6 +54,7 @@ const SnehalSection: React.FC = () => {
             {banner.buttonText}
           </motion.button>
         </div>
+
         {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -67,20 +69,41 @@ const SnehalSection: React.FC = () => {
             className="rounded-2xl w-full max-w-xs md:max-w-sm object-cover shadow-md"
           />
         </motion.div>
+
+        {/* ✅ Mobile Button (Centered Below Image) */}
+        <div className="flex justify-center mt-5 md:hidden">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.open(banner.buttonLink, "_blank")}
+            className="inline-flex items-center gap-3 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ea34b] transition-all shadow-lg"
+          >
+            <span className="bg-white rounded-full flex items-center justify-center p-1">
+              <Image
+                src="/Svg/Group.png"
+                alt="Arrow"
+                width={22}
+                height={18}
+                className="object-contain"
+              />
+            </span>
+            {banner.buttonText}
+          </motion.button>
+        </div>
       </motion.div>
 
-      {/*Overview Section */}
+      {/* 🌿 Overview Section */}
       <div
         id="overview"
         className="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start p-4 md:p-6"
       >
-        {/* Left Gallery */}
+        {/* ✅ Left Gallery (Dashboard view unchanged) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-4"
+          className="hidden md:flex flex-col md:flex-row gap-4"
         >
           <div className="flex-1">
             <Image
@@ -102,31 +125,56 @@ const SnehalSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Right Content */}
+        {/* ✅ Right Content (Desktop same, Mobile reordered) */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className={`${sueEllen.className} text-xl md:text-2xl text-gray-700`}>
-            {overview.title}
-          </h3>
-          <h2
-            className={`${calistoga.className} text-2xl md:text-3xl font-bold text-[#6BB45B] mb-5`}
-          >
-            {overview.heading}
-          </h2>
-
-          {overview.paragraphs.map((p, i) => (
-            <p
-              key={i}
-              className="text-gray-700 mb-4 leading-relaxed text-[14px] md:text-[15px] font-medium"
+          {/* ✅ Title, heading, paragraph — appear first in mobile */}
+          <div className="md:mb-0 mb-6">
+            <h3 className={`${sueEllen.className} text-xl md:text-2xl text-gray-700`}>
+              {overview.title}
+            </h3>
+            <h2
+              className={`${calistoga.className} text-2xl md:text-3xl font-bold text-[#6BB45B] mb-5`}
             >
-              {p}
-            </p>
-          ))}
-        </motion.div> 
+              {overview.heading}
+            </h2>
+
+            {overview.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="text-gray-700 mb-4 leading-relaxed text-[14px] md:text-[15px] font-medium"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+
+          {/* ✅ Mobile Images Below Text */}
+          <div className="flex flex-col md:hidden gap-4 mt-6">
+            {/* Large Image */}
+            <Image
+              src={overview.gallery[0]}
+              alt="Main Snehal image"
+              className="rounded-2xl w-full h-[280px] sm:h-[330px] object-cover shadow-md"
+            />
+
+            {/* Two Smaller Side-by-Side Images */}
+            <div className="grid grid-cols-2 gap-4">
+              {overview.gallery.slice(1, 3).map((img, i) => (
+                <Image
+                  key={i}
+                  src={img}
+                  alt={`Snehal small image ${i + 1}`}
+                  className="rounded-2xl w-full h-[150px] sm:h-[180px] object-cover shadow-md"
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ const MeetTeam = () => {
           src={bgImage}
           alt="Meet our team"
           width={1200}
-          height={600}
+          height={800}
           className="w-full h-auto object-cover rounded-[40px]"
           priority
         />
