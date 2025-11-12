@@ -3,11 +3,13 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link"; // ✅ Added for link navigation
 import { calistoga, sueEllen } from "../../app/font";
 
 interface ButtonData {
   text: string;
   icon?: StaticImageData;
+  link?: string; // ✅ Added link support
 }
 
 interface DifferenceSectionProps {
@@ -25,7 +27,7 @@ const DifferenceSection: React.FC<DifferenceSectionProps> = ({ data }) => {
 
   return (
     <section className="bg-white px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 py-16 rounded-xl overflow-hidden">
-      {/* Image Side */}
+      {/* ✅ Image Side */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -46,7 +48,7 @@ const DifferenceSection: React.FC<DifferenceSectionProps> = ({ data }) => {
         </div>
       </motion.div>
 
-      {/* Text Side */}
+      {/* ✅ Text Side */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -63,20 +65,27 @@ const DifferenceSection: React.FC<DifferenceSectionProps> = ({ data }) => {
         <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6">
           {description}
         </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-3 bg-white text-[#73BE5F] px-6 py-3 rounded-full font-medium hover:bg-[#E8FBE4] transition-colors w-fit"
+
+        {/* ✅ Button wrapped in Next.js Link */}
+        <Link
+          href={buttons.sponser.link || "#"}
+          className="w-fit"
         >
-          {buttons.sponser.icon && (
-            <Image
-              src={buttons.sponser.icon}
-              alt="arrow"
-              className="w-5 h-5 object-contain"
-            />
-          )}
-          {buttons.sponser.text}
-        </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 bg-white text-[#73BE5F] px-6 py-3 rounded-full font-medium hover:bg-[#E8FBE4] transition-colors"
+          >
+            {buttons.sponser.icon && (
+              <Image
+                src={buttons.sponser.icon}
+                alt="arrow"
+                className="w-5 h-5 object-contain"
+              />
+            )}
+            {buttons.sponser.text}
+          </motion.button>
+        </Link>
       </motion.div>
     </section>
   );

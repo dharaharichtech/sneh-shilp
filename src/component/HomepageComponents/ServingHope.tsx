@@ -94,7 +94,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
               {title}
             </h4>
             <h2
-              className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] font-bold leading-tight`}
+              className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] font-bold leading-tight mt-5`}
             >
               {heading}
             </h2>
@@ -140,7 +140,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
                   />
                 </div>
                 <div>
-                  <h5 className="text-sm text-[#2E4049] font-medium">
+                  <h5 className="text-sm text-[#2E4049] font-medium ">
                     {card.heading}
                   </h5>
                   <p className="text-[#2E4049] font-semibold text-sm">
@@ -154,7 +154,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
           {/* ✅ Contact Line with Arrow */}
           <div className="flex justify-start items-center gap-2 mt-5">
             <p
-              className={`${sueEllen.className} text-lg text-[#2E4049] text-left`}
+              className={`${sueEllen.className} text-lg text-[#2E4049] text-left `}
             >
               {subheading}
             </p>

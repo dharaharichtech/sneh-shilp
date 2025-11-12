@@ -24,23 +24,23 @@ const ClothingSection: React.FC<{
   donationData: DonationSectionProps;
 }> = ({ clothingData, donationData }) => {
   return (
-    <section className="bg-white w-full">
+    <section className="bg-white w-full mb-40">
       {/* ===================== CLOTHING SECTION ===================== */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 w-full">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT CONTENT */}
           <div>
             <h2
-              className={`${calistoga.className} text-3xl md:text-6xl font-extrabold text-[#73BE5F] mb-4 md:mb-6`}
+              className={`${calistoga.className} text-3xl md:text-5xl font-extrabold text-[#73BE5F] mb-4 md:mb-6`}
             >
               {clothingData.title}
             </h2>
 
-            <p className="text-gray-700 text-base md:text-xl leading-relaxed mb-6 md:mb-10 max-w-xl">
+            <p className="text-gray-700 text-base md:text-10xl leading-relaxed mb-6 md:mb-10 max-w-xl">
               {clothingData.description}
             </p>
 
-            <button className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white font-semibold text-base md:text-xl px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#58a34d] hover:shadow-lg transition-all duration-300 mx-auto ml-0 md:mx-0">
+            <button className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white font-semibold text-base md:text-10xl px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#58a34d] hover:transition-all duration-300 mx-auto ml-0 md:mx-0">
               <Image
                 src={clothingData.buttonIcon}
                 alt="Donate Now"
@@ -62,11 +62,11 @@ const ClothingSection: React.FC<{
         src={img}
         alt="Clothing Donation"
         width={400}
-        height={400}
+        height={350}
         className="
           w-full 
           h-[250px] sm:h-[300px] 
-          md:h-[350px] lg:h-[400px] 
+          md:h-[350px] lg:h-[360px] 
           object-cover rounded-2xl 
           hover:scale-105 transition-transform duration-500
         "

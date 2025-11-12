@@ -58,7 +58,7 @@ OurProjectSection: {
     sponser: {
       text: "Sponsor Now",
       icon: Helper.Arrow1,
-      link: "/donate/rahelba", // ✅ Added link here
+      link: "/donate/rahelba", 
     },
   },
 
@@ -194,12 +194,13 @@ OurProjectSection: {
       },
     ],
 
-    buttons: {
-      sponser: {
-        text: "Sponsor Now",
-        icon: Helper.Arrow1,
-      },
+   buttons: {
+    sponser: {
+      text: "Sponsor Now",
+      icon: Helper.Arrow1,
+      link: "/donate/stie-shala", 
     },
+  },
     Image: Helper.Unlocking,
   },
 
@@ -241,12 +242,14 @@ OurProjectSection: {
     heading: "About SnehShilp Foundation",
     description:
       "SnehShilp Foundation is the culmination of the years of hard work of Shilp. Shilp has been turning people’s dreams into reality since 2004 by keeping their needs in focus and building around them. We wish to take a leap now and give back to the society by doing what it takes to make a significant difference in people’s lives. SnehShilp Foundation has been established with the sole purpose of empowering, strengthening and enabling people to live a life they truly deserve.",
-    buttons: {
-      sponser: {
-        text: "Know More",
-        icon: Helper.Arrow,
-      },
+      buttons: {
+    sponser: {
+      text: "Know More",
+      icon: Helper.Arrow,
+      link: "/aboutus", 
     },
+  },
+  
     image: Helper.DifferenceImage,
   },
 

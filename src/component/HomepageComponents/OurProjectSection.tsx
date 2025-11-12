@@ -80,7 +80,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
                 {heading}
               </h2>
               <h3
-                className={`${calistoga.className} text-2xl text-[#73BE5F] font-semibold`}
+                className={`${calistoga.className} text-xl text-[#73BE5F] font-semibold`}
               >
                 {subheading}
               </h3>
@@ -177,7 +177,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
                 {heading}
               </h2>
               <h3
-                className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}
+                className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] mt-5`}
               >
                 {subheading}
               </h3>

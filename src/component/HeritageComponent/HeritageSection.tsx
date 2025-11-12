@@ -6,12 +6,20 @@ import { motion } from "framer-motion";
 import { heritageData } from "@/data/heritageData";
 import { calistoga, sueEllen } from "@/app/font";
 
+import ArrowDown from "../../../public/Image/heritage/heritage-arrow.svg"; 
+
 const HeritageSection: React.FC = () => {
   const { banner, overview, mission } = heritageData;
 
+  const handleScrollToOverview = () => {
+    const element = document.getElementById("overview-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full mt-20 overflow-hidden">
-      {/* Banner Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -19,7 +27,6 @@ const HeritageSection: React.FC = () => {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6 py-12"
       >
-        {/* Left Text */}
         <div className="flex-1 text-center md:text-left">
           <h1
             className={`${calistoga.className} text-3xl sm:text-4xl text-[#6BB45B] mb-3`}
@@ -32,15 +39,19 @@ const HeritageSection: React.FC = () => {
 
           <motion.button
             whileHover={{ scale: 1.05 }}
-            onClick={() => window.open(banner.buttonLink, "_blank")}
-            className="inline-flex items-center gap-2 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ca14d] transition shadow-md"
+            onClick={handleScrollToOverview}
+            className="inline-flex items-center gap-3 bg-[#6BB45B] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5ca14d] transition shadow-md"
           >
-            {banner.buttonText}
-            <span className="text-lg">→</span>
+            <span>{banner.buttonText}</span>
+            <Image
+              src={ArrowDown}
+              alt="Down Arrow"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
           </motion.button>
         </div>
-
-        {/* Right Heritage Logo */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -60,6 +71,7 @@ const HeritageSection: React.FC = () => {
 
       {/* Overview Section */}
       <motion.div
+        id="overview-section"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

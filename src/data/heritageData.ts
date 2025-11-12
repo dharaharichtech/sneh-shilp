@@ -6,7 +6,7 @@ export const heritageData = {
     description:
       "The Heritage Walk 2023 was our second major initiative in creating awareness about drug abuse and promoting cultural heritage. Held on World Heritage Day, the event aimed to instill pride in our rich cultural legacy and educate participants about its significance.",
     buttonText: "Explore More",
-    buttonLink: "https://snehalbrahmbhatt.com/",
+    buttonLink: "/heritage-walk",
     bannerImg: HeritageHelper.banner,
     logo: HeritageHelper.heritageLogo,
   },

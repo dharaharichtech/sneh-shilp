@@ -7,7 +7,7 @@ import { heritageData } from "@/data/heritageData";
 import { calistoga, sueEllen } from "@/app/font";
 
 const WalkingRoute: React.FC = () => {
-  const { intro, highlights, volunteer } = heritageData.walkingRoute;
+  const { intro, highlights } = heritageData.walkingRoute;
 
   return (
     <section className="w-full bg-white mt-20 overflow-hidden">
@@ -82,51 +82,7 @@ const WalkingRoute: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/*Volunteer Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full mt-16 flex justify-center px-6"
-      >
-        <div className="bg-[#6BB45B] w-full max-w-6xl rounded-3xl py-10 px-8 sm:px-10 flex flex-col md:flex-row items-center justify-between text-white shadow-lg">
-          {/* Text */}
-          <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
-            <h2
-              className={`${calistoga.className} text-3xl md:text-4xl font-bold mb-3`}
-            >
-              {volunteer.title}
-            </h2>
-            <p className="text-white/90 text-base md:text-lg mb-6 leading-relaxed max-w-md mx-auto md:mx-0">
-              {volunteer.description}
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              onClick={() => window.open(volunteer.buttonLink, "_self")}
-              className="inline-flex items-center gap-2 bg-white text-[#6BB45B] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
-            >
-              {volunteer.buttonText}
-              <span className="text-lg">→</span>
-            </motion.button>
-          </div>
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex-1 flex justify-center md:justify-end"
-          >
-            <Image
-              src={volunteer.icon}
-              alt="Volunteer"
-              width={200}
-              height={200}
-              className="object-contain"
-            />
-          </motion.div>
-        </div>
-      </motion.div>
+     
     </section>
   );
 };

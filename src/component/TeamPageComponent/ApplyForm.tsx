@@ -16,8 +16,8 @@ const ApplyForm = () => {
     Resume: null as File | null,
   });
   const [loading, setLoading] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, files } = e.target as HTMLInputElement;
@@ -31,7 +31,8 @@ const ApplyForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setMessage("");
+    setIsError(false);
 
     try {
       const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -53,9 +54,8 @@ const ApplyForm = () => {
       const result = await res.json();
 
       if (res.ok) {
-        setShowPopup(true);
-        setTimeout(() => setShowPopup(false), 3000);
-
+        setMessage("✅ Thank you! Your application has been submitted successfully.");
+        setIsError(false);
         setFormValues({
           name: "",
           email: "",
@@ -65,29 +65,37 @@ const ApplyForm = () => {
           Resume: null,
         });
       } else {
-        setError(result.error || "Failed to submit. Please check all fields.");
+        setMessage(result.error || "❌ Failed to submit. Please check all fields.");
+        setIsError(true);
       }
     } catch (error) {
       console.error("Submit Error:", error);
-      setError("Server not responding. Please try again later.");
+      setMessage("⚠️ Server not responding. Please try again later.");
+      setIsError(true);
     } finally {
       setLoading(false);
+      // Auto-hide message after 3 seconds
+      setTimeout(() => setMessage(""), 3000);
     }
   };
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative">
-      {/* Success Popup */}
+    <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative overflow-hidden">
+      {/* ✅ Message Popup */}
       <AnimatePresence>
-        {showPopup && (
+        {message && (
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -30, scale: 0.9 }}
             transition={{ duration: 0.4 }}
-            className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-white border border-green-400 shadow-lg rounded-xl px-8 py-4 text-green-700 font-semibold z-50"
+            className={`absolute top-8 left-1/2 transform -translate-x-1/2 shadow-lg rounded-xl px-8 py-4 font-semibold z-50 ${
+              isError
+                ? "bg-white border border-red-400 text-red-600"
+                : "bg-white border border-green-400 text-green-700"
+            }`}
           >
-            Thank you! Your application has been submitted successfully.
+            {message}
           </motion.div>
         )}
       </AnimatePresence>
@@ -238,8 +246,6 @@ const ApplyForm = () => {
               </button>
             </div>
           </form>
-
-          {error && <p className="text-red-600 mt-4">{error}</p>}
         </motion.div>
       </div>
     </section>

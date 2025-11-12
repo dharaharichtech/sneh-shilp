@@ -12,7 +12,7 @@ const ClothingPage: React.FC = () => {
       oneplate,
   } = HelponwheelsData;
 
-  return ( <main className="w-full min-h-screen bg-gray-50 flex justify-center items-start pt-[140px]">
+  return ( <main className="w-full min-h-screen bg-gray-50 flex justify-center items-start pt-[100px]">
       <div className="w-full max-w-7xl px-4">
       <ClothingSection
         clothingData={clothingData}

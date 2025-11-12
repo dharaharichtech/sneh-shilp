@@ -72,7 +72,7 @@ export default function GivingBack({ data }: GivingBackSectionProps) {
           {title}
         </h4>
         <h2
-          className={`${calistoga.className} text-2xl text-[#73BE5F] font-bold`}
+          className={`${calistoga.className} text-2xl text-[#73BE5F] font-bold `}
         >
           {heading}
         </h2>
@@ -122,7 +122,7 @@ export default function GivingBack({ data }: GivingBackSectionProps) {
             {title}
           </h4>
           <h2
-            className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F]`}
+            className={`${calistoga.className} text-4xl md:text-5xl text-[#73BE5F] mt-5`}
           >
             {heading}
           </h2>
