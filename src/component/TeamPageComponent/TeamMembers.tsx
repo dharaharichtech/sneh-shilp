@@ -10,14 +10,14 @@ const TeamMembers = () => {
   const { heading, members } = OurTeamData.TeamMembersSection;
 
   return (
-    <section className="py-16 px-4 md:px-10 bg-white overflow-hidden mt-[-40px] md:mt-[-80px]">
+    <section className="py-16 px-4 md:px-10 bg-white overflow-hidden mt-[-40px] md:mt-[-80px]  mt-[-90px] md:mt-[-30px]">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-[#5FA144] mb-12 text-center md:text-left"
+          className="text-3xl md:text-5xl font-bold text-[#5FA144] mb-12 text-left md:text-left"
         >
           {heading}
         </motion.h2>

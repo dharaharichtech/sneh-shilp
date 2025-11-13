@@ -20,7 +20,7 @@ const SnehalSection: React.FC = () => {
         className="bg-[#EEFFE9] rounded-3xl mx-auto max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-10 shadow-md"
       >
         {/* Left Content */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 text-center md:text-left ">
           <h3 className={`${sueEllen.className} text-lg text-gray-700 mb-1`}>
             {banner.title}
           </h3>

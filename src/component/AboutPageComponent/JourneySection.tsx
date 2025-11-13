@@ -22,11 +22,14 @@ const JourneySection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-12 md:py-20 px-6 md:px-12 bg-white overflow-hidden">
+    <section
+      id="our-journey"
+      className="relative w-full py-5 md:py-12 px-6 md:px-12 bg-white overflow-hidden scroll-mt-20"
+    >
       <div className="relative max-w-6xl mx-auto">
         {/* ✅ Title */}
         <motion.div
-          className="relative text-center mb-12 md:mb-16"
+          className="relative text-center mb-8 md:mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -39,8 +42,8 @@ const JourneySection: React.FC = () => {
           </h1>
 
           {/* Desktop Top Dot */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-30px] z-10 hidden md:block">
-            <div className="w-4 h-4 rounded-full bg-[#73BE5F]" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-25px] z-10 hidden md:block">
+            <div className="w-3.5 h-3.5 rounded-full bg-[#73BE5F]" />
           </div>
         </motion.div>
 
@@ -48,62 +51,58 @@ const JourneySection: React.FC = () => {
         <div
           className="absolute left-1/2 transform -translate-x-1/2 w-[2px] hidden md:block"
           style={{
-            top: "100px",
+            top: "90px",
             bottom: "0",
             backgroundImage:
               "linear-gradient(to bottom, #73BE5F 60%, transparent 40%)",
-            backgroundSize: "4px 14px",
+            backgroundSize: "4px 12px",
             backgroundRepeat: "repeat-y",
           }}
         />
 
-        {/* ✅ Timeline Content */}
-        <div className="space-y-12 md:space-y-0">
+        {/* ✅ Timeline */}
+        <div className="space-y-10 md:space-y-0"> {/* Reduced spacing */}
           {timeline.map((item, index) => (
             <motion.div
               key={item.id}
-              className="relative"
-              style={{ marginTop: index === 0 ? "0" : "-40px" }}
-              initial={{ opacity: 0, y: 50 }}
+              className={`relative ${index !== 0 ? "mt-6 md:mt-0" : ""}`} // less vertical gap
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
               {/* Desktop Connector Dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden md:block top-0">
-                <div className="w-6 h-6 rounded-full border-[2.5px] border-[#73BE5F] bg-white flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-[#73BE5F]" />
+                <div className="w-5 h-5 rounded-full border-[2px] border-[#73BE5F] bg-white flex items-center justify-center">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#73BE5F]" />
                 </div>
               </div>
 
-              {/* ✅ Mobile View — Simple Stack (text over image) */}
+              {/* ✅ Card Layout */}
               <div
-                className={`flex flex-col md:flex-row items-start gap-4 md:gap-0 ${
+                className={`flex flex-col md:flex-row items-start md:items-center md:gap-0 ${
                   item.position === "right"
                     ? "md:flex-row-reverse md:text-right"
                     : ""
                 }`}
               >
                 {/* Text & Image Section */}
-                <div className="w-full md:w-[45%] space-y-3 md:space-y-4 md:px-6">
-                  {/* Heading */}
+                <div className="w-full md:w-[45%] space-y-2 md:space-y-3 md:px-6 p-4 rounded-2xl md:rounded-none">
                   <h2
                     className={`${calistoga.className} text-2xl md:text-3xl font-bold text-[#73BE5F]`}
                   >
                     {item.heading}
                   </h2>
 
-                  {/* Description */}
-                  <p className="text-gray-700 text-[15px] md:text-[16px] leading-relaxed">
+                  <p className="text-gray-700 text-[14px] md:text-[16px] leading-relaxed">
                     {item.description}
                   </p>
 
-                  {/* ✅ Image — Visible Below Text */}
                   <motion.div
-                    className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-xl mt-3"
-                    initial={{ scale: 0.9, opacity: 0 }}
+                    className="relative w-full h-52 sm:h-60 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-xl mt-2"
+                    initial={{ scale: 0.95, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     viewport={{ once: true }}
                   >
                     <Image
@@ -116,7 +115,7 @@ const JourneySection: React.FC = () => {
                   </motion.div>
                 </div>
 
-                {/* Empty Spacer (for desktop layout) */}
+                {/* Empty Spacers for desktop alignment */}
                 <div className="hidden md:block w-[10%]" />
                 <div className="hidden md:block w-[45%]" />
               </div>

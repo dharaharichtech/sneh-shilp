@@ -22,7 +22,7 @@ interface GetInvolvedSectionProps {
 
 const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({ data }) => {
   return (
-    <section className="relative w-full min-h-[85vh] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full min-h-[85vh] overflow-hidden flex items-center justify-center mt-[-90px] md:mt-[-30px]">
       {/* ✅ Background Image */}
       <Image
         src={data.bgimage}
@@ -85,7 +85,7 @@ const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({ data }) => {
                 />
               </div>
 
-              <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-700 font-medium leading-tight text-center lg:text-left max-w-[120px]">
+              <p className="text-[18px] sm:text-[14px] md:text-[15px] text-gray-700 font-medium leading-tight text-center lg:text-left max-w-[120px]">
                 {icon.description}
               </p>
             </motion.div>

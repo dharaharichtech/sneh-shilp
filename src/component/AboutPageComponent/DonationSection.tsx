@@ -4,7 +4,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "../../app/font";
-import AboutusButtons from "../../buttons/Aboutusbutton";
+import { ArrowDown } from "lucide-react"; // ✅ Arrow icon (npm install lucide-react)
 
 interface ButtonData {
   text: string;
@@ -23,7 +23,17 @@ interface DonationSectionProps {
 }
 
 export default function DonationSection({ data }: DonationSectionProps) {
-  const { title, heading, description, image} = data;
+  const { title, heading, description, image } = data;
+
+  // ✅ Scroll to "Our Journey" section
+  const handleScroll = () => {
+    const target = document.getElementById("our-journey");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      console.warn("❌ Target section not found. Make sure 'id=our-journey' exists.");
+    }
+  };
 
   return (
     <section className="bg-[#EEFFE9] w-[90%] mx-auto px-6 md:px-12 py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-10 rounded-2xl shadow-lg mt-10">
@@ -35,9 +45,7 @@ export default function DonationSection({ data }: DonationSectionProps) {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h4
-          className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}
-        >
+        <h4 className={`${sueEllen.className} text-3xl md:text-4xl text-[#2E4049]`}>
           {title}
         </h4>
 
@@ -53,11 +61,15 @@ export default function DonationSection({ data }: DonationSectionProps) {
 
         {/* ✅ Scroll Button */}
         <div className="flex justify-center md:justify-start mt-6">
-          <AboutusButtons
-            text="Explore More"
-            scrollTo="next-section"
-            direction="down"
-          />
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleScroll}
+            className="flex items-center justify-center gap-2 bg-[#73BE5F] text-white text-sm md:text-base px-6 py-2.5 md:px-8 md:py-3 rounded-full font-medium hover:bg-[#5FA94E] shadow-md transition-all"
+          >
+            <ArrowDown className="w-5 h-5 text-white" />
+            Explore More
+          </motion.button>
         </div>
       </motion.div>
 

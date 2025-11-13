@@ -41,7 +41,7 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full mt-[-200px] md:mt-[-150px]">
       {/* Header */}
       <motion.div
         initial="hidden"
@@ -72,7 +72,7 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
       animate="visible"
       custom={i}
       whileHover={{ scale: 1.05 }}
-      className={`rounded-2xl p-6 border hover:shadow-lg transition-all ${
+      className={`rounded-2xl p-6  transition-all ${
         box.bg || "bg-white"
       }`}
     >
@@ -100,7 +100,7 @@ const Wardrobe: React.FC<{ data: ClothingPageProps }> = ({ data }) => {
       </motion.div>
 
       {/* Difference Section */}
-<div className="bg-[#EEFFE9] py-10 md:py-16 px-5 md:px-10">
+<div className="bg-[#EEFFE9] py-10 md:py-16 px-5 md:px-10 ">
   <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
     
     {/* ✅ LEFT TEXT SECTION */}

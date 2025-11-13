@@ -10,7 +10,7 @@ const ChairmanMessageSection = () => {
   const { heading, message, chairmanName, images } = ChairmanMessageSection;
 
   return (
-    <section className="relative w-full py-16 md:py-28 bg-gradient-to-b from-white to-[#f9fafb] overflow-hidden">
+ <section className="relative w-full py-10 md:py-1 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         {/* ✅ LEFT IMAGE (Desktop layout only) */}
         <motion.div
@@ -54,16 +54,17 @@ const ChairmanMessageSection = () => {
           </h2>
 
           {/* ✅ MOBILE IMAGE (Center Image for Mobile) */}
-          <div className="lg:hidden flex flex-col items-start mb-6">
-            <div className="relative w-full max-w-[300px] h-64 rounded-xl overflow-hidden">
-              <Image
-                src={images[0]}
-                alt="Chairman Portrait"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+        <div className="lg:hidden flex flex-col items-start mb-6">
+          <div className="relative w-full h-70 rounded-xl overflow-hidden">
+            <Image
+              src={images[0]}
+              alt="Chairman Portrait"
+              fill
+              className="object-cover rounded-xl"
+            />
           </div>
+        </div>
+
 
           {/* ✅ Message Text (Left Aligned for Mobile + Desktop) */}
           <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg mb-5 max-w-[95%] lg:max-w-[90%]">

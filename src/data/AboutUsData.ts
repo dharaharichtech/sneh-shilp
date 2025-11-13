@@ -84,7 +84,7 @@ export const AboutUsData = {
     text: "Explore More",
     icon: Helper.rightArrow,
   },
-  images: [Helper.blackbox, Helper.graybox],
+  images: [Helper.blackbox],
 },
 
   TeamStorySection: {

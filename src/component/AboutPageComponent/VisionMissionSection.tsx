@@ -11,7 +11,7 @@ export default function VisionMissionSection() {
   const { Vision, Mission, bgImage ,bgimage} = VisionMissionSection;
 
   return (
-    <section className="relative w-[92%] mx-auto my-12 md:my-20 rounded-3xl overflow-hidden bg-[#E8FBE3] md:bg-transparent">
+  <section className="relative w-[92%] mx-auto my- md:my-14 rounded-3xl overflow-hidden bg-[#E8FBE3] md:bg-transparent mt-[-2 0px] md:mt-[-30px]">
         <div className="absolute inset-0 hidden md:block overflow-hidden flex items-center justify-center">
         <Image
           src={bgImage}

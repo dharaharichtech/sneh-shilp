@@ -1,4 +1,4 @@
-import teamBg from "../../public/Image/TeamPage/teamBg.svg";
+import teamBg from "../../public/Image/TeamPage/teamBg.png";
 import VolunteerIcon from "../../public/Image/TeamPage/VolunteerIcon.svg";
 import InternshipIcon from "../../public/Image/TeamPage/InternshipIcon.svg";
 import PartnerIcon from "../../public/Image/TeamPage/PartnerIcon.svg";
@@ -10,6 +10,11 @@ import darshil from "../../public/Image/TeamPage/members/darshil.png";
 import harsh from "../../public/Image/TeamPage/members/harsh.png";
 import sachin from "../../public/Image/TeamPage/members/sachin.png";
 import snehal from "../../public/Image/TeamPage/members/snehal.png";
+import demo from "../../public/Image/TeamPage/members/demo.png";
+import arpan from "../../public/Image/TeamPage/members/arpanbarot.png";
+import richa from "../../public/Image/TeamPage/members/richa.png"; 
+import dhrumil from "../../public/Image/TeamPage/members/dhrumil.png";
+import surpreet from "../../public/Image/TeamPage/members/Surpreet.png";
 
 export const Helper = {
     teamBg,
@@ -23,6 +28,10 @@ export const Helper = {
     darshil,
     harsh,
     sachin,
-    snehal
-
+    snehal,
+    demo,
+    arpan,
+    richa,
+    dhrumil,
+    surpreet,
 };

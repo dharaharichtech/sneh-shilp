@@ -49,7 +49,7 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({ blogSection, joinOurSection }
   const handleNavigateToBlog = () => router.push("/blog");
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white  mt-[-90px] md:mt-[-30px]">
       {/* Blog Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.div

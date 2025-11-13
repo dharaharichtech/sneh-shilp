@@ -2,19 +2,19 @@ import ChairmanMessageSection from "@/component/AboutPageComponent/ChairmanMessa
 import DecadesShilpGroup from "@/component/AboutPageComponent/DecadesShilpGroup";
 import DonationSection from "@/component/AboutPageComponent/DonationSection";
 import JourneySection from "@/component/AboutPageComponent/JourneySection";
-// import TeamStory from "@/component/AboutPageComponent/TeamStory";
 import VisionMissionSection from "@/component/AboutPageComponent/VisionMissionSection";
 import { AboutUsData } from "@/data/AboutUsData";
 
 export default function Aboutus() {
   return (
-    <main className="w-full overflow-hidden space-y-20 mt-20 mb-20">
+    <main className="w-full overflow-hidden mt-16 md:mt-20 mb-16 md:mb-20 flex flex-col gap-16 md:gap-20">
+      {/* ✅ Equal spacing between all sections */}
       <DonationSection data={AboutUsData.HumanitySection} />
-      <JourneySection/>
+      <JourneySection />
       <VisionMissionSection />
-      <ChairmanMessageSection/>
-      <DecadesShilpGroup/>
-      {/* <TeamStory/> */}
+      <ChairmanMessageSection />
+      <DecadesShilpGroup />
+      {/* <TeamStory /> */}
     </main>
   );
 }

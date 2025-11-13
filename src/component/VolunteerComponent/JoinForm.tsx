@@ -24,23 +24,69 @@ const JoinForm: React.FC = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    email: "",
+    mobile: "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [popup, setPopup] = useState(false);
   const [error, setError] = useState("");
 
+  // ✅ Handle input change (mobile restriction + email validation)
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
     const { name, value } = e.target;
+
+    if (name === "mobile") {
+      const onlyNumbers = value.replace(/[^0-9]/g, ""); // only digits allowed
+      if (onlyNumbers.length > 10) return; // stop at 10 digits
+      setFormData((prev) => ({ ...prev, mobile: onlyNumbers }));
+
+      // live validation
+      if (onlyNumbers.length < 10) {
+        setErrors((prev) => ({
+          ...prev,
+          mobile: "Mobile number must be 10 digits.",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, mobile: "" }));
+      }
+      return;
+    }
+
+    if (name === "email") {
+      setFormData((prev) => ({ ...prev, email: value }));
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (value && !emailRegex.test(value)) {
+        setErrors((prev) => ({
+          ...prev,
+          email: "Please enter a valid email address.",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, email: "" }));
+      }
+      return;
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ✅ Submit Handler
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    // prevent submission if invalid fields
+    if (errors.email || errors.mobile) {
+      setError("⚠️ Please correct the highlighted fields before submitting.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await sendJoinMessage(formData);
@@ -65,7 +111,7 @@ const JoinForm: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative overflow-hidden">
+    <section className="w-full py-16 md:py-24 px-6 md:px-16 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +152,7 @@ const JoinForm: React.FC = () => {
           <h3
             className={`${calistoga.className} text-xl md:text-2xl text-[#73BE5F] mb-6`}
           >
-            Join as Volunteer to Intern
+            Join as Volunteer or Intern
           </h3>
 
           {/* ✅ Form Layout */}
@@ -136,21 +182,32 @@ const JoinForm: React.FC = () => {
                 onChange={handleChange}
                 required
                 placeholder="Email Id"
-                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 placeholder-gray-500"
+                className={`w-full bg-transparent border-b py-2 focus:outline-none text-gray-800 placeholder-gray-500 ${
+                  errors.email ? "border-red-500" : "border-[#73BE5F]"
+                }`}
               />
+              {errors.email && (
+                <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+              )}
             </div>
 
             {/* Mobile */}
             <div>
               <input
-                type="text"
+                type="tel"
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
+                maxLength={10}
                 required
                 placeholder="Mobile No."
-                className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800 placeholder-gray-500"
+                className={`w-full bg-transparent border-b py-2 focus:outline-none text-gray-800 placeholder-gray-500 ${
+                  errors.mobile ? "border-red-500" : "border-[#73BE5F]"
+                }`}
               />
+              {errors.mobile && (
+                <p className="text-sm text-red-500 mt-1">{errors.mobile}</p>
+              )}
             </div>
 
             {/* Dropdown */}

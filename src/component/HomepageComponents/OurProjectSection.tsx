@@ -49,7 +49,8 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
   } = data;
 
   return (
-    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl overflow-hidden">
+  <section className="bg-white px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl overflow-hidden mt-[-50px] md:mt-[-30px]">
+
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <motion.h4
@@ -57,7 +58,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
           whileInView="show"
           viewport={{ once: true }}
           variants={item}
-          className={`${calistoga.className} text-2xl md:text-4xl text-[#73BE5F] text-center font-semibold mb-6`}
+          className={`${calistoga.className} text-3xl md:text-4xl text-[#73BE5F] text-center font-semibold mb-8`}
         >
           {title}
         </motion.h4>
@@ -73,23 +74,23 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             className="w-full md:w-1/2 flex flex-col md:flex-row gap-4"
           >
             {/* ✅ Mobile Text Section */}
-            <div className="md:hidden text-center mb-3">
+            <div className="md:hidden text-left mb-5">
               <h2
-                className={`${sueEllen.className} text-lg text-[#2E4049] mb-1`}
+                className={`${sueEllen.className} text-2xl text-[#2E4049] mb-2`}
               >
                 {heading}
               </h2>
               <h3
-                className={`${calistoga.className} text-xl text-[#73BE5F] font-semibold`}
+                className={`${calistoga.className} text-3xl text-[#73BE5F] font-semibold mb-3`}
               >
                 {subheading}
               </h3>
-              <p className="text-gray-600 text-sm mt-2 leading-relaxed px-2">
+              <p className="text-gray-700 text-base leading-relaxed">
                 {description}
               </p>
             </div>
 
-            {/* ✅ Mobile Layout (your image style) */}
+            {/* ✅ Mobile Layout (image style) */}
             <div className="block md:hidden w-full">
               <div className="grid grid-cols-[60%_auto] gap-3">
                 {/* Large Left Image */}
@@ -187,13 +188,15 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             </div>
 
             {/* Highlight Section */}
-            <div className="text-center md:text-left mt-4">
+            <div className="text-left mt-4">
               <h4
-                className={`${calistoga.className} text-lg text-[#73BE5F] font-semibold`}
+                className={`${calistoga.className} text-2xl md:text-xl text-[#73BE5F] font-semibold`}
               >
                 {highlight}
               </h4>
-              <p className="text-gray-500 text-sm mt-1">{subdescription}</p>
+              <p className="text-gray-500 text-sm md:text-base mt-1">
+                {subdescription}
+              </p>
             </div>
 
             {/* Cards */}
@@ -201,7 +204,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               {cards.map((card) => (
                 <div
                   key={card.id}
-                  className="bg-[#FFF9E8] p-3 rounded-xl flex gap-3 items-center shadow-sm"
+                  className="bg-[#FFF9E8] p-6 rounded-xl flex gap-3 items-center"
                 >
                   <div className="w-10 h-10 flex-shrink-0">
                     <Image
@@ -225,10 +228,10 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             </div>
 
             {/* Button */}
-            <div className="mt-6 flex justify-center md:justify-start">
+            <div className="mt-6 flex justify-start">
               <Link
                 href={buttons.sponser.link || "/donate"}
-                className="flex items-center gap-2 bg-[#73BE5F] text-white px-6 py-2.5 rounded-full font-medium hover:bg-[#5FA94E] transition-all duration-200"
+                className="flex items-center gap-2 bg-[#73BE5F] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5FA94E] transition-all duration-200"
               >
                 {buttons.sponser.icon && (
                   <span className="flex items-center justify-center w-6 h-6">

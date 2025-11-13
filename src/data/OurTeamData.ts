@@ -57,7 +57,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, 
+        image:Helper.demo, 
         name: "Hetal Patel",
         role: "Trustee",
         socialLinks: {
@@ -68,7 +68,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, 
+        image: Helper.arpan, 
         name: "Arpan Barot",
         role: "Trustee",
         socialLinks: {
@@ -79,7 +79,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null,
+        image: Helper.demo,
         name: "Dimpi Barot",
         role: "Trustee",
         socialLinks: {
@@ -90,7 +90,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, 
+        image: Helper.demo, 
         name: "Raj Rakesh Rao",
         role: "Trustee",
         socialLinks: {
@@ -101,7 +101,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null,
+        image: Helper.demo,
         name: "Pannaben Rao",
         role: "Trustee",
         socialLinks: {
@@ -123,7 +123,7 @@ export const OurTeamData = {
         },
       },
       {
-        image: null, 
+        image: Helper.richa, 
         name: "Richa Mishra",
         role: "Administrative coordinator",
         socialLinks: {
@@ -134,9 +134,9 @@ export const OurTeamData = {
         },
       },
       {
-        image: Helper.snehal,
-        name: "Snehal Brahmbhatt",
-        role: "Founder",
+        image: Helper.sachin,
+        name: "Sachin Mishra",
+        role: "Programme manager",
         socialLinks: {
           facebook: "#",
           instagram: "#",
@@ -145,9 +145,64 @@ export const OurTeamData = {
         },
       },
       {
-        image: Helper.snehal,
-        name: "Snehal Brahmbhatt",
-        role: "Founder",
+        image: Helper.dhrumil,
+        name: "Dhrumil Desai",
+        role: "Programme manager",
+        socialLinks: {
+          facebook: "#",
+          instagram: "#",
+          linkedin: "#",
+          twitter: "#",
+        },
+      },
+       {
+        image: Helper.demo,
+        name: "Akash Gohil",
+        role: "Advisor ",
+        socialLinks: {
+          facebook: "#",
+          instagram: "#",
+          linkedin: "#",
+          twitter: "#",
+        },
+      },
+       {
+        image: Helper.surpreet,
+        name: "Surpreet Singh Khalsa",
+        role: "Advisor",
+        socialLinks: {
+          facebook: "#",
+          instagram: "#",
+          linkedin: "#",
+          twitter: "#",
+        },
+      },
+       {
+        image: Helper.harsh,
+        name: "Harsh Gandhi",
+        role: "IT specialist",
+        socialLinks: {
+          facebook: "#",
+          instagram: "#",
+          linkedin: "#",
+          twitter: "#",
+        },
+      },
+       {
+        image: Helper.demo,
+        name: "Parth Parikh",
+        role: "Project manager",
+        socialLinks: {
+          facebook: "#",
+          instagram: "#",
+          linkedin: "#",
+          twitter: "#",
+        },
+      },
+       {
+        image: Helper.demo,
+        name: "Harsh Kalal",
+        role: "Project manager",
         socialLinks: {
           facebook: "#",
           instagram: "#",

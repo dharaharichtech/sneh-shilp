@@ -69,7 +69,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
         setIsError(false);
         setFormValues({ name: "", email: "", mobile: "", Project: "" });
       } else {
-        setMessage(result.error || "❌ Failed to submit. Please check all fields.");
+        setMessage(result.error || "Failed to submit. Please check all fields.");
         setIsError(true);
       }
     } catch (error) {
@@ -84,7 +84,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
   };
 
   return (
-    <section className="bg-[#E7F5E1] py-12 px-6 md:px-12 lg:px-20 rounded-xl overflow-hidden relative">
+    <section className="bg-[#E7F5E1] py-12 px-6 md:px-12 lg:px-20 rounded-xl overflow-hidden relative mt-[-70px] md:mt-[-30px]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* ✅ Left Section (Form) */}
         <motion.div
@@ -97,7 +97,7 @@ export default function WeHelpSection({ data }: { data: WeHelpSectionProps["data
             {data.title}
           </h4>
           <h2
-            className={`${calistoga.className} text-2xl md:text-4xl font-bold text-[#73BE5F] mb-4`}
+            className={`${calistoga.className} text-3xl md:text-4xl font-bold text-[#73BE5F] mb-4`}
           >
             {data.heading}
           </h2>

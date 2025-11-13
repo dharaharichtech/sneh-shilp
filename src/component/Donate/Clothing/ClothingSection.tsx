@@ -24,7 +24,7 @@ const ClothingSection: React.FC<{
   donationData: DonationSectionProps;
 }> = ({ clothingData, donationData }) => {
   return (
-    <section className="bg-white w-full mb-40">
+    <section className="w-full mb-40 mt-[-30px] md:mt-[-30px]">
       {/* ===================== CLOTHING SECTION ===================== */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 w-full">
         <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -56,7 +56,7 @@ const ClothingSection: React.FC<{
   {clothingData.images.map((img, i) => (
     <div
       key={i}
-      className="w-full rounded-2xl overflow-hidden md hover:transition-all duration-300"
+      className="w-full rounded-2xl overflow-hidden md hover:transition-all duration-300 "
     >
       <Image
         src={img}
@@ -79,7 +79,7 @@ const ClothingSection: React.FC<{
       </div>
 
       {/* ===================== DONATION SECTION ===================== */}
-      <div className="py-16 px-5 md:px-10">
+      <div className="py-16 px-5 md:px-10  mt-[-50px] md:mt-[-30px]">
         {/* Heading */}
         <div className="max-w-7xl mx-auto text-center mb-12 md:mb-14">
           <h4

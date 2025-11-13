@@ -26,7 +26,7 @@ const DifferenceSection: React.FC<DifferenceSectionProps> = ({ data }) => {
   const { title, heading, description, buttons, image } = data;
 
   return (
-    <section className="bg-white px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 py-16 rounded-xl overflow-hidden">
+    <section className="bg-white px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10 py-16 rounded-xl overflow-hidden mt-[-90px] md:mt-[-30px]">
       {/* ✅ Image Side */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}

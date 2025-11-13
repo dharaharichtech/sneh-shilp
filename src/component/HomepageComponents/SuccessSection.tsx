@@ -25,7 +25,8 @@ const SuccessSection: React.FC<SuccessSectionProps> = ({ data }) => {
   const { title, heading, description, cards } = data;
 
   return (
-    <section className="bg-[#E8FBE4] px-6 md:px-12 lg:px-20 py-12 rounded-xl">
+    <section className="bg-[#E8FBE4] px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl mt-[-70px] md:mt-[-30px]">
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -46,7 +47,7 @@ const SuccessSection: React.FC<SuccessSectionProps> = ({ data }) => {
           <p className="text-gray-600 max-w-6xl">{description}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
           {cards.map((card) => (
             <motion.div
               key={card.id}
@@ -54,26 +55,34 @@ const SuccessSection: React.FC<SuccessSectionProps> = ({ data }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-md p-5 flex items-center gap-4"
+              className="bg-white rounded-2xl p-6 flex items-center gap-5 hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 flex-shrink-0">
+              {/* Bigger Icon */}
+              <div className="w-16 h-16 flex-shrink-0">
                 <Image
                   src={card.icon}
                   alt={card.title}
-                  width={48}
-                  height={48}
+                  width={64}
+                  height={64}
                   className="object-contain"
                 />
               </div>
+
+              {/* Text Section */}
               <div>
-                <h4 className="text-gray-700 font-semibold">{card.title}</h4>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900">
+                <h4
+                  className={`${calistoga.className} text-gray-700 font-semi bold text-lg sm:text-xl`}
+                >
+                  {card.title}
+                </h4>
+                <p className="text-2xl sm:text-3xl text-gray-900 mt-1">
                   {card.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -25,6 +25,14 @@ interface ContactSectionProps {
 }
 
 const ContactSection: React.FC<{ data: ContactSectionProps }> = ({ data }) => {
+  // ✅ Smooth scroll handler
+  const handleScrollToForm = () => {
+    const section = document.getElementById("contact-form");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="bg-white py-14 px-5 sm:px-8 md:px-10 lg:px-20">
       <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
@@ -34,7 +42,7 @@ const ContactSection: React.FC<{ data: ContactSectionProps }> = ({ data }) => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="w-full lg:w-1/2 space-y-5 text-left" 
+          className="w-full lg:w-1/2 space-y-5 text-left"
         >
           <h3
             className={`${sueEllen.className} text-xl sm:text-2xl md:text-3xl text-gray-800`}
@@ -52,10 +60,11 @@ const ContactSection: React.FC<{ data: ContactSectionProps }> = ({ data }) => {
             {data.description}
           </p>
 
-          {/* ✅ Button full-width on mobile */}
+          {/* ✅ Contact Button with scroll */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
+            onClick={handleScrollToForm} // 👈 scroll to form here
             className="mt-4 flex items-center justify-center sm:justify-start gap-3 bg-[#73BE5F] text-white rounded-full px-8 py-3 text-sm font-semibold hover:bg-[#5aa647] transition-all sm:w-auto"
           >
             <Image

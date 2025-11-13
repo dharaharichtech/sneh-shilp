@@ -5,8 +5,8 @@ import Journey1 from "../../public/Image/AboutUsPage/journey1.png";
 import Journey2 from "../../public/Image/AboutUsPage/journey2.png";
 import Journey3 from "../../public/Image/AboutUsPage/journey3.png";
 import msg1 from "../../public/Image/AboutUsPage/msg1.png";
-import blackbox from "../../public/Image/AboutUsPage/blackbox.svg";
-import graybox from "../../public/Image/AboutUsPage/graybox.svg";
+import blackbox from "../../public/Image/AboutUsPage/blackbox.png";
+// import graybox from "../../public/Image/AboutUsPage/graybox.svg";
 import rightArrow from "../../public/Svg/arrow-2.svg";
 import Arrow1 from "../../public/Svg/down-arrow.svg"
 import JoinFrame from "../../public/Image/AboutUsPage/JoinFrame.svg";
@@ -23,7 +23,7 @@ export const Helper = {
   JoinFrame,
   rightArrow,
   blackbox,
-  graybox,
+  // graybox,
   Arrow1,
   mission,
 };

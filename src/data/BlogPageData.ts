@@ -16,7 +16,7 @@ export const BlogSectionData = {
         date: "October 16, 2023",
         highlight: "Celebrating the divine feminine",
         description:
-          "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion, dance, and divine celebrations. Amidst the joyous festivities, the eighth and ninth days bring forth a sacred Hindu ritual known as Kanya Puja. The young girls, considered representations of the goddess’s divine energy, are worshipped on this day.  At SnehShilp...",
+          "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion....",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/celebrating-the-divine-feminine", 
@@ -38,7 +38,7 @@ export const BlogSectionData = {
         date: "November 11, 2023",
         highlight: "Spreading joy and goodness",
         description:
-          "At SnehShilp Foundation, we believe that joy multiplies when shared, and this Diwali, we had the privilege of partnering with WealthX Capital for an initiative that left lasting smiles on many faces.   Diwali, the festival of lights, is not just about illumination; it’s about spreading warmth, happiness, and indulging in the simple joys of...",
+          "At SnehShilp Foundation, we believe that joy multiplies when shared, and this Diwali, we had the privilege of ...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/spreading-joy-and-goodness", 
@@ -61,7 +61,7 @@ export const BlogSectionData = {
         date: "December 29, 2022",
         highlight: "A day of fun, learning and adventure",
         description:
-          "In our ongoing mission to create meaningful connections and spread joy, we recently spent a great day with the resilient kids from the leprosy colony. Recognizing the importance of experiences that many take for granted, we decided to treat these enthusiastic learners to a day of fun and learning.   Our destination for the day...",
+          "In our ongoing mission to create meaningful connections and spread joy, we recently.....",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/a-day-of-fun-learning-and-adventure", 
@@ -84,7 +84,7 @@ export const BlogSectionData = {
         date: "November 4, 2023",
         highlight: "Building bonds beyond shelter",
         description:
-          "A day filled with warmth and shared smiles unfolded as the Sneh Shilp team made a special trip to Ambaji with the beloved residents of Rahel Ba Vrudh Ashram. These remarkable individuals, who have become an integral part of the Sneh Shilp Foundation family, were in for a treat.   Our connection with this shelter...",
+          "A day filled with warmth and shared smiles unfolded as the Sneh Shilp team made a special trip to...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/building-bonds-beyond-shelter", 
@@ -105,7 +105,7 @@ export const BlogSectionData = {
         date: "October  10, 2023",
         highlight: "Celebrating birthday with a purpose",
         description:
-          "In a heart-warming departure from conventional birthday celebrations, the son of Mr. and Mrs. Brahmbhatt, Manthan Brahmbhatt, added a unique and meaningful touch to his special day. Shifting away from the usual fanfare, he decided to spread joy and create lasting memories by celebrating with underprivileged kids.   The celebration took a heart-warming turn as...",
+          "In a heart-warming departure from conventional birthday celebrations, the son of Mr. and Mrs. Brahmbhatt...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/celebrating-birthday-with-a-purpose", 
@@ -126,7 +126,7 @@ export const BlogSectionData = {
         date: "September 10, 2023",
         highlight: "Pioneering Gujarat’s Start-Up Landscape",
         description:
-          "In an unforgettable two-day extravaganza, SnehShilp Foundation, in collaboration with Swen Proficon, orchestrated “Shilp presents Startup Fest Gujarat,” a trailblazing event that set a new standard for start-up gatherings. With Gujarat as its backdrop, this festival attracted innovators, entrepreneurs, and investors from near....",
+          "In an unforgettable two-day extravaganza, SnehShilp Foundation, in collaboration with Swen Proficon, orchestrated ...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/pioneering-gujarat-startup-landscape", 
@@ -152,7 +152,7 @@ export const BlogSectionData = {
         date: "January 26, 2023",
         highlight: "Educate the young ones",
         description:
-          "Site Shala is an educational program designed to provide basic education and skill development to children of construction workers. Our initiative began a year ago, and since then, we have been dedicated to improving the lives of these children by empowering them with knowledge and skills.  ",
+          "Site Shala is an educational program designed to provide basic education and life skills to children...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/educate-the-young-ones", 
@@ -171,7 +171,7 @@ export const BlogSectionData = {
         date: "October 11, 2024",
         highlight: "Clothes to the needy",
         description:
-          "The act of giving is one of the most beautiful and fulfilling actions that we as humans can undertake. And when it comes to donating clothes and footwear, the impact that it can have on someone’s life can be tremendous. For many of us, clothing and footwear are essentials that we take for",
+          "The act of giving is one of the most beautiful and fulfilling actions one can undertake...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/Clothes to the needy", 
@@ -190,7 +190,7 @@ export const BlogSectionData = {
         date: "November 22, 2024",
         highlight: "Hygiene and Sanitation",
         description:
-          "We recognized the multiple efforts that a woman makes each day of her life. Our Founder, Mrs. Snehal Brahmbhatt took a visit to one of our construction sites to honour the work of the women workers who leave behind so much and toil for the betterment of their families...",
+          "We recognized the multiple efforts that a woman makes each day of her life. Our Founder, Mrs. Snehal Brahmbhatt...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/hygiene-and-sanitation", 
@@ -209,7 +209,7 @@ export const BlogSectionData = {
         date: "September 09, 2022",
         highlight: "Manthan Self Defence Academy",
         description:
-          "Benzir wanted to celebrate her birthday differently this time. She wanted to cut a cake but with someone special. She also wanted the attention but from someone else. That’s when she decided to come to SnehShilp Foundation. Being a fond lover of kids and a mother to a one-year-old herself...",
+          "Benzir wanted to celebrate her birthday differently this time. She wanted to cut a cake but with someone special...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
         link: "/blog/manthan-self-defence-academy", 

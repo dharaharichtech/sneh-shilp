@@ -60,7 +60,8 @@ export default function ServingHope({ data }: ServingHopeProps) {
   };
 
   return (
-    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 mt-[-50px] md:mt-[-80px] rounded-xl overflow-hidden">
+ <section className="bg-white px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl overflow-hidden mt-[-90px] md:mt-[-30px]">
+
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* LEFT CONTENT */}
         <motion.div
@@ -72,19 +73,21 @@ export default function ServingHope({ data }: ServingHopeProps) {
           className="w-full md:w-1/2 flex flex-col gap-4"
         >
           {/* ✅ Mobile Header Section - Now LEFT ALIGNED */}
-          <div className="md:hidden mb-3 text-left">
-            <h4 className={`${sueEllen.className} text-xl text-[#2E4049]`}>
-              {title}
-            </h4>
-            <h2
-              className={`${calistoga.className} text-2xl text-[#73BE5F] font-bold`}
-            >
-              {heading}
-            </h2>
-            <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-              {description}
-            </p>
-          </div>
+            <div className="md:hidden text-left mb-5">
+              <h2
+                  className={`${sueEllen.className} text-2xl text-[#2E4049] mb-2`}
+                 >
+                  {title}
+                </h2>
+                <h3
+                className={`${calistoga.className} text-4xl text-[#73BE5F] font-semibold mb-3`}
+                 >
+                {heading}
+                </h3>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {description}
+                </p>
+            </div>
 
           {/* ✅ Desktop Header (Unchanged) */}
           <div className="hidden md:block">
@@ -117,7 +120,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
           {/* ✅ Highlight Section */}
           <div className="mt-5 text-left">
             <h3
-              className={`${calistoga.className} text-base md:text-lg text-[#73BE5F] font-semibold`}
+              className={`${calistoga.className} text-2xl md:text-lg text-[#73BE5F] font-semibold`}
             >
               {higlight}
             </h3>
@@ -128,7 +131,7 @@ export default function ServingHope({ data }: ServingHopeProps) {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#FFF9E8] p-3 rounded-xl flex items-center gap-3 shadow-sm"
+                className="bg-[#FFF9E8] p-6 rounded-xl flex items-center gap-3 shadow-sm"
               >
                 <div className="w-10 h-10">
                   <Image

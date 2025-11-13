@@ -1,4 +1,4 @@
-"use client"; // Ensure this stays on top
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -46,22 +46,69 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
   const [loading, setLoading] = useState(false);
   const [popup, setPopup] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState({
+    email: "",
+    mobile: "",
+  });
 
+  // ✅ Handle input change with validation
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
+    // ✅ Mobile number validation
+    if (name === "mobile") {
+      const digitsOnly = value.replace(/[^0-9]/g, ""); // only digits allowed
+      if (digitsOnly.length > 10) return; // stop at 10 digits
+      setFormValues((prev) => ({ ...prev, mobile: digitsOnly }));
+
+      if (digitsOnly.length < 10 && digitsOnly.length > 0) {
+        setFieldErrors((prev) => ({
+          ...prev,
+          mobile: "Mobile number must be 10 digits.",
+        }));
+      } else {
+        setFieldErrors((prev) => ({ ...prev, mobile: "" }));
+      }
+      return;
+    }
+
+    // ✅ Email validation
+    if (name === "email") {
+      setFormValues((prev) => ({ ...prev, email: value }));
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (value && !emailRegex.test(value)) {
+        setFieldErrors((prev) => ({
+          ...prev,
+          email: "Please enter a valid email address.",
+        }));
+      } else {
+        setFieldErrors((prev) => ({ ...prev, email: "" }));
+      }
+      return;
+    }
+
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ✅ Handle Submit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
     const { name, email, mobile, Subject, message } = formValues;
+
+    // Validation check before submission
     if (!name || !email || !mobile || !Subject || !message) {
       setError("Please fill all required fields.");
+      setLoading(false);
+      return;
+    }
+
+    if (fieldErrors.email || fieldErrors.mobile) {
+      setError("Please correct invalid fields before submitting.");
       setLoading(false);
       return;
     }
@@ -74,24 +121,24 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
         setTimeout(() => setPopup(false), 3000);
       }
     } catch {
-      setError(
-        "Failed to submit. Please check all fields or try again later."
-      );
+      setError("Failed to submit. Please try again later.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-   <section className="bg-white  pb-14 sm:pb-16 px-5 md:px-10 lg:px-20">
-
-      {/* Form Section */}
+    <section
+      id="contact-form"
+      className="scroll-mt-24 bg-white pb-14 sm:pb-16 px-5 md:px-10 lg:px-20"
+    >
+      {/* ✅ Contact Form Section */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="w-full bg-[#EEFFE9] rounded-2xl p-6 md:p-10"
+        className="w-full bg-[#EEFFE9] rounded-2xl p-6 md:p-10 shadow-sm"
       >
         <h3
           className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F] mb-8`}
@@ -99,7 +146,6 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
           {data.title}
         </h3>
 
-        {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
             {data.fields
@@ -125,12 +171,22 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
                     value={formValues[field.name as keyof JoinMessageData]}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-[#2E4049] placeholder-gray-400"
+                    className={`w-full bg-transparent border-b py-2 text-[#2E4049] placeholder-gray-400 focus:outline-none transition-all ${
+                      fieldErrors[field.name as "email" | "mobile"]
+                        ? "border-red-500 focus:border-red-400"
+                        : "border-[#73BE5F] focus:border-[#5AA04E]"
+                    }`}
                   />
+                  {fieldErrors[field.name as "email" | "mobile"] && (
+                    <p className="text-xs text-red-500 mt-1">
+                      {fieldErrors[field.name as "email" | "mobile"]}
+                    </p>
+                  )}
                 </motion.div>
               ))}
           </div>
 
+          {/* ✅ Textarea */}
           {data.fields
             .filter((f) => f.type === "textarea")
             .map((field) => (
@@ -149,21 +205,22 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
                   onChange={handleChange}
                   rows={5}
                   required
-                  className="w-full bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 resize-none"
+                  className="w-full bg-transparent border-b border-[#73BE5F] focus:border-[#5AA04E] focus:outline-none py-2 resize-none text-[#2E4049]"
                 />
               </div>
             ))}
 
-          {error && <p className="text-red-600 mt-3">{error}</p>}
+          {error && <p className="text-red-600 mt-2">{error}</p>}
 
+          {/* ✅ Submit Button */}
           <motion.button
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             disabled={loading}
-            className="mt-8 flex items-center justify-center gap-3 bg-[#73BE5F] text-white rounded-full px-3 py-2 hover:bg-[#5aa647]"
+            className="mt-8 flex items-center justify-center gap-3 bg-[#73BE5F] text-white rounded-full px-6 py-3 hover:bg-[#5aa647] transition-all duration-300"
           >
-            <Image src={data.button.icon} alt="arrow" width={18} height={18} />
+            <Image src={data.button.icon} alt="arrow" width={20} height={20} />
             <span className={`${calistoga.className} text-sm`}>
               {loading ? "Submitting..." : data.button.text}
             </span>
@@ -171,7 +228,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
         </form>
       </motion.div>
 
-      {/* Popup */}
+      {/* ✅ Popup Confirmation */}
       {popup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
           <motion.div
@@ -190,7 +247,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
         </div>
       )}
 
-      {/* Google Map - Shilp 3 */}
+      {/* ✅ Google Map */}
       <div className="mt-10 md:mt-16">
         <motion.h3
           initial={{ opacity: 0, y: 30 }}
@@ -199,6 +256,7 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
           viewport={{ once: true }}
           className={`${calistoga.className} text-2xl md:text-3xl text-[#73BE5F] mb-5 text-center`}
         >
+          Our Location
         </motion.h3>
 
         <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-md">
@@ -212,7 +270,6 @@ const JoinUsSection: React.FC<{ data: JoinUsSectionProps }> = ({ data }) => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
       </div>
     </section>
   );

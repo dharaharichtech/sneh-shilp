@@ -46,7 +46,7 @@ const OurTeam: React.FC = () => {
                 className="object-contain"
               />
             </div>
-            <h3 className="text-[#73BE5F] text-lg md:text-xl font-semibold">
+            <h3 className={`${calistoga.className} text-[#73BE5F] text-lg md:text-xl font-semibold`}>
               {item.heading}
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">

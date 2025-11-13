@@ -15,24 +15,68 @@ const ApplyForm = () => {
     Start: "",
     Resume: null as File | null,
   });
+
+  const [errors, setErrors] = useState({
+    email: "",
+    mobile: "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
+  // ✅ Input change handler with number & email validation
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, files } = e.target as HTMLInputElement;
+
     if (name === "Resume" && files) {
       setFormValues((prev) => ({ ...prev, Resume: files[0] }));
-    } else {
-      setFormValues((prev) => ({ ...prev, [name]: value }));
+      return;
     }
+
+    if (name === "mobile") {
+      const onlyNumbers = value.replace(/[^0-9]/g, ""); // only digits
+      if (onlyNumbers.length > 10) return; // limit to 10
+      setFormValues((prev) => ({ ...prev, mobile: onlyNumbers }));
+
+      // Validation for 10 digits
+      if (onlyNumbers.length < 10) {
+        setErrors((prev) => ({ ...prev, mobile: "Mobile number must be 10 digits." }));
+      } else {
+        setErrors((prev) => ({ ...prev, mobile: "" }));
+      }
+      return;
+    }
+
+    if (name === "email") {
+      setFormValues((prev) => ({ ...prev, email: value }));
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (value && !emailRegex.test(value)) {
+        setErrors((prev) => ({ ...prev, email: "Please enter a valid email address." }));
+      } else {
+        setErrors((prev) => ({ ...prev, email: "" }));
+      }
+      return;
+    }
+
+    setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ✅ Form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
     setIsError(false);
+
+    // Prevent submission if validation errors exist
+    if (errors.email || errors.mobile) {
+      setMessage("⚠️ Please fix the highlighted fields before submitting.");
+      setIsError(true);
+      setLoading(false);
+      setTimeout(() => setMessage(""), 3000);
+      return;
+    }
 
     try {
       const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -74,13 +118,12 @@ const ApplyForm = () => {
       setIsError(true);
     } finally {
       setLoading(false);
-      // Auto-hide message after 3 seconds
       setTimeout(() => setMessage(""), 3000);
     }
   };
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative overflow-hidden">
+    <section className="w-full py-16 md:py-24 px-6 md:px-16 bg-white relative overflow-hidden mt-[-90px] md:mt-[-30px]">
       {/* ✅ Message Popup */}
       <AnimatePresence>
         {message && (
@@ -133,11 +176,7 @@ const ApplyForm = () => {
             Apply for a position
           </h3>
 
-          <form
-            onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            encType="multipart/form-data"
-          >
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8" encType="multipart/form-data">
             {/* Name */}
             <div className="flex flex-col">
               <label className="text-gray-700 text-sm mb-2">Your Name</label>
@@ -159,9 +198,12 @@ const ApplyForm = () => {
                 name="email"
                 value={formValues.email}
                 onChange={handleChange}
-                className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
+                className={`bg-transparent border-b py-2 focus:outline-none text-gray-800 ${
+                  errors.email ? "border-red-500" : "border-[#73BE5F]"
+                }`}
                 required
               />
+              {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
             </div>
 
             {/* Mobile */}
@@ -172,9 +214,13 @@ const ApplyForm = () => {
                 name="mobile"
                 value={formValues.mobile}
                 onChange={handleChange}
-                className="bg-transparent border-b border-[#73BE5F] focus:outline-none py-2 text-gray-800"
+                maxLength={10} // extra protection
+                className={`bg-transparent border-b py-2 focus:outline-none text-gray-800 ${
+                  errors.mobile ? "border-red-500" : "border-[#73BE5F]"
+                }`}
                 required
               />
+              {errors.mobile && <p className="text-sm text-red-500 mt-1">{errors.mobile}</p>}
             </div>
 
             {/* Select Position */}

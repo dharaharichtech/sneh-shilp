@@ -13,7 +13,7 @@ const JoinUs = () => {
 
   return (
     <section
-      className="w-full py-16 md:py-24 px-6 md:px-16 rounded-2xl max-w-7xl mx-auto shadow-sm"
+      className="w-full py-16 md:py-24 px-6 md:px-16 rounded-2xl max-w-7xl mx-auto shadow-sm  mt-[-70px] md:mt-[-30px]"
       style={{ backgroundColor: bgColor }}
     >
       {/* Heading */}
@@ -50,21 +50,21 @@ const JoinUs = () => {
             className="bg-white rounded-2xl shadow-sm p-8 flex flex-col justify-between text-left hover:shadow-lg transition-all"
           >
             <div>
-              <div className="w-16 h-16 bg-[#73BE5F] rounded-full flex items-center justify-center mb-6">
+              <div className="w-20 h-16 bg-[#73BE5F] rounded-full flex items-center justify-center mb-6">
                 <Image
                   src={card.icon}
                   alt={card.title}
-                  width={50}
+                  width={90}
                   height={50}
                   className="object-contain"
                 />
               </div>
               <h3
-                className={`${calistoga.className} text-2xl font-bold text-[#73BE5F] mb-3`}
+                className={`${calistoga.className} text-3xl font-bold text-[#73BE5F] mb-3`}
               >
                 {card.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-1xl leading-relaxed">
                 {card.text}
               </p>
             </div>

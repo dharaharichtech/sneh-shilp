@@ -53,7 +53,7 @@ const TheBlogSection: React.FC<BlogSectionProps> = ({ data }) => {
           {description.map((line, i) => (
             <p
               key={i}
-              className="text-sm sm:text-base leading-relaxed max-w-xl mx-auto"
+              className="text-sm sm:text-base leading-relaxed max-w-50xl mx-auto"
             >
               {line}
             </p>

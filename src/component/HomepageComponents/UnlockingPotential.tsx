@@ -47,7 +47,8 @@ export default function UnlockingPotential({
   } = data;
 
   return (
-    <section className="bg-white px-6 md:px-12 lg:px-20 py-12 rounded-xl overflow-hidden mt-[-50px] md:mt-[-80px]">
+     <section className="bg-white px-6 md:px-12 lg:px-20 py-12 md:py-16 rounded-xl overflow-hidden mt-[-90px] md:mt-[-30px]">
+
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* ✅ LEFT CONTENT */}
         <motion.div
@@ -57,21 +58,21 @@ export default function UnlockingPotential({
           className="w-full md:w-1/2"
         >
           {/* ✅ Mobile Header */}
-          <div className="md:hidden mb-4">
-            <h2
-              className={`${sueEllen.className} text-lg text-[#2E4049] leading-snug`}
-            >
-              {title}
-            </h2>
-            <h3
-              className={`${calistoga.className} text-2xl text-[#73BE5F] font-bold mt-1`}
-            >
-              {heading}
-            </h3>
-            <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-              {description}
-            </p>
-          </div>
+      <div className="md:hidden text-left mb-5">
+           <h2
+                        className={`${sueEllen.className} text-2xl text-[#2E4049] mb-2`}
+                      >
+                        {title}
+                      </h2>
+                      <h3
+                        className={`${calistoga.className} text-4xl text-[#73BE5F] font-semibold mb-3`}
+                      >
+                        {heading}
+                      </h3>
+                      <p className="text-gray-700 text-base leading-relaxed">
+                        {description}
+                      </p>
+                    </div>
 
           {/* ✅ Desktop Header */}
           <div className="hidden md:block">
@@ -114,7 +115,7 @@ export default function UnlockingPotential({
 
           {/* ✅ Highlight Text */}
           <h4
-            className={`${calistoga.className} text-base md:text-lg text-[#73BE5F] font-semibold mt-4`}
+            className={`${calistoga.className} text-2xl md:text-lg text-[#73BE5F] font-semibold mt-4`}
           >
             {higlight}
           </h4>
@@ -124,7 +125,7 @@ export default function UnlockingPotential({
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#FFF9E8] p-3 rounded-xl flex items-center gap-3 shadow-sm"
+                className="bg-[#FFF9E8] p-6 rounded-xl flex items-center gap-3 shadow-sm"
               >
                 <div className="w-10 h-10 flex-shrink-0">
                   <Image
@@ -149,14 +150,14 @@ export default function UnlockingPotential({
           <div className="mt-5 flex justify-start">
             <Link
               href={buttons.sponser.link || "#"}
-              className="inline-flex items-center justify-center gap-2 bg-[#73BE5F] text-white text-sm md:text-base px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium hover:bg-[#5FA94E] transition shadow-md"
+              className="inline-flex items-center justify-center gap-2 bg-[#73BE5F] text-white text-sm md:text-base px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium hover:bg-[#5FA94E] transition"
             >
               {buttons.sponser.icon && (
                 <Image
                   src={buttons.sponser.icon}
                   alt="btn icon"
-                  width={18}
-                  height={18}
+                  width={25}
+                  height={25}
                   className="object-contain"
                 />
               )}
@@ -173,7 +174,7 @@ export default function UnlockingPotential({
           transition={{ delay: 0.08 }}
           className="hidden md:flex w-full md:w-1/2 justify-center"
         >
-          <div className="w-[100%] max-w-lg relative rounded-xl overflow-hidden h-64 md:h-80 lg:h-[490px]">
+          <div className="w-[100%] max-w-lg relative rounded-xl overflow-hidden h-80 md:h-80 lg:h-[490px]">
             <Image
               src={mainImage}
               alt="Unlocking potential"
