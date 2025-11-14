@@ -1,3 +1,4 @@
+// src/data/BlogPageData.ts
 import { blogPageImages } from "@/Helper/BlogPageHelper";
 
 export const BlogSectionData = {
@@ -19,7 +20,7 @@ export const BlogSectionData = {
           "In the Indian tradition, the auspicious occasion of Navratri unfolds nine days of devotion....",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/celebrating-the-divine-feminine", 
+        link: "/blog/celebrating-the-divine-feminine",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
@@ -41,7 +42,7 @@ export const BlogSectionData = {
           "At SnehShilp Foundation, we believe that joy multiplies when shared, and this Diwali, we had the privilege of ...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/spreading-joy-and-goodness", 
+        link: "/blog/spreading-joy-and-goodness",
         fullContent: {
           author: "admin",
           readTime: "2 minute read",
@@ -64,7 +65,7 @@ export const BlogSectionData = {
           "In our ongoing mission to create meaningful connections and spread joy, we recently.....",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/a-day-of-fun-learning-and-adventure", 
+        link: "/blog/a-day-of-fun-learning-and-adventure",
         fullContent: {
           author: "admin",
           readTime: "2 minute read",
@@ -87,7 +88,7 @@ export const BlogSectionData = {
           "A day filled with warmth and shared smiles unfolded as the Sneh Shilp team made a special trip to...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/building-bonds-beyond-shelter", 
+        link: "/blog/building-bonds-beyond-shelter",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
@@ -102,13 +103,13 @@ export const BlogSectionData = {
         id: 5,
         slug: "celebrating-birthday-with-a-purpose",
         image: blogPageImages.Banner5,
-        date: "October  10, 2023",
+        date: "October 10, 2023",
         highlight: "Celebrating birthday with a purpose",
         description:
           "In a heart-warming departure from conventional birthday celebrations, the son of Mr. and Mrs. Brahmbhatt...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/celebrating-birthday-with-a-purpose", 
+        link: "/blog/celebrating-birthday-with-a-purpose",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
@@ -129,7 +130,7 @@ export const BlogSectionData = {
           "In an unforgettable two-day extravaganza, SnehShilp Foundation, in collaboration with Swen Proficon, orchestrated ...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/pioneering-gujarat-startup-landscape", 
+        link: "/blog/pioneering-gujarat-startup-landscape",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
@@ -138,9 +139,7 @@ export const BlogSectionData = {
             "Throughout these two remarkable days, Startup Fest Gujarat was a hub of activity. Entrepreneurs had the privilege of receiving one-on-one business audits and validations from the esteemed strategist and expert, Hirav Shah. The event also hosted a series of mentoring sessions led by industry experts, inspiring talks, and panel discussions. The Game Arena provided a fun and engaging space for networking and collaboration, fostering meaningful connections among attendees.",
             "The highlight of the event was the substantial commitment from investors to support promising startups. Of the 200+ participating startups, a remarkable 55 sparked deep interest from investors, leading to the signing of 43 crore rupees worth of Letters of Intent (LOIs). This marked the beginning of many promising collaborations and future innovations.",
             "Startup Fest Gujarat attracted over 14,000 visitors over two days, showcasing the tremendous enthusiasm and interest in Gujarat’s startup ecosystem. Visitors, mentors, and investors came from major cities, including Delhi, Mumbai, Rajkot, Surat, Pune, Kolkata, and even globally renowned chambers of commerce, demonstrating the event’s transformative power.",
-            "The grand finale of the event celebrated the outstanding contributions of individuals to the startup ecosystem in Ahmedabad and Gujarat. It also recognized the excellence and innovation of startups, with many receiving prestigious awards across various sectors.",
-
-"The incredible success of Startup Fest Gujarat Season 1 has paved the way for the eagerly awaited Season 2. With continued enthusiasm from startups, investors, and supporters, the event promises to be even more transformative for Gujarat’s startup ecosystem.This event wouldn’t have been possible without the unwavering support of Swen Proficon. Their vision and dedication to youth empowerment and entrepreneurship have played a pivotal role in the triumph of Startup Fest Gujarat.",
+            "The incredible success of Startup Fest Gujarat Season 1 has paved the way for the eagerly awaited Season 2. With continued enthusiasm from startups, investors, and supporters, the event promises to be even more transformative for Gujarat’s startup ecosystem.This event wouldn’t have been possible without the unwavering support of Swen Proficon. Their vision and dedication to youth empowerment and entrepreneurship have played a pivotal role in the triumph of Startup Fest Gujarat.",
             "Thank you for reading.",
           ],
         },
@@ -155,18 +154,16 @@ export const BlogSectionData = {
           "Site Shala is an educational program designed to provide basic education and life skills to children...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/educate-the-young-ones", 
+        link: "/blog/educate-the-young-ones",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
-          content: [
-            "Thank you for reading.",
-          ],
+          content: ["Thank you for reading."],
         },
       },
       {
         id: 8,
-        slug: "Clothes to the needy",
+        slug: "clothes-to-the-needy",
         image: blogPageImages.Banner8,
         date: "October 11, 2024",
         highlight: "Clothes to the needy",
@@ -174,13 +171,11 @@ export const BlogSectionData = {
           "The act of giving is one of the most beautiful and fulfilling actions one can undertake...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/Clothes to the needy", 
+        link: "/blog/clothes-to-the-needy",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
-          content: [
-            "Thank you for reading.",
-          ],
+          content: ["Thank you for reading."],
         },
       },
       {
@@ -193,13 +188,11 @@ export const BlogSectionData = {
           "We recognized the multiple efforts that a woman makes each day of her life. Our Founder, Mrs. Snehal Brahmbhatt...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/hygiene-and-sanitation", 
+        link: "/blog/hygiene-and-sanitation",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
-          content: [
-            "Thank you for reading.",
-          ],
+          content: ["Thank you for reading."],
         },
       },
       {
@@ -212,13 +205,11 @@ export const BlogSectionData = {
           "Benzir wanted to celebrate her birthday differently this time. She wanted to cut a cake but with someone special...",
         belowtext: "Read More",
         icon: blogPageImages.ReadMoreArrow,
-        link: "/blog/manthan-self-defence-academy", 
+        link: "/blog/manthan-self-defence-academy",
         fullContent: {
           author: "admin",
           readTime: "1 minute read",
-          content: [
-            "Thank you for reading.",
-          ],
+          content: ["Thank you for reading."],
         },
       },
     ],
