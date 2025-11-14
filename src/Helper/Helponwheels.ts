@@ -21,7 +21,7 @@ import Meals from "../../public/Image/Donation/Meals(perday).png";
 import Mealsprovidetilldate from "../../public/Image/Donation/Mealsprovidetilldate.png";
 import Areascovered from "../../public/Image/Donation/Areascovered.png";
 
-import dontiondifference from "../../public/Image/Donation/dontiondifference.png";
+import dontiondifference from "../../public/Image/Donation/Elders.png";
 import Banner1 from "../../public/Image/BlogPage/blog1.png";
 import Banner2 from "../../public/Image/BlogPage/Blogs2.png";
 import Banner3 from "../../public/Image/BlogPage/Blogs3.png";

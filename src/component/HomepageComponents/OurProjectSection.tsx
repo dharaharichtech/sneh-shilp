@@ -129,7 +129,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
             {/* ✅ Desktop Layout (unchanged) */}
             <div className="hidden md:flex w-full flex-row gap-4">
               {/* Large Left Image */}
-              <div className="w-2/3 relative rounded-xl overflow-hidden h-[420px]">
+              <div className="w-1/2 relative rounded-xl overflow-hidden h-[420px]">
                 <Image
                   src={images[0]}
                   alt="Project main image"
@@ -140,7 +140,7 @@ export default function OurProjectSection({ data }: OurProjectSectionProps) {
               </div>
 
               {/* Two stacked small images */}
-              <div className="w-1/3 flex flex-col gap-4">
+              <div className="w-1/2 flex flex-col gap-4">
                 <div className="relative w-full h-[200px] rounded-xl overflow-hidden">
                   <Image
                     src={images[1]}
