@@ -9,7 +9,7 @@ interface JoinMessageData {
 }
 
 export const sendJoinMessage = async (formData: JoinMessageData): Promise<AxiosResponse> => {
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:5000/api";
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "https://mail.snehshilp.org/api";
 
   try {
     const response = await axios.post(`${API_BASE}/Contact`, formData, {

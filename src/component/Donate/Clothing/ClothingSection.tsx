@@ -28,6 +28,7 @@ const ClothingSection: React.FC<{
       {/* ===================== CLOTHING SECTION ===================== */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 w-full">
         <div className="grid md:grid-cols-2 gap-10 items-center">
+
           {/* LEFT CONTENT */}
           <div>
             <h2
@@ -40,56 +41,58 @@ const ClothingSection: React.FC<{
               {clothingData.description}
             </p>
 
-            <button className="flex items-center justify-center gap-3 bg-[#73BE5F] text-white font-semibold text-base md:text-10xl px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#58a34d] hover:transition-all duration-300 mx-auto ml-0 md:mx-0">
-              <Image
-                src={clothingData.buttonIcon}
-                alt="Donate Now"
-                width={26}
-                height={26}
-              />
-              {clothingData.buttonText}
-            </button>
+            {/* UPDATED DONATE BUTTON - ONLY LINK ADDED */}
+          <a
+  href="https://pages.razorpay.com/snehshilpfoundation"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 bg-[#73BE5F] text-white font-semibold text-base px-6 py-3 rounded-full hover:bg-[#58a34d] transition-all duration-300 w-fit"
+>
+  <Image
+    src={clothingData.buttonIcon}
+    alt="Donate Now"
+    width={26}
+    height={26}
+  />
+  {clothingData.buttonText}
+</a>
+
           </div>
 
           {/* RIGHT IMAGES */}
-      <div className="grid md:grid-cols-1 grid-cols-1 gap-3 md:gap-5">
-  {clothingData.images.map((img, i) => (
-    <div
-      key={i}
-      className="w-full rounded-2xl overflow-hidden md hover:transition-all duration-300 "
-    >
-      <Image
-        src={img}
-        alt="Clothing Donation"
-        width={400}
-        height={350}
-        className="
-          w-full 
-          h-[250px] sm:h-[300px] 
-          md:h-[350px] lg:h-[360px] 
-          object-cover rounded-2xl 
-          hover:scale-105 transition-transform duration-500
-        "
-      />
-    </div>
-  ))}
-</div>
+          <div className="grid md:grid-cols-1 grid-cols-1 gap-3 md:gap-5">
+            {clothingData.images.map((img, i) => (
+              <div
+                key={i}
+                className="w-full rounded-2xl overflow-hidden hover:transition-all duration-300"
+              >
+                <Image
+                  src={img}
+                  alt="Clothing Donation"
+                  width={400}
+                  height={350}
+                  className="
+                  w-full 
+                  h-[250px] sm:h-[300px] 
+                  md:h-[350px] lg:h-[360px] 
+                  object-cover rounded-2xl 
+                  hover:scale-105 transition-transform duration-500
+                "
+                />
+              </div>
+            ))}
+          </div>
 
         </div>
       </div>
 
       {/* ===================== DONATION SECTION ===================== */}
-      <div className="py-16 px-5 md:px-10  mt-[-50px] md:mt-[-30px]">
-        {/* Heading */}
+      <div className="py-16 px-5 md:px-10 mt-[-50px] md:mt-[-30px]">
         <div className="max-w-7xl mx-auto text-center mb-12 md:mb-14">
-          <h4
-            className={`${sueEllen.className} text-lg md:text-3xl text-gray-700 mb-2`}
-          >
+          <h4 className={`${sueEllen.className} text-lg md:text-3xl text-gray-700 mb-2`}>
             {donationData.title}
           </h4>
-          <h2
-            className={`${calistoga.className} text-3xl md:text-6xl text-[#73BE5F] mb-3 md:mb-4`}
-          >
+          <h2 className={`${calistoga.className} text-3xl md:text-6xl text-[#73BE5F] mb-3 md:mb-4`}>
             {donationData.heading}
           </h2>
           <p className="text-gray-600 text-sm md:text-base max-w-5xl mx-auto leading-relaxed">
@@ -97,75 +100,27 @@ const ClothingSection: React.FC<{
           </p>
         </div>
 
-        {/* Desktop Grid (UNCHANGED) */}
+        {/* Desktop Grid */}
         <div className="max-w-7xl mx-auto hidden md:grid grid-cols-4 gap-5">
           <div className="flex flex-col gap-5">
-            <Image
-              src={donationData.gallery[0]}
-              alt="Donation 1"
-              width={400}
-              height={500}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <Image
-              src={donationData.gallery[4]}
-              alt="Donation 5"
-              width={400}
-              height={400}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
+            <Image src={donationData.gallery[0]} alt="Donation 1" width={400} height={500} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
+            <Image src={donationData.gallery[4]} alt="Donation 5" width={400} height={400} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="flex flex-col gap-5 mt-16">
-            <Image
-              src={donationData.gallery[1]}
-              alt="Donation 2"
-              width={400}
-              height={400}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <Image
-              src={donationData.gallery[5]}
-              alt="Donation 6"
-              width={400}
-              height={500}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
+            <Image src={donationData.gallery[1]} alt="Donation 2" width={400} height={400} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
+            <Image src={donationData.gallery[5]} alt="Donation 6" width={400} height={500} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="flex flex-col gap-5">
-            <Image
-              src={donationData.gallery[2]}
-              alt="Donation 3"
-              width={400}
-              height={500}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <Image
-              src={donationData.gallery[6]}
-              alt="Donation 7"
-              width={400}
-              height={350}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
+            <Image src={donationData.gallery[2]} alt="Donation 3" width={400} height={500} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
+            <Image src={donationData.gallery[6]} alt="Donation 7" width={400} height={350} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="flex flex-col gap-5 mt-16">
-            <Image
-              src={donationData.gallery[3]}
-              alt="Donation 4"
-              width={400}
-              height={450}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <Image
-              src={donationData.gallery[7]}
-              alt="Donation 8"
-              width={400}
-              height={500}
-              className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
-            />
+            <Image src={donationData.gallery[3]} alt="Donation 4" width={400} height={450} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
+            <Image src={donationData.gallery[7]} alt="Donation 8" width={400} height={500} className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
 
-        {/* ✅ Mobile Layout (Exactly Like Your Image) */}
+        {/* Mobile Layout */}
         <div className="md:hidden flex flex-col gap-5 mt-5">
           {donationData.gallery.map((img, i) => (
             <div

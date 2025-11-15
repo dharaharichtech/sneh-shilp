@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { calistoga, sueEllen } from "../../app/font";
 import { OurTeamData } from "@/data/OurTeamData";
@@ -13,7 +14,7 @@ const JoinUs = () => {
 
   return (
     <section
-      className="w-full py-16 md:py-24 px-6 md:px-16 rounded-2xl max-w-7xl mx-auto shadow-sm  mt-[-70px] md:mt-[-30px]"
+      className="w-full py-16 md:py-24 px-6 md:px-16 rounded-2xl max-w-7xl mx-auto shadow-sm mt-[-70px] md:mt-[-30px]"
       style={{ backgroundColor: bgColor }}
     >
       {/* Heading */}
@@ -69,16 +70,11 @@ const JoinUs = () => {
               </p>
             </div>
 
-            {/* ✅ Button that opens link */}
+            {/* Button - Open in SAME TAB */}
             <div className="mt-8">
-              <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
+              <Link href={card.link} className="inline-block">
                 <TeamsButtons text={card.button} />
-              </a>
+              </Link>
             </div>
           </motion.div>
         ))}

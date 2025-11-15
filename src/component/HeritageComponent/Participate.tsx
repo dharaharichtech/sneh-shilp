@@ -81,7 +81,7 @@ const Participate: React.FC = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/participate",
+        "https://mail.snehshilp.org/api/participate",
         formData,
         {
           headers: { "Content-Type": "application/json" },

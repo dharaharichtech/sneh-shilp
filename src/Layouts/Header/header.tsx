@@ -14,9 +14,11 @@ const Header: React.FC = () => {
   const router = useRouter();
 
   const toggleMenu = () => setMobileOpen((prev) => !prev);
+
   const handleDropdown = (id: number) => {
     setActiveDropdown((prev) => (prev === id ? null : id));
   };
+
   const handleLinkClick = (href: string) => {
     router.push(href);
     setMobileOpen(false);
@@ -26,6 +28,7 @@ const Header: React.FC = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50 border-b border-gray-100">
       <div className="max-w-[1300px] mx-auto flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-10 xl:px-14 py-3 md:py-4">
+
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
@@ -39,7 +42,7 @@ const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap- text-[#2E4049] text-[14px] lg:text-[15px] font-medium">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-6 text-[#2E4049] text-[14px] lg:text-[15px] font-medium">
           {navLinks.map((link) => {
             const hasSub = !!(link.subLinks && link.subLinks.length > 0);
             return (
@@ -54,7 +57,6 @@ const Header: React.FC = () => {
                   )}
                 </Link>
 
-                {/* Desktop Dropdown */}
                 {hasSub && (
                   <div className="absolute left-0 mt-2 w-48 md:w-56 bg-white border border-gray-100 shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {(link.subLinks ?? []).map((sub, idx) => (
@@ -79,15 +81,17 @@ const Header: React.FC = () => {
 
         {/* Donate Button (Desktop) */}
         <div className="hidden md:flex items-center ml-2">
-          <Link
-            href="/donate"
+          <a
+            href="https://pages.razorpay.com/snehshilpfoundation"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#6BB45B] text-white font-medium px-4 md:px-5 py-2.5 rounded-full shadow-sm hover:bg-[#5ca64f] transition-all whitespace-nowrap"
           >
             <span className="flex items-center justify-center bg-white text-[#6BB45B] rounded-full w-6 h-6">
               <Heart size={15} fill="#6BB45B" strokeWidth={0} />
             </span>
             Donate Now
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -111,6 +115,7 @@ const Header: React.FC = () => {
             const hasSub = !!(link.subLinks && link.subLinks.length > 0);
             return (
               <div key={link.id} className="flex flex-col">
+
                 {/* Main Link */}
                 <button
                   onClick={() =>
@@ -128,7 +133,7 @@ const Header: React.FC = () => {
                   )}
                 </button>
 
-                {/* Mobile Sublinks */}
+                {/* Mobile Sub Links */}
                 {hasSub && (
                   <div
                     className={`pl-4 flex flex-col overflow-hidden transition-all duration-300 ${
@@ -154,16 +159,19 @@ const Header: React.FC = () => {
 
           {/* Donate Button (Mobile) */}
           <div className="pt-3">
-            <button
-              onClick={() => handleLinkClick("/donate")}
+            <a
+              href="https://pages.razorpay.com/snehshilpfoundation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#6BB45B] text-white font-medium px-5 py-2.5 rounded-full shadow-sm hover:bg-[#5ca64f] transition-all w-full justify-center"
             >
               <span className="flex items-center justify-center bg-white text-[#6BB45B] rounded-full w-6 h-6">
                 <Heart size={15} fill="#6BB45B" strokeWidth={0} />
               </span>
               Donate Now
-            </button>
+            </a>
           </div>
+
         </nav>
       </div>
     </header>
@@ -171,3 +179,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+  
